@@ -136,8 +136,18 @@
             <strong id="iosCookieBannerTitle">🍪 Cookies & Datenschutz</strong><br>
             {{ settings.cookie_banner_text | default: 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren.' }} 
             Mit der Nutzung unserer Website stimmen Sie unserer 
-            <a href="{{ settings.privacy_policy_url | default: '/pages/datenschutz' }}" target="_blank">Datenschutzerklärung</a> und 
-            <a href="{{ settings.imprint_url | default: '/pages/impressum' }}" target="_blank">Impressum</a> zu.
+            {%- if settings.privacy_policy_url != blank and settings.privacy_policy_url != '#' -%}
+              <a href="{{ settings.privacy_policy_url }}" target="_blank">Datenschutzerklärung</a>
+            {%- else -%}
+              Datenschutzerklärung
+            {%- endif -%}
+            {%- if settings.privacy_policy_url != blank and settings.privacy_policy_url != '#' and settings.imprint_url != blank and settings.imprint_url != '#' -%} und {%- endif -%}
+            {%- if settings.imprint_url != blank and settings.imprint_url != '#' -%}
+              <a href="{{ settings.imprint_url }}" target="_blank">Impressum</a>
+            {%- else -%}
+              Impressum
+            {%- endif -%}
+            zu.
           </div>
           <div class="ios-cookie-actions">
             <button id="declineCookies" class="ios-btn ghost">Ablehnen</button>
