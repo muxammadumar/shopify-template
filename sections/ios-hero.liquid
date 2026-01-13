@@ -16,12 +16,13 @@
       {% render 'ios-navigation' %}
 
       <div class="ios-actions">
-        <button class="ios-burger" id="iosBurger" aria-label="Menü" aria-controls="iosMobileNav" aria-expanded="false">
+        {% render 'ios-language-selector' %}
+        <button class="ios-burger" id="iosBurger" aria-label="{{ 'general.menu' | t }}" aria-controls="iosMobileNav" aria-expanded="false" data-menu-open="{{ 'general.menu_open' | t }}" data-menu-close="{{ 'general.menu_close' | t }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
-        <a class="ios-btn ghost" href="#pricing">Pakete ansehen</a>
+        <a class="ios-btn ghost" href="#pricing">{{ 'general.view_packages' | t }}</a>
         <a class="ios-btn primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
       </div>
     </div>
@@ -52,7 +53,7 @@
         {% endif %}
 
         {% if section.settings.chip_1 != blank or section.settings.chip_2 != blank or section.settings.chip_3 != blank %}
-        <div class="ios-chips" aria-label="Wichtige Vorteile">
+        <div class="ios-chips" aria-label="{{ 'hero.important_benefits' | t }}">
           {% if section.settings.chip_1 != blank %}
           <div class="ios-chip">⏱️ <b>{{ section.settings.chip_1 }}</b></div>
           {% endif %}
@@ -72,17 +73,17 @@
         {% endif %}
       </div>
 
-      <aside class="ios-glass ios-side" aria-label="Kurz & klar">
+      <aside class="ios-glass ios-side" aria-label="{{ 'hero.short_and_clear' | t }}">
         <div class="ios-ring" aria-hidden="true"></div>
-        <h3>Kurz & klar</h3>
+        <h3>{{ 'hero.short_and_clear' | t }}</h3>
 
         <div class="ios-stat">
-          <div class="ios-stat-row"><span>Dauer</span><strong>Bis zu 48 Stunden</strong></div>
-          <div class="ios-stat-row"><span>Basis</span><strong>Shopify + Lieferant</strong></div>
-          <div class="ios-stat-row"><span>Format</span><strong>Startklare Brand-Basis</strong></div>
+          <div class="ios-stat-row"><span>{{ 'hero.duration' | t }}</span><strong>{{ 'hero.duration_value' | t }}</strong></div>
+          <div class="ios-stat-row"><span>{{ 'hero.basis' | t }}</span><strong>{{ 'hero.basis_value' | t }}</strong></div>
+          <div class="ios-stat-row"><span>{{ 'hero.format' | t }}</span><strong>{{ 'hero.format_value' | t }}</strong></div>
         </div>
 
-        <div class="ios-tag">✨ iOS‑style glass landing</div>
+        <div class="ios-tag">{{ 'hero.ios_style' | t }}</div>
       </aside>
     </div>
   </div>

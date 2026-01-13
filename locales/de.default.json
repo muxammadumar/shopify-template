@@ -1,0 +1,49 @@
+{
+  "general": {
+    "menu": "Menü",
+    "menu_open": "Menü öffnen",
+    "menu_close": "Menü schließen",
+    "view_packages": "Pakete ansehen",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "skip_to_content": "Zum Hauptinhalt springen"
+  },
+  "cookie_banner": {
+    "title": "🍪 Cookies & Datenschutz",
+    "text": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren.",
+    "privacy_policy": "Datenschutzerklärung",
+    "imprint": "Impressum",
+    "agreement": "Mit der Nutzung unserer Website stimmen Sie unserer",
+    "and": "und",
+    "agree": "zu."
+  },
+  "language": {
+    "select": "Sprache auswählen",
+    "german": "Deutsch",
+    "english": "English",
+    "current": "Aktuelle Sprache"
+  },
+  "country": {
+    "select": "Land auswählen",
+    "hint": "Выберите страну — мы создаём магазин под ваш рынок"
+  },
+  "meta": {
+    "description": "Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem. Deine Brand in 48 Stunden startklar.",
+    "description_short": "Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem."
+  },
+  "hero": {
+    "important_benefits": "Wichtige Vorteile",
+    "short_and_clear": "Kurz & klar",
+    "duration": "Dauer",
+    "duration_value": "Bis zu 48 Stunden",
+    "basis": "Basis",
+    "basis_value": "Shopify + Lieferant",
+    "format": "Format",
+    "format_value": "Startklare Brand-Basis",
+    "ios_style": "✨ iOS‑style glass landing"
+  },
+  "pricing": {
+    "packages": "Pakete",
+    "edit_hint": "Texte und Pakete können im Theme Editor (Anpassen) für diese Seite bearbeitet werden."
+  }
+}

@@ -52,7 +52,8 @@
             var burger = document.getElementById('iosBurger');
             if(burger) {
               burger.setAttribute('aria-expanded', 'false');
-              burger.setAttribute('aria-label', 'Menü öffnen');
+              var menuOpen = burger.getAttribute('data-menu-open') || 'Open menu';
+              burger.setAttribute('aria-label', menuOpen);
             }
           }
           

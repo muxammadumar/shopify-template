@@ -1,0 +1,42 @@
+{% comment %}
+  Language selector dropdown component
+  Usage: {% render 'ios-language-selector' %}
+  Shows available languages and allows switching between them
+{% endcomment %}
+
+{%- if shop.published_locales.size > 1 -%}
+<div class="ios-language-selector-wrapper">
+  <div class="ios-language-selector" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="{{ 'language.select' | t }}">
+    <button class="ios-language-trigger" type="button" id="iosLanguageTrigger" aria-label="{{ 'language.select' | t }}">
+      <span class="ios-language-flag" id="iosLanguageFlag">
+        {%- if request.locale.iso_code == 'de' -%}🇩🇪
+        {%- elsif request.locale.iso_code == 'en' -%}🇬🇧
+        {%- else -%}🌐
+        {%- endif -%}
+      </span>
+      <span class="ios-language-code" id="iosLanguageCode">{{ request.locale.iso_code | upcase }}</span>
+      <svg class="ios-language-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <ul class="ios-language-list" id="iosLanguageList" role="listbox" aria-label="{{ 'language.select' | t }}" hidden>
+      {%- for locale in shop.published_locales -%}
+        <li role="option" 
+            data-locale="{{ locale.iso_code }}" 
+            data-flag="{%- if locale.iso_code == 'de' -%}🇩🇪{%- elsif locale.iso_code == 'en' -%}🇬🇧{%- else -%}🌐{%- endif -%}"
+            data-name="{{ locale.endonym_name }}"
+            {%- if locale.iso_code == request.locale.iso_code -%}aria-selected="true"{%- else -%}aria-selected="false"{%- endif -%}
+            tabindex="0">
+          <a href="{{ locale.root_path }}" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+            {%- if locale.iso_code == 'de' -%}🇩🇪
+            {%- elsif locale.iso_code == 'en' -%}🇬🇧
+            {%- else -%}🌐
+            {%- endif -%}
+            {{ locale.endonym_name }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+{%- endif -%}

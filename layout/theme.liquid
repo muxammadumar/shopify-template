@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,7 +15,7 @@
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- else -%}
-      <meta name="description" content="Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem. Deine Brand in 48 Stunden startklar.">
+      <meta name="description" content="{{ 'meta.description' | t }}">
     {%- endif -%}
 
     <link rel="canonical" href="{{ canonical_url }}">
@@ -34,7 +34,7 @@
     <meta property="og:url" content="{{ canonical_url }}">
     <meta property="og:title" content="{%- if page_title -%}{{ page_title }}{%- else -%}{{ shop.name }}{%- endif -%}">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="{%- if page_description -%}{{ page_description | escape }}{%- else -%}Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem. Deine Brand in 48 Stunden startklar.{%- endif -%}">
+      <meta property="og:description" content="{%- if page_description -%}{{ page_description | escape }}{%- else -%}{{ 'meta.description' | t }}{%- endif -%}">
     {%- if page_image -%}
       <meta property="og:image" content="http:{{ page_image | img_url: '1200x630' }}">
       <meta property="og:image:secure_url" content="https:{{ page_image | img_url: '1200x630' }}">
@@ -42,12 +42,12 @@
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="{%- if page_title -%}{{ page_title | escape }}{%- else -%}{{ shop.name | escape }}{%- endif -%}">
     {%- endif -%}
-    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale" content="{{ request.locale.iso_code }}_{{ request.locale.iso_code | upcase }}">
 
     {%- comment -%} Twitter Card Meta Tags {%- endcomment -%}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{%- if page_title -%}{{ page_title }}{%- else -%}{{ shop.name }}{%- endif -%}">
-    <meta name="twitter:description" content="{%- if page_description -%}{{ page_description | escape }}{%- else -%}Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem.{%- endif -%}">
+      <meta name="twitter:description" content="{%- if page_description -%}{{ page_description | escape }}{%- else -%}{{ 'meta.description_short' | t }}{%- endif -%}">
     {%- if page_image -%}
       <meta name="twitter:image" content="https:{{ page_image | img_url: '1200x630' }}">
     {%- endif -%}
@@ -60,7 +60,7 @@
       "name": "{{ shop.name }}",
       "url": "{{ shop.url }}",
       "logo": "{{ 'logo.png' | asset_url }}",
-      "description": "Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem. Deine Brand in 48 Stunden startklar.",
+      "description": "{{ 'meta.description' | t }}",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "DE"
@@ -103,6 +103,7 @@
     <script src="{{ 'faq-accordion.js' | asset_url }}" defer></script>
     <script src="{{ 'country-selector.js' | asset_url }}" defer></script>
     <script src="{{ 'cookie-banner.js' | asset_url }}" defer></script>
+    <script src="{{ 'language-selector.js' | asset_url }}" defer></script>
     <script src="{{ 'main.js' | asset_url }}" defer></script>
 
     {%- comment -%} Theme Color Variables {%- endcomment -%}
@@ -121,7 +122,7 @@
 
   <body>
     {%- comment -%} Skip to content link for accessibility {%- endcomment -%}
-    <a class="ios-skip" href="#MainContent">Zum Hauptinhalt springen</a>
+    <a class="ios-skip" href="#MainContent">{{ 'general.skip_to_content' | t }}</a>
 
     <main id="MainContent" role="main">
       {{ content_for_layout }}
@@ -133,27 +134,27 @@
       <div class="ios-wrap">
         <div class="ios-cookie-content">
           <div class="ios-cookie-text">
-            <strong id="iosCookieBannerTitle">🍪 Cookies & Datenschutz</strong><br>
-            {{ settings.cookie_banner_text | default: 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren.' }} 
-            Mit der Nutzung unserer Website stimmen Sie unserer 
+            <strong id="iosCookieBannerTitle">{{ 'cookie_banner.title' | t }}</strong><br>
+            {%- if settings.cookie_banner_text != blank -%}{{ settings.cookie_banner_text }}{%- else -%}{{ 'cookie_banner.text' | t }}{%- endif -%} 
+            {{ 'cookie_banner.agreement' | t }} 
             {%- assign privacy_url = settings.privacy_policy_url | default: '' -%}
             {%- assign imprint_url = settings.imprint_url | default: '' -%}
             {%- if privacy_url != blank and privacy_url != '#' -%}
-              <a href="{{ privacy_url }}" target="_blank">Datenschutzerklärung</a>
+              <a href="{{ privacy_url }}" target="_blank">{{ 'cookie_banner.privacy_policy' | t }}</a>
             {%- else -%}
-              Datenschutzerklärung
+              {{ 'cookie_banner.privacy_policy' | t }}
             {%- endif -%}
-            {%- if privacy_url != blank and privacy_url != '#' and imprint_url != blank and imprint_url != '#' -%} und {%- endif -%}
+            {%- if privacy_url != blank and privacy_url != '#' and imprint_url != blank and imprint_url != '#' -%} {{ 'cookie_banner.and' | t }} {%- endif -%}
             {%- if imprint_url != blank and imprint_url != '#' -%}
-              <a href="{{ imprint_url }}" target="_blank">Impressum</a>
+              <a href="{{ imprint_url }}" target="_blank">{{ 'cookie_banner.imprint' | t }}</a>
             {%- else -%}
-              Impressum
+              {{ 'cookie_banner.imprint' | t }}
             {%- endif -%}
-            zu.
+            {{ 'cookie_banner.agree' | t }}
           </div>
           <div class="ios-cookie-actions">
-            <button id="declineCookies" class="ios-btn ghost">Ablehnen</button>
-            <button id="acceptCookies" class="ios-btn primary">Akzeptieren</button>
+            <button id="declineCookies" class="ios-btn ghost">{{ 'general.decline' | t }}</button>
+            <button id="acceptCookies" class="ios-btn primary">{{ 'general.accept' | t }}</button>
           </div>
         </div>
       </div>

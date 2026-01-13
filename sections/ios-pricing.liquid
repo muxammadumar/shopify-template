@@ -1,4 +1,4 @@
-<section id="pricing" class="ios-section" aria-label="Pakete">
+<section id="pricing" class="ios-section" aria-label="{{ 'pricing.packages' | t }}">
   <div class="ios-wrap">
     {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
 
@@ -66,7 +66,7 @@
     </div>
 
     <p class="ios-text-hint">
-      Texte und Pakete können im Theme Editor (Anpassen) für diese Seite bearbeitet werden.
+      {{ 'pricing.edit_hint' | t }}
     </p>
     
     {%- comment -%} Service Schema for Pricing Plans {%- endcomment -%}

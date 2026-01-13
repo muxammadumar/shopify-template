@@ -932,7 +932,6 @@ details[open] .ios-chev{
 }
 .ios-country-selector[aria-expanded="true"] .ios-country-list{
   display: block;
-  display: block;
 }
 .ios-country-list li{
   padding: 10px 12px;
@@ -954,6 +953,118 @@ details[open] .ios-chev{
   background: rgba(201,162,39,.15);
   border: 1px solid var(--stroke2);
 }
+.ios-country-hint{
+  margin: 10px 0 0;
+  color: var(--muted2);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* Language Selector */
+.ios-language-selector-wrapper{
+  display: inline-flex;
+  align-items: center;
+}
+.ios-language-selector{
+  position: relative;
+  display: inline-block;
+}
+.ios-language-trigger{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 680;
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: left;
+}
+.ios-language-trigger:hover{
+  background: rgba(255,255,255,.10);
+  border-color: var(--stroke2);
+}
+.ios-language-trigger:focus{
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.ios-language-selector[aria-expanded="true"] .ios-language-trigger{
+  border-color: var(--stroke2);
+  background: rgba(255,255,255,.10);
+}
+.ios-language-selector[aria-expanded="true"] .ios-language-chevron{
+  transform: rotate(180deg);
+}
+.ios-language-flag{
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.ios-language-code{
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 0;
+}
+.ios-language-chevron{
+  flex-shrink: 0;
+  transition: transform .2s ease;
+  color: var(--muted);
+}
+.ios-language-list{
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.08) 100%);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  z-index: 100;
+  min-width: 140px;
+  display: none;
+}
+.ios-language-selector[aria-expanded="true"] .ios-language-list{
+  display: block;
+}
+.ios-language-list li{
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .15s ease;
+  color: var(--text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ios-language-list li:hover,
+.ios-language-list li:focus{
+  background: rgba(255,255,255,.10);
+  outline: none;
+}
+.ios-language-list li[aria-selected="true"]{
+  background: rgba(201,162,39,.15);
+  border: 1px solid var(--stroke2);
+}
+
+@media(max-width: 640px){
+  .ios-language-selector-wrapper{
+    order: -1;
+  }
+  .ios-language-list{
+    right: 0;
+    left: auto;
+  }
+}
+
 .ios-country-hint{
   margin: 10px 0 0;
   font-size: 12px;

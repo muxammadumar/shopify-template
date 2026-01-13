@@ -1,0 +1,49 @@
+{
+  "general": {
+    "menu": "Menu",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
+    "view_packages": "View Packages",
+    "accept": "Accept",
+    "decline": "Decline",
+    "skip_to_content": "Skip to main content"
+  },
+  "cookie_banner": {
+    "title": "🍪 Cookies & Privacy",
+    "text": "We use cookies to improve your experience and optimize our service.",
+    "privacy_policy": "Privacy Policy",
+    "imprint": "Imprint",
+    "agreement": "By using our website, you agree to our",
+    "and": "and",
+    "agree": "."
+  },
+  "language": {
+    "select": "Select language",
+    "german": "Deutsch",
+    "english": "English",
+    "current": "Current language"
+  },
+  "country": {
+    "select": "Select country",
+    "hint": "Select a country — we create a store for your market"
+  },
+  "meta": {
+    "description": "Custom Dropshipping Brand: Shop, Branding, Ads & Socials – all in one. Your brand ready in 48 hours.",
+    "description_short": "Custom Dropshipping Brand: Shop, Branding, Ads & Socials – all in one."
+  },
+  "hero": {
+    "important_benefits": "Important Benefits",
+    "short_and_clear": "Short & Clear",
+    "duration": "Duration",
+    "duration_value": "Up to 48 hours",
+    "basis": "Basis",
+    "basis_value": "Shopify + Supplier",
+    "format": "Format",
+    "format_value": "Ready-to-launch Brand Base",
+    "ios_style": "✨ iOS‑style glass landing"
+  },
+  "pricing": {
+    "packages": "Packages",
+    "edit_hint": "Texts and packages can be edited in the Theme Editor (Customize) for this page."
+  }
+}

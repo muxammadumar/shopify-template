@@ -57,7 +57,9 @@
         e.stopPropagation();
         var isOpen = mobileNav.classList.toggle('open');
         burger.setAttribute('aria-expanded', isOpen);
-        burger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+        var menuOpen = burger.getAttribute('data-menu-open') || 'Open menu';
+        var menuClose = burger.getAttribute('data-menu-close') || 'Close menu';
+        burger.setAttribute('aria-label', isOpen ? menuClose : menuOpen);
         
         if(isOpen){
           // Trap focus in mobile menu when open
@@ -83,7 +85,8 @@
           if(!isClickInside){
             mobileNav.classList.remove('open');
             burger.setAttribute('aria-expanded', 'false');
-            burger.setAttribute('aria-label', 'Menü öffnen');
+            var menuOpen = burger.getAttribute('data-menu-open') || 'Open menu';
+            burger.setAttribute('aria-label', menuOpen);
             if(removeFocusTrap) {
               removeFocusTrap();
               removeFocusTrap = null;
