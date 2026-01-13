@@ -1,0 +1,61 @@
+<section id="how" class="ios-section" aria-label="So funktioniert’s">
+  <div class="ios-wrap">
+    <div class="ios-head">
+      <div>
+        <h2 class="ios-h2">{{ section.settings.title }}</h2>
+        <p class="ios-sub">{{ section.settings.subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="ios-grid2">
+      <div class="ios-card" style="padding:16px">
+        <div class="ios-steps">
+          {% for block in section.blocks %}
+            <div class="ios-step" {{ block.shopify_attributes }}>
+              <div class="ios-num">{{ forloop.index }}</div>
+              <div>
+                <h4>{{ block.settings.title }}</h4>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="ios-glass" style="padding:16px">
+        <h3 style="margin:0 0 8px; font-size:14.5px; font-weight:850">Warum das funktioniert</h3>
+        <p style="margin:0; color:var(--muted); font-size:13.5px; line-height:1.65">
+          Du verlierst keine Wochen mit Design, Setup und Recherche. Du bekommst eine fertige Grundlage und gehst direkt in Test & Sales.
+        </p>
+        <ul class="ios-list">
+          <li>Ohne eigenes Lager & Logistik</li>
+          <li>Für schnellen Start gebaut</li>
+          <li>Support & Onboarding</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS Steps",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "So funktioniert’s" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Schritt für Schritt vom Paket bis zu den ersten Verkäufen." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Schritt" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Beschreibung des Schritts." }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "iOS Steps" }]
+}
+{% endschema %}
+

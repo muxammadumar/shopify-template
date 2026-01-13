@@ -1,0 +1,65 @@
+<section class="ios-section" aria-label="Vorteile">
+  <div class="ios-wrap">
+    <div class="ios-head">
+      <div>
+        <h2 class="ios-h2">{{ section.settings.title }}</h2>
+        <p class="ios-sub">{{ section.settings.subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="ios-grid3">
+      {% for block in section.blocks %}
+        <div class="ios-card" style="padding:16px" {{ block.shopify_attributes }}>
+          <div class="ios-title-row">
+            <h3 style="margin:0; font-size:14.5px; font-weight:800">{{ block.settings.title }}</h3>
+            <span class="ios-badge">
+              {% case block.settings.icon %}
+                {% when 'bolt' %}⚡
+                {% when 'chat' %}💬
+                {% when 'creditcard' %}💳
+                {% when 'sparkles' %}✨
+                {% else %}●
+              {% endcase %}
+            </span>
+          </div>
+          <p style="margin:0; color:var(--muted); font-size:13.5px; line-height:1.65">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS Features",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Warum das klappt" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Weniger Stress, schneller Launch." }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Blitzstart" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Du bekommst die Basis für Brand und Shop, um Nachfrage ohne Wochen Vorarbeit zu testen." },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "bolt", "label": "Bolt" },
+            { "value": "chat", "label": "Chat" },
+            { "value": "creditcard", "label": "Credit Card" },
+            { "value": "sparkles", "label": "Sparkles" }
+          ],
+          "default": "bolt"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "iOS Features" }]
+}
+{% endschema %}
+

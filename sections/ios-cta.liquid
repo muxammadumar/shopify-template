@@ -1,0 +1,36 @@
+<section id="cta" class="ios-cta" aria-label="Call‑to‑Action">
+  <div class="ios-wrap">
+    <div class="ios-glass ios-cta-box">
+      <div>
+        <h3>{{ section.settings.title }}</h3>
+        <p>{{ section.settings.subtitle }}</p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="ios-btn primary" href="{{ section.settings.link_1 }}">{{ section.settings.button_1 }}</a>
+        <a class="ios-btn ghost" href="{{ section.settings.link_2 }}" {% if section.settings.link_2 contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+          {{ section.settings.button_2 }}
+        </a>
+      </div>
+    </div>
+
+    <div style="margin-top: 14px; color:var(--muted2); font-size:12.5px; line-height:1.6">
+      <span>Tipp:</span> Wenn du willst, können wir einen „Jetzt kaufen“-Button für ein konkretes Shopify-Produkt hinzufügen.
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS CTA",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Bereit, in 48 Stunden zu starten?" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Wähle ein Paket – wir erstellen den Launch‑Plan und übergeben dir eine startklare Brand‑Basis." },
+    { "type": "text", "id": "button_1", "label": "Button 1 text", "default": "Paket wählen" },
+    { "type": "text", "id": "link_1", "label": "Button 1 link", "default": "#pricing" },
+    { "type": "text", "id": "button_2", "label": "Button 2 text", "default": "Original öffnen" },
+    { "type": "text", "id": "link_2", "label": "Button 2 link", "default": "https://launchheld.com/products/individuelle-dropshipping-brand" }
+  ],
+  "presets": [{ "name": "iOS CTA" }]
+}
+{% endschema %}
+

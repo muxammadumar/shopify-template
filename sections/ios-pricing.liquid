@@ -1,0 +1,81 @@
+<section id="pricing" class="ios-section" aria-label="Pakete">
+  <div class="ios-wrap">
+    <div class="ios-head">
+      <div>
+        <h2 class="ios-h2">{{ section.settings.title }}</h2>
+        <p class="ios-sub">{{ section.settings.subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="ios-pricing">
+      {% for block in section.blocks %}
+        <div class="ios-glass ios-plan{% if block.settings.featured %} featured{% endif %}" {{ block.shopify_attributes }}>
+          <div class="ios-plan-head">
+            <div>
+              <h3>{{ block.settings.name }}</h3>
+              <div class="sub">{{ block.settings.desc }}</div>
+            </div>
+            <span class="ios-badge">{{ block.settings.tag }}</span>
+          </div>
+
+          <div class="ios-price">
+            {{ block.settings.price }}
+            {% if block.settings.was != blank %}<span class="ios-was">{{ block.settings.was }}</span>{% endif %}
+          </div>
+
+          <ul class="ios-list">
+            {% for i in (1..5) %}
+              {% assign key = 'feat' | append: i %}
+              {% assign v = block.settings[key] %}
+              {% if v != blank %}<li>{{ v }}</li>{% endif %}
+            {% endfor %}
+          </ul>
+
+          <div class="cta">
+            <a class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %}" href="{{ block.settings.link }}">{{ block.settings.button }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <p style="margin:12px 0 0; color:var(--muted2); font-size:12.5px; line-height:1.6">
+      Texte und Pakete können im Theme Editor (Anpassen) für diese Seite bearbeitet werden.
+    </p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS Pricing",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Pakete" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Wähle dein Support‑Level und die Assets." }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "Starter" },
+        { "type": "text", "id": "desc", "label": "Description", "default": "Kleiner Start" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "One‑time" },
+        { "type": "text", "id": "price", "label": "Price", "default": "49,95 €" },
+        { "type": "text", "id": "was", "label": "Was price", "default": "69,95 €" },
+        { "type": "checkbox", "id": "featured", "label": "Featured", "default": false },
+
+        { "type": "text", "id": "feat1", "label": "Feature 1", "default": "Vollständiger Shopify‑Store" },
+        { "type": "text", "id": "feat2", "label": "Feature 2", "default": "Produkt + Lieferant (Basis)" },
+        { "type": "text", "id": "feat3", "label": "Feature 3", "default": "Logo + Basic Branding" },
+        { "type": "text", "id": "feat4", "label": "Feature 4", "default": "1 Ad‑Creative" },
+        { "type": "text", "id": "feat5", "label": "Feature 5", "default": "Rechtliche Vorlagen (Basis)" },
+
+        { "type": "text", "id": "button", "label": "Button text", "default": "Wählen" },
+        { "type": "text", "id": "link", "label": "Button link", "default": "#cta" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "iOS Pricing" }]
+}
+{% endschema %}
+

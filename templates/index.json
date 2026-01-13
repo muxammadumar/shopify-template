@@ -1,0 +1,336 @@
+{
+  "sections": {
+    "main": {
+      "type": "ios-hero",
+      "settings": {
+        "brand": "LaunchHeld",
+        "tagline": "All‑in‑one dropshipping brand",
+        "kicker": "Deine Brand in 48 Stunden startklar",
+        "heading": "Individuelle Dropshipping‑Brand: Shop, Branding, Ads & Socials – alles in einem",
+        "subheading": "Wir bauen die Grundlage für Brand und Shop, damit du ohne Tech‑Stress schnell live gehen kannst.",
+        "primary_label": "Brand starten",
+        "primary_link": "#cta",
+        "secondary_label": "So funktioniert’s",
+        "secondary_link": "#how",
+        "chip_1": "Bis zu 48 Stunden",
+        "chip_2": "1:1 Onboarding",
+        "chip_3": "Einmalzahlung"
+      }
+    },
+    "features": {
+      "type": "ios-features",
+      "settings": {
+        "title": "Warum das klappt",
+        "subtitle": "Weniger Stress, schneller Launch."
+      },
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "title": "Blitzstart",
+            "text": "Du bekommst die Basis für Brand und Shop, um Nachfrage ohne Wochen Vorarbeit zu testen.",
+            "icon": "bolt"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "title": "Persönlicher Support",
+            "text": "Support bei Launch, Setup und den ersten Schritten.",
+            "icon": "chat"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "title": "Klare Kosten",
+            "text": "Einmalzahlung pro Paket – ohne verpflichtendes Abo.",
+            "icon": "creditcard"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    "what": {
+      "type": "ios-included",
+      "settings": {
+        "title": "Was enthalten ist",
+        "subtitle": "Shop, Packaging und Basis‑Marketing‑Assets – alles in einem."
+      },
+      "blocks": {
+        "i1": {
+          "type": "item",
+          "settings": {
+            "title": "Shopify‑Store (startklar)",
+            "text": "Responsive Design, Conversion‑Struktur und Übergabe der Zugänge.",
+            "badge": "Store"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "title": "Branding & Creatives",
+            "text": "Logo, visueller Stil und Creatives für Socials/Ads.",
+            "badge": "Brand"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "title": "Produkt + Lieferant",
+            "text": "„Verkaufen → Lieferant versendet“ – ohne eigenes Lager.",
+            "badge": "Product"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "title": "Onboarding",
+            "text": "1:1‑Call und klare Next Steps für deinen Start.",
+            "badge": "Support"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ]
+    },
+    "how": {
+      "type": "ios-steps",
+      "settings": {
+        "title": "So funktioniert’s",
+        "subtitle": "Schritt für Schritt vom Paket bis zu den ersten Verkäufen."
+      },
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Du wählst ein Paket",
+            "text": "Starter / Pro / Premium – passend zu Tempo und Support‑Level."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Wir bauen deine Brand",
+            "text": "Shopify + visuelles System + Vorbereitung fürs Marketing."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Du startest Traffic",
+            "text": "Du verkaufst – Fulfillment läuft über den Lieferanten."
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "title": "Du optimierst & skalierst",
+            "text": "Du verbesserst Offer, Creatives und Conversion."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ]
+    },
+    "profit": {
+      "type": "ios-profit",
+      "settings": {
+        "title": "Beispiel‑Marge (Modell)",
+        "subtitle": "Typisches Modell: Du verkaufst teurer, der Lieferant liefert günstiger.",
+        "sell_label": "Verkaufspreis",
+        "sell_value": "39,99 €",
+        "cost_label": "Lieferantenpreis (inkl. Versand)",
+        "cost_value": "9,99 €",
+        "profit_label": "Brutto‑Marge (Beispiel)",
+        "profit_value": "≈ 30 €"
+      }
+    },
+    "pricing": {
+      "type": "ios-pricing",
+      "settings": {
+        "title": "Pakete",
+        "subtitle": "Wähle dein Support‑Level und die Assets."
+      },
+      "blocks": {
+        "p1": {
+          "type": "plan",
+          "settings": {
+            "name": "Starter",
+            "tag": "Einmalig",
+            "price": "49,95 €",
+            "was": "69,95 €",
+            "desc": "Kleiner Start",
+            "featured": false,
+            "feat1": "Vollständiger Shopify‑Store",
+            "feat2": "Produkt + Lieferant (Basis)",
+            "feat3": "Logo + Basic Branding",
+            "feat4": "1 Ad‑Creative",
+            "feat5": "Rechtliche Vorlagen (Basis)",
+            "button": "Starter wählen",
+            "link": "#cta"
+          }
+        },
+        "p2": {
+          "type": "plan",
+          "settings": {
+            "name": "Pro",
+            "tag": "Beliebt",
+            "price": "79,95 €",
+            "was": "99,95 €",
+            "desc": "Für einen sicheren Launch",
+            "featured": true,
+            "feat1": "Alles aus Starter",
+            "feat2": "1:1‑Onboarding‑Call",
+            "feat3": "Social‑Setup",
+            "feat4": "3 Produkte + Lieferant",
+            "feat5": "Brand‑Visuals",
+            "button": "Pro wählen",
+            "link": "#cta"
+          }
+        },
+        "p3": {
+          "type": "plan",
+          "settings": {
+            "name": "Premium",
+            "tag": "Scale",
+            "price": "149,95 €",
+            "was": "179,95 €",
+            "desc": "Individuell mit Support",
+            "featured": false,
+            "feat1": "Alles aus Pro",
+            "feat2": "SEO‑Optimierung",
+            "feat3": "90 Tage Support",
+            "feat4": "Tägliche Winning‑Varianten",
+            "feat5": "Wöchentliche 1:1‑Sessions",
+            "button": "Premium wählen",
+            "link": "#cta"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "faq": {
+      "type": "ios-faq",
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Kurze Antworten auf häufige Fragen."
+      },
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Wie bekomme ich Zugriff auf den Store?",
+            "a": "Nach dem Setup übertragen wir dir die Shopify‑Zugänge und geben dir klare Start‑Steps."
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Brauche ich technische Skills?",
+            "a": "Nein. Das Format ist auf schnellen Start ausgelegt – bei Bedarf mit Begleitung."
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Auf welcher Plattform läuft der Store?",
+            "a": "Shopify – ideal für Katalog, Checkout und Basis‑Setup."
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "q": "Gibt es Support nach dem Kauf?",
+            "a": "Ja. Du bekommst Support und einen Kontakt für Launch‑Fragen und die ersten Schritte."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    },
+    "cta": {
+      "type": "ios-cta",
+      "settings": {
+        "title": "Bereit, in 48 Stunden zu starten?",
+        "subtitle": "Wähle ein Paket – wir erstellen den Launch‑Plan und übergeben dir eine startklare Brand‑Basis.",
+        "button_1": "Paket wählen",
+        "link_1": "#pricing",
+        "button_2": "Original öffnen",
+        "link_2": "https://launchheld.com/products/individuelle-dropshipping-brand"
+      }
+    },
+    "proof": {
+      "type": "ios-proof",
+      "settings": {
+        "title": "Vertrauen & Ergebnisse",
+        "subtitle": "Klarer Fokus: schnell live gehen und direkt testen.",
+        "quote_highlight": "Du bekommst nicht nur einen Store,",
+        "quote_rest": "sondern eine startklare Brand-Basis inkl. Struktur, Assets und Next Steps."
+      },
+      "blocks": {
+        "b1": {
+          "type": "badge",
+          "settings": {
+            "label": "48h Delivery"
+          }
+        },
+        "b2": {
+          "type": "badge",
+          "settings": {
+            "label": "One-time Payment"
+          }
+        },
+        "b3": {
+          "type": "badge",
+          "settings": {
+            "label": "Shopify-ready"
+          }
+        },
+        "b4": {
+          "type": "badge",
+          "settings": {
+            "label": "Brand Assets"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "proof",
+    "features",
+    "what",
+    "how",
+    "pricing",
+    "profit",
+    "faq",
+    "cta"
+  ]
+}

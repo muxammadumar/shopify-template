@@ -1,0 +1,49 @@
+<section id="faq" class="ios-section" aria-label="FAQ">
+  <div class="ios-wrap">
+    <div class="ios-head">
+      <div>
+        <h2 class="ios-h2">{{ section.settings.title }}</h2>
+        <p class="ios-sub">{{ section.settings.subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="ios-faq">
+      {% for block in section.blocks %}
+        <details class="ios-details" {{ block.shopify_attributes }}>
+          <summary class="ios-summary">
+            {{ block.settings.q }}
+            <span class="ios-chev" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <p>{{ block.settings.a }}</p>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS FAQ",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "FAQ" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Kurze Antworten auf häufige Fragen." }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Q&A",
+      "settings": [
+        { "type": "text", "id": "q", "label": "Question", "default": "Frage" },
+        { "type": "textarea", "id": "a", "label": "Answer", "default": "Antwort" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [{ "name": "iOS FAQ" }]
+}
+{% endschema %}
+
