@@ -136,14 +136,16 @@
             <strong id="iosCookieBannerTitle">🍪 Cookies & Datenschutz</strong><br>
             {{ settings.cookie_banner_text | default: 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren.' }} 
             Mit der Nutzung unserer Website stimmen Sie unserer 
-            {%- if settings.privacy_policy_url != blank and settings.privacy_policy_url != '#' -%}
-              <a href="{{ settings.privacy_policy_url }}" target="_blank">Datenschutzerklärung</a>
+            {%- assign privacy_url = settings.privacy_policy_url | default: '' -%}
+            {%- assign imprint_url = settings.imprint_url | default: '' -%}
+            {%- if privacy_url != blank and privacy_url != '#' and privacy_url != 'https://example.com/pages/datenschutz' -%}
+              <a href="{{ privacy_url }}" target="_blank">Datenschutzerklärung</a>
             {%- else -%}
               Datenschutzerklärung
             {%- endif -%}
-            {%- if settings.privacy_policy_url != blank and settings.privacy_policy_url != '#' and settings.imprint_url != blank and settings.imprint_url != '#' -%} und {%- endif -%}
-            {%- if settings.imprint_url != blank and settings.imprint_url != '#' -%}
-              <a href="{{ settings.imprint_url }}" target="_blank">Impressum</a>
+            {%- if privacy_url != blank and privacy_url != '#' and privacy_url != 'https://example.com/pages/datenschutz' and imprint_url != blank and imprint_url != '#' and imprint_url != 'https://example.com/pages/impressum' -%} und {%- endif -%}
+            {%- if imprint_url != blank and imprint_url != '#' and imprint_url != 'https://example.com/pages/impressum' -%}
+              <a href="{{ imprint_url }}" target="_blank">Impressum</a>
             {%- else -%}
               Impressum
             {%- endif -%}
