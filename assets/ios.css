@@ -932,6 +932,7 @@ details[open] .ios-chev{
 }
 .ios-country-selector[aria-expanded="true"] .ios-country-list{
   display: block;
+  display: block;
 }
 .ios-country-list li{
   padding: 10px 12px;

@@ -22,6 +22,47 @@
         return false;
       }
       
+      // Helper functions
+      function updateSelection(option){
+        flagEl.textContent = option.getAttribute('data-flag');
+        nameEl.textContent = option.getAttribute('data-name');
+        
+        // Update aria-selected
+        var options = list.querySelectorAll('li[role="option"]');
+        options.forEach(function(opt){
+          opt.setAttribute('aria-selected', 'false');
+        });
+        option.setAttribute('aria-selected', 'true');
+      }
+      
+      function closeDropdown(){
+        selector.setAttribute('aria-expanded', 'false');
+      }
+      
+      function openDropdown(){
+        selector.setAttribute('aria-expanded', 'true');
+      }
+      
+      function selectOption(option){
+        updateSelection(option);
+        closeDropdown();
+        trigger.focus();
+        
+        // Save to localStorage
+        var country = option.getAttribute('data-country');
+        localStorage.setItem('selectedCountry', country);
+        
+        // Optional: Trigger custom event
+        var event = new CustomEvent('countrySelected', {
+          detail: {
+            country: country,
+            flag: option.getAttribute('data-flag'),
+            name: option.getAttribute('data-name')
+          }
+        });
+        document.dispatchEvent(event);
+      }
+      
       // Load saved country from localStorage
       var savedCountry = localStorage.getItem('selectedCountry');
       if(savedCountry){
@@ -31,13 +72,17 @@
         }
       }
       
+      // Dropdown is hidden by default via CSS
+      
       // Toggle dropdown
       trigger.addEventListener('click', function(e){
         e.stopPropagation();
         var isOpen = selector.getAttribute('aria-expanded') === 'true';
-        selector.setAttribute('aria-expanded', !isOpen);
         
-        if(!isOpen){
+        if(isOpen){
+          closeDropdown();
+        } else {
+          openDropdown();
           // Focus first option when opening
           var firstOption = list.querySelector('li[role="option"]');
           if(firstOption) {
@@ -72,41 +117,6 @@
           }
         });
       });
-      
-      function selectOption(option){
-        updateSelection(option);
-        closeDropdown();
-        trigger.focus();
-        
-        // Save to localStorage
-        var country = option.getAttribute('data-country');
-        localStorage.setItem('selectedCountry', country);
-        
-        // Optional: Trigger custom event
-        var event = new CustomEvent('countrySelected', {
-          detail: {
-            country: country,
-            flag: option.getAttribute('data-flag'),
-            name: option.getAttribute('data-name')
-          }
-        });
-        document.dispatchEvent(event);
-      }
-      
-      function updateSelection(option){
-        flagEl.textContent = option.getAttribute('data-flag');
-        nameEl.textContent = option.getAttribute('data-name');
-        
-        // Update aria-selected
-        options.forEach(function(opt){
-          opt.setAttribute('aria-selected', 'false');
-        });
-        option.setAttribute('aria-selected', 'true');
-      }
-      
-      function closeDropdown(){
-        selector.setAttribute('aria-expanded', 'false');
-      }
       
       // Close dropdown when clicking outside
       document.addEventListener('click', function(e){

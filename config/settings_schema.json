@@ -192,13 +192,13 @@
         "type": "url",
         "id": "privacy_policy_url",
         "label": "Link zur Datenschutzerklärung",
-        "default": "/pages/datenschutz"
+        "default": ""
       },
       {
         "type": "url",
         "id": "imprint_url",
         "label": "Link zum Impressum",
-        "default": "/pages/impressum",
+        "default": "",
         "info": "Impressum ist gesetzlich in Deutschland erforderlich"
       }
     ]
