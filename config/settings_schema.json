@@ -189,16 +189,16 @@
         "default": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren."
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "privacy_policy_url",
         "label": "Link zur Datenschutzerklärung",
-        "default": "https://example.com/pages/datenschutz"
+        "default": "/pages/datenschutz"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "imprint_url",
         "label": "Link zum Impressum",
-        "default": "https://example.com/pages/impressum",
+        "default": "/pages/impressum",
         "info": "Impressum ist gesetzlich in Deutschland erforderlich"
       }
     ]

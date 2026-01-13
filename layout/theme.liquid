@@ -138,13 +138,13 @@
             Mit der Nutzung unserer Website stimmen Sie unserer 
             {%- assign privacy_url = settings.privacy_policy_url | default: '' -%}
             {%- assign imprint_url = settings.imprint_url | default: '' -%}
-            {%- if privacy_url != blank and privacy_url != '#' and privacy_url != 'https://example.com/pages/datenschutz' -%}
+            {%- if privacy_url != blank and privacy_url != '#' -%}
               <a href="{{ privacy_url }}" target="_blank">Datenschutzerklärung</a>
             {%- else -%}
               Datenschutzerklärung
             {%- endif -%}
-            {%- if privacy_url != blank and privacy_url != '#' and privacy_url != 'https://example.com/pages/datenschutz' and imprint_url != blank and imprint_url != '#' and imprint_url != 'https://example.com/pages/impressum' -%} und {%- endif -%}
-            {%- if imprint_url != blank and imprint_url != '#' and imprint_url != 'https://example.com/pages/impressum' -%}
+            {%- if privacy_url != blank and privacy_url != '#' and imprint_url != blank and imprint_url != '#' -%} und {%- endif -%}
+            {%- if imprint_url != blank and imprint_url != '#' -%}
               <a href="{{ imprint_url }}" target="_blank">Impressum</a>
             {%- else -%}
               Impressum
