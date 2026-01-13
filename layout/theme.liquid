@@ -40,6 +40,7 @@
       <meta property="og:image:secure_url" content="https:{{ page_image | img_url: '1200x630' }}">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
+      <meta property="og:image:alt" content="{%- if page_title -%}{{ page_title | escape }}{%- else -%}{{ shop.name | escape }}{%- endif -%}">
     {%- endif -%}
     <meta property="og:locale" content="de_DE">
 
@@ -96,8 +97,13 @@
     </style>
     {{ 'ios.css' | asset_url | stylesheet_tag }}
     
-    {%- comment -%} Theme JavaScript - deferred for performance {%- endcomment -%}
-    <script src="{{ 'ios.js' | asset_url }}" defer></script>
+    {%- comment -%} Theme JavaScript - modularized for better performance {%- endcomment -%}
+    <script src="{{ 'js/smooth-scroll.js' | asset_url }}" defer></script>
+    <script src="{{ 'js/mobile-menu.js' | asset_url }}" defer></script>
+    <script src="{{ 'js/faq-accordion.js' | asset_url }}" defer></script>
+    <script src="{{ 'js/country-selector.js' | asset_url }}" defer></script>
+    <script src="{{ 'js/cookie-banner.js' | asset_url }}" defer></script>
+    <script src="{{ 'js/main.js' | asset_url }}" defer></script>
 
     {%- comment -%} Theme Color Variables {%- endcomment -%}
     <style>
@@ -122,15 +128,16 @@
     </main>
 
     {%- comment -%} Cookie Consent Banner (GDPR Requirement for Germany) {%- endcomment -%}
-    <div id="iosCookieBanner" class="ios-cookie-banner">
+    {%- if settings.cookie_banner_enabled != false -%}
+    <div id="iosCookieBanner" class="ios-cookie-banner" role="dialog" aria-labelledby="iosCookieBannerTitle" aria-modal="true">
       <div class="ios-wrap">
         <div class="ios-cookie-content">
           <div class="ios-cookie-text">
-            <strong>🍪 Cookies & Datenschutz</strong><br>
-            Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren. 
+            <strong id="iosCookieBannerTitle">🍪 Cookies & Datenschutz</strong><br>
+            {{ settings.cookie_banner_text | default: 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren.' }} 
             Mit der Nutzung unserer Website stimmen Sie unserer 
-            <a href="/pages/datenschutz" target="_blank">Datenschutzerklärung</a> und 
-            <a href="/pages/impressum" target="_blank">Impressum</a> zu.
+            <a href="{{ settings.privacy_policy_url | default: '/pages/datenschutz' }}" target="_blank">Datenschutzerklärung</a> und 
+            <a href="{{ settings.imprint_url | default: '/pages/impressum' }}" target="_blank">Impressum</a> zu.
           </div>
           <div class="ios-cookie-actions">
             <button id="declineCookies" class="ios-btn ghost">Ablehnen</button>
@@ -139,6 +146,7 @@
         </div>
       </div>
     </div>
+    {%- endif -%}
 
     {%- comment -%} Detect if CSS custom properties are supported {%- endcomment -%}
     <script>

@@ -260,13 +260,29 @@
             "q": "Gibt es Support nach dem Kauf?",
             "a": "Ja. Du bekommst Support und einen Kontakt für Launch‑Fragen und die ersten Schritte."
           }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "q": "Kann ich den Store nach dem Launch anpassen?",
+            "a": "Ja, absolut. Du erhältst vollen Zugriff auf den Shopify‑Store und kannst Design, Produkte und Inhalte jederzeit anpassen."
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "q": "Was passiert, wenn ich Fragen während des Setups habe?",
+            "a": "Du bekommst direkten Support während des gesamten Prozesses. Bei Fragen stehen wir dir zur Verfügung und begleiten dich Schritt für Schritt."
+          }
         }
       },
       "block_order": [
         "q1",
         "q2",
         "q3",
-        "q4"
+        "q4",
+        "q5",
+        "q6"
       ]
     },
     "cta": {
@@ -320,15 +336,63 @@
         "b3",
         "b4"
       ]
+    },
+    "about": {
+      "type": "ios-about",
+      "settings": {
+        "title": "Über uns",
+        "subtitle": "Wer wir sind und was uns antreibt.",
+        "content": "<p>Wir sind ein Team von Experten, das sich darauf spezialisiert hat, Dropshipping-Brands schnell und erfolgreich zu launchen. Unser Ziel ist es, Unternehmern den Einstieg in den E-Commerce zu erleichtern.</p>"
+      }
+    },
+    "reviews": {
+      "type": "ios-reviews",
+      "settings": {
+        "title": "Was unsere Kunden sagen",
+        "subtitle": "Echte Erfahrungen von Unternehmern, die mit uns gestartet sind."
+      },
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "name": "Daniel R.",
+            "text": "The store is great, but the support exceeded my expectations. They answered all my questions and guided me through every step of the launch.",
+            "rating": 5
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "name": "Mark T.",
+            "text": "Was able to start selling in less than a week. First sales came faster than I expected. Definitely one of the best investments I made in e-commerce.",
+            "rating": 5
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "name": "Alex R.",
+            "text": "Was able to start selling in less than a week. First sales came faster than I expected. Definitely one of the best investments I made in e-commerce.",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ]
     }
   },
   "order": [
     "main",
     "proof",
+    "about",
     "features",
     "what",
     "how",
     "pricing",
+    "reviews",
     "profit",
     "faq",
     "cta"

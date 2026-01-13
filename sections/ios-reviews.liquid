@@ -1,0 +1,90 @@
+<section id="reviews" class="ios-section" aria-label="Bewertungen">
+  <div class="ios-wrap">
+    {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
+
+    {% if section.blocks.size > 0 %}
+    <div class="ios-reviews-grid">
+      {% for block in section.blocks %}
+        <div class="ios-glass ios-review-card" {{ block.shopify_attributes }}>
+          <div class="ios-review-rating">
+            {% assign rating = block.settings.rating | default: 5 | plus: 0 %}
+            {% for i in (1..5) %}
+              {% if i <= rating %}
+                <span class="ios-star ios-star-filled">★</span>
+              {% else %}
+                <span class="ios-star ios-star-empty">☆</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if block.settings.text != blank %}
+          <p class="ios-review-text">{{ block.settings.text }}</p>
+          {% endif %}
+          {% if block.settings.name != blank %}
+          <div class="ios-review-author">— {{ block.settings.name }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="ios-sub">Keine Bewertungen vorhanden.</p>
+    {% endif %}
+
+    {%- comment -%} Review Schema for SEO {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "{{ shop.name }}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "{{ section.blocks.size }}"
+      },
+      "review": [
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'review' -%}
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "{{ block.settings.name | escape }}"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "{{ block.settings.rating | default: 5 }}",
+              "bestRating": "5"
+            },
+            "reviewBody": "{{ block.settings.text | escape }}"
+          }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+    </script>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS Reviews",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Was unsere Kunden sagen" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Echte Erfahrungen von Unternehmern, die mit uns gestartet sind." }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Customer Name", "default": "Daniel R." },
+        { "type": "textarea", "id": "text", "label": "Review Text", "default": "The store is great, but the support exceeded my expectations. They answered all my questions and guided me through every step of the launch." },
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "iOS Reviews" }]
+}
+{% endschema %}

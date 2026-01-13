@@ -1,4 +1,20 @@
-/* Rolex-inspired dark green + visible glass (DE) - Enhanced & Fixed */
+/**
+ * iOS Theme CSS
+ * Rolex-inspired dark green + visible glass (DE)
+ * 
+ * CSS Architecture:
+ * 1. CSS Custom Properties (Variables)
+ * 2. Reset & Base Styles
+ * 3. Layout & Utilities
+ * 4. Components (Buttons, Cards, Navigation)
+ * 5. Sections (Hero, Pricing, FAQ, etc.)
+ * 6. Responsive Design
+ * 7. Print Styles
+ */
+
+/* ============================================
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   ============================================ */
 :root{
   /* palette */
   --bg0:#040B07;
@@ -39,25 +55,31 @@
   background: #040B07;
 }
 
+/* ============================================
+   2. RESET & BASE STYLES
+   ============================================ */
 *{box-sizing:border-box}
 html{height:100%; scroll-behavior:smooth}
 body{
   height:100%;
   margin:0;
   color:var(--text);
-  color:#F3F4EF;
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Text","Helvetica Neue", Arial, system-ui, sans-serif;
   /* Simplified background - fixed gradient rendering */
-  background-color: #040B07;
+  background-color: var(--bg0);
   background-image: 
     radial-gradient(ellipse 1000px 520px at 15% -10%, rgba(11,61,46,.4) 0%, transparent 50%),
     radial-gradient(ellipse 900px 520px at 85% 0%, rgba(201,162,39,.15) 0%, transparent 55%),
     radial-gradient(ellipse 900px 520px at 55% 110%, rgba(15,81,50,.2) 0%, transparent 50%),
-    linear-gradient(180deg, #040B07 0%, #061A12 100%);
+    linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
   background-attachment: fixed;
   /* Fixed: Remove problematic overflow-x */
   min-height: 100vh;
 }
+
+/* ============================================
+   3. LAYOUT & UTILITIES
+   ============================================ */
 
 /* Accessibility skip link */
 .ios-skip{
@@ -68,7 +90,6 @@ body{
   height:1px; 
   overflow:hidden;
   z-index:var(--z-skip);
-  z-index:9999;
 }
 .ios-skip:focus{
   left:16px; 
@@ -78,18 +99,16 @@ body{
   padding:10px 12px;
   border-radius: 12px;
   background: rgba(10,20,14,.85);
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 16px 40px rgba(0,0,0,.45);
-  color: #F3F4EF;
+  border:1px solid var(--stroke);
+  box-shadow: var(--shadow2);
+  color: var(--text);
   text-decoration: none;
   outline: 2px solid var(--gold);
-  outline: 2px solid #C9A227;
   outline-offset: 2px;
 }
 
 .ios-wrap{
   max-width:var(--max); 
-  max-width:1140px; 
   margin:0 auto; 
   padding:0 20px;
 }
@@ -110,19 +129,21 @@ body{
 .ios-sub{
   margin:0; 
   color:var(--muted); 
-  color:rgba(243,244,239,.72); 
   font-size: 13.5px; 
   line-height:1.7; 
   max-width: 75ch;
 }
 
-/* Glass morphism with fallbacks */
+/* ============================================
+   4. COMPONENTS
+   ============================================ */
+
+/* Glass Morphism Components */
 .ios-glass{
   background: linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.06) 100%);
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow2);
   border-radius: var(--radius2);
-  border-radius: 26px;
   /* Backdrop filter with fallbacks */
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);
@@ -137,10 +158,9 @@ body{
 
 .ios-card{
   background: linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.05) 100%);
-  border: 1px solid rgba(255,255,255,.10);
-  box-shadow: 0 16px 40px rgba(0,0,0,.45);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow2);
   border-radius: var(--radius);
-  border-radius: 18px;
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   backdrop-filter: blur(16px) saturate(140%);
 }
@@ -169,10 +189,9 @@ body{
   font-size: 13.5px;
   font-weight: 680;
   cursor:pointer;
-  border:1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.08);
+  border:1px solid var(--stroke);
+  background: var(--card);
   color: var(--text);
-  color: #F3F4EF;
   text-decoration:none;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
   /* Prevent text selection on buttons */
@@ -183,12 +202,11 @@ body{
 .ios-btn:hover,
 .ios-btn:focus{
   transform: translateY(-1px); 
-  box-shadow: 0 30px 70px rgba(0,0,0,.55);
+  box-shadow: var(--shadow);
   outline: none;
 }
 .ios-btn:focus-visible{
   outline: 2px solid var(--gold);
-  outline: 2px solid #C9A227;
   outline-offset: 2px;
 }
 .ios-btn:active{
@@ -207,12 +225,11 @@ body{
   background: rgba(255,255,255,.06);
 }
 
-/* Sticky navigation */
+/* Navigation */
 .ios-topbar{
   position:sticky; 
   top:0; 
   z-index: var(--z-nav);
-  z-index: 1000;
   background: rgba(4,11,7,.75);
   border-bottom: 1px solid rgba(255,255,255,.10);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
@@ -238,7 +255,6 @@ body{
 }
 .ios-brand:focus{
   outline: 2px solid var(--gold);
-  outline: 2px solid #C9A227;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -258,13 +274,11 @@ body{
   display:block; 
   letter-spacing:.2px; 
   color: var(--text);
-  color: #F3F4EF;
 }
 .ios-brand span{
   display:block; 
   font-size: 12px; 
   color:var(--muted2);
-  color:rgba(243,244,239,.55); 
   margin-top:1px;
 }
 
@@ -275,7 +289,6 @@ body{
 }
 .ios-nav a{
   color:var(--muted);
-  color:rgba(243,244,239,.72);
   font-size: 13px;
   text-decoration:none;
   padding: 8px 10px;
@@ -285,13 +298,11 @@ body{
 }
 .ios-nav a:hover{
   color: var(--text);
-  color: #F3F4EF;
-  border-color: rgba(201,162,39,.22);
-  background: rgba(255,255,255,.06);
+  border-color: var(--stroke2);
+  background: var(--card2);
 }
 .ios-nav a:focus{
   outline: 2px solid var(--gold);
-  outline: 2px solid #C9A227;
   outline-offset: 2px;
 }
 
@@ -305,20 +316,18 @@ body{
   width:42px; 
   height:42px;
   border-radius: 14px;
-  border:1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.06);
+  border:1px solid var(--stroke);
+  background: var(--card2);
   color: var(--text);
-  color: #F3F4EF;
   cursor:pointer;
   transition: all .2s ease;
 }
 .ios-burger:hover{
   background: rgba(255,255,255,.10);
-  border-color: rgba(201,162,39,.22);
+  border-color: var(--stroke2);
 }
 .ios-burger:focus{
   outline: 2px solid var(--gold);
-  outline: 2px solid #C9A227;
   outline-offset: 2px;
 }
 .ios-mobile{
@@ -333,21 +342,24 @@ body{
   margin-top: 10px;
   padding: 12px 10px;
   border-radius: 14px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
+  border:1px solid var(--stroke);
+  background: var(--card2);
   color:var(--muted);
-  color:rgba(243,244,239,.72);
   text-decoration:none;
   transition: all .2s ease;
 }
 .ios-mobile a:hover,
 .ios-mobile a:focus{
   background: rgba(255,255,255,.10);
-  color: #F3F4EF;
-  border-color: rgba(201,162,39,.22);
+  color: var(--text);
+  border-color: var(--stroke2);
 }
 
-/* Hero section */
+/* ============================================
+   5. SECTIONS
+   ============================================ */
+
+/* Hero Section */
 .ios-hero{padding: 54px 0 18px}
 .ios-hero-grid{
   display:grid; 
@@ -361,18 +373,16 @@ body{
   gap:10px;
   font-size: 12px; 
   color:var(--muted);
-  color:rgba(243,244,239,.72);
   padding: 8px 10px;
   border-radius: 999px;
-  border:1px solid rgba(201,162,39,.22);
-  background: rgba(255,255,255,.06);
+  border:1px solid var(--stroke2);
+  background: var(--card2);
 }
 .ios-dot{
   width:8px; 
   height:8px; 
   border-radius: 99px; 
   background: var(--gold);
-  background: #C9A227; 
   box-shadow: 0 0 0 7px rgba(201,162,39,.14);
   flex-shrink: 0;
 }
@@ -386,7 +396,6 @@ body{
 .ios-lead{
   margin:0 0 16px; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 15.5px; 
   line-height: 1.75; 
   max-width: 72ch;
@@ -404,15 +413,13 @@ body{
   gap:8px;
   padding: 8px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
+  background: var(--card2);
+  border:1px solid var(--stroke);
   color:var(--muted);
-  color:rgba(243,244,239,.72);
   font-size: 12.5px;
 }
 .ios-chip b{
   color: var(--text);
-  color: #F3F4EF; 
   font-weight: 750;
 }
 
@@ -439,7 +446,6 @@ body{
   letter-spacing:.24em; 
   text-transform:uppercase; 
   color:var(--muted);
-  color:rgba(243,244,239,.72);
 }
 .ios-stat{
   display:grid; 
@@ -457,7 +463,6 @@ body{
 }
 .ios-stat-row span{
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 13px;
 }
 .ios-stat-row strong{
@@ -480,7 +485,40 @@ body{
   width: -webkit-fit-content;
 }
 
-/* Grid layouts */
+/* Utility Classes */
+.ios-flex-gap{
+  display:flex; 
+  gap:10px; 
+  flex-wrap:wrap;
+}
+.ios-margin-top-sm{
+  margin-top: 10px;
+}
+.ios-margin-top-md{
+  margin-top: 14px;
+}
+.ios-padding-card{
+  padding: 16px;
+}
+.ios-text-feature-title{
+  margin:0; 
+  font-size:14.5px; 
+  font-weight:800;
+}
+.ios-text-feature-body{
+  margin:0; 
+  color:var(--muted); 
+  font-size:13.5px; 
+  line-height:1.65;
+}
+.ios-text-hint{
+  margin:12px 0 0; 
+  color:var(--muted2); 
+  font-size:12.5px; 
+  line-height:1.6;
+}
+
+/* Grid Layouts */
 .ios-grid3{
   display:grid; 
   grid-template-columns: repeat(3, 1fr); 
@@ -508,7 +546,7 @@ body{
   flex-shrink: 0;
 }
 
-/* Steps section */
+/* Steps Section */
 .ios-steps{
   display:grid; 
   gap:12px;
@@ -519,8 +557,7 @@ body{
   gap: 12px;
   padding: 14px;
   border-radius: var(--radius);
-  border-radius: 18px;
-  border:1px solid rgba(255,255,255,.10);
+  border:1px solid var(--stroke);
   background: rgba(0,0,0,.18);
 }
 .ios-num{
@@ -543,12 +580,11 @@ body{
 .ios-step p{
   margin:0; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 13.5px; 
   line-height: 1.7;
 }
 
-/* Profit calculator */
+/* Profit Calculator Section */
 .ios-profit{
   display:grid; 
   grid-template-columns: 1.1fr .9fr; 
@@ -571,7 +607,6 @@ body{
 }
 .ios-row span{
   color:var(--muted);
-  color:rgba(243,244,239,.72);
 }
 .ios-row b{
   font-weight: 860;
@@ -584,7 +619,7 @@ body{
   color: rgba(243,244,239,.98);
 }
 
-/* Pricing cards */
+/* Pricing Section */
 .ios-pricing{
   display:grid; 
   grid-template-columns: repeat(3, 1fr); 
@@ -593,7 +628,6 @@ body{
 .ios-plan{
   padding: 18px; 
   border-radius: var(--radius2);
-  border-radius: 26px;
   transition: transform .2s ease;
 }
 .ios-plan.featured{
@@ -614,7 +648,6 @@ body{
 .ios-plan .sub{
   margin: 2px 0 0; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 12.5px;
 }
 .ios-price{
@@ -634,7 +667,6 @@ body{
   margin: 10px 0 0; 
   padding-left: 18px; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 13.5px; 
   line-height: 1.75;
 }
@@ -645,7 +677,7 @@ body{
   width: 100%;
 }
 
-/* FAQ section */
+/* FAQ Section */
 .ios-faq{
   display:grid; 
   grid-template-columns: 1fr 1fr; 
@@ -654,8 +686,7 @@ body{
 .ios-details{
   padding: 12px 12px;
   border-radius: var(--radius);
-  border-radius: 18px;
-  border:1px solid rgba(255,255,255,.10);
+  border:1px solid var(--stroke);
   background: rgba(0,0,0,.18);
 }
 .ios-summary{
@@ -691,12 +722,11 @@ details[open] .ios-chev{
 .ios-details p{
   margin: 10px 0 0; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 13.5px; 
   line-height: 1.7;
 }
 
-/* CTA section */
+/* CTA Section */
 .ios-cta{
   padding: 34px 0 64px;
 }
@@ -717,12 +747,11 @@ details[open] .ios-chev{
 .ios-cta-box p{
   margin: 6px 0 0; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   font-size: 13.5px; 
   line-height: 1.7;
 }
 
-/* Proof/social proof section */
+/* Proof/Social Proof Section */
 .ios-proof{
   padding-top: 10px;
 }
@@ -749,7 +778,6 @@ details[open] .ios-chev{
 .ios-quote{
   font-size: 13.5px; 
   color:var(--muted);
-  color:rgba(243,244,239,.72); 
   line-height: 1.75; 
   margin: 0;
 }
@@ -766,14 +794,179 @@ details[open] .ios-chev{
   border-color: rgba(255,255,255,.10);
 }
 
-/* Cookie banner (GDPR) */
+/* About Section */
+.ios-about-content{
+  margin-top: 18px;
+}
+.ios-about-text{
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.ios-about-text p{
+  margin: 0 0 12px;
+}
+.ios-about-text p:last-child{
+  margin-bottom: 0;
+}
+.ios-about-image img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reviews Section */
+.ios-reviews-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.ios-review-card{
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ios-review-rating{
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+.ios-star{
+  font-size: 18px;
+  line-height: 1;
+  color: var(--gold);
+}
+.ios-star-empty{
+  color: rgba(201,162,39,.3);
+}
+.ios-review-text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  flex: 1;
+}
+.ios-review-author{
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+
+/* Country Selector */
+.ios-country-selector-wrapper{
+  margin-top: 18px;
+}
+.ios-country-selector{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+}
+.ios-country-trigger{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 680;
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: left;
+}
+.ios-country-trigger:hover{
+  background: rgba(255,255,255,.10);
+  border-color: var(--stroke2);
+}
+.ios-country-trigger:focus{
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.ios-country-selector[aria-expanded="true"] .ios-country-trigger{
+  border-color: var(--stroke2);
+  background: rgba(255,255,255,.10);
+}
+.ios-country-selector[aria-expanded="true"] .ios-country-chevron{
+  transform: rotate(180deg);
+}
+.ios-country-flag{
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.ios-country-name{
+  flex: 1;
+  min-width: 0;
+}
+.ios-country-chevron{
+  flex-shrink: 0;
+  transition: transform .2s ease;
+  color: var(--muted);
+}
+.ios-country-list{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.08) 100%);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  z-index: 100;
+  max-height: 320px;
+  overflow-y: auto;
+  display: none;
+}
+.ios-country-selector[aria-expanded="true"] .ios-country-list{
+  display: block;
+}
+.ios-country-list li{
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .15s ease;
+  color: var(--text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ios-country-list li:hover,
+.ios-country-list li:focus{
+  background: rgba(255,255,255,.10);
+  outline: none;
+}
+.ios-country-list li[aria-selected="true"]{
+  background: rgba(201,162,39,.15);
+  border: 1px solid var(--stroke2);
+}
+.ios-country-hint{
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.5;
+}
+
+/* Cookie Banner (GDPR) */
 .ios-cookie-banner{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
   z-index:var(--z-overlay);
-  z-index:100;
   background: rgba(4,11,7,.95);
   border-top:1px solid rgba(201,162,39,.22);
   padding:16px 0;
@@ -796,11 +989,11 @@ details[open] .ios-chev{
   flex:1;
   min-width:250px;
   font-size:13.5px;
-  color:rgba(243,244,239,.72);
+  color:var(--muted);
   line-height:1.6;
 }
 .ios-cookie-text a{
-  color:#C9A227;
+  color:var(--gold);
   text-decoration:underline;
 }
 .ios-cookie-actions{
@@ -809,7 +1002,9 @@ details[open] .ios-chev{
   flex-wrap:wrap;
 }
 
-/* Responsive design */
+/* ============================================
+   6. RESPONSIVE DESIGN
+   ============================================ */
 @media (max-width: 980px){
   .ios-hero-grid{grid-template-columns: 1fr}
   .ios-grid3{grid-template-columns: 1fr}
@@ -819,6 +1014,7 @@ details[open] .ios-chev{
   .ios-plan.featured{transform:none}
   .ios-faq{grid-template-columns: 1fr}
   .ios-proof-grid{grid-template-columns: 1fr}
+  .ios-reviews-grid{grid-template-columns: 1fr}
 
   .ios-nav{display:none}
   .ios-burger{display:inline-grid; place-items:center}
@@ -843,7 +1039,9 @@ details[open] .ios-chev{
   .ios-cookie-actions .ios-btn{flex:1}
 }
 
-/* Print styles */
+/* ============================================
+   7. PRINT STYLES
+   ============================================ */
 @media print{
   .ios-topbar,
   .ios-burger,

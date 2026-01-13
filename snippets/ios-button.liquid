@@ -1,0 +1,11 @@
+{% comment %}
+  Reusable button component
+  Usage: {% render 'ios-button', href: '#link', label: 'Button Text', style: 'primary' %}
+  Styles: primary, ghost, gold
+{% endcomment %}
+
+<a class="ios-btn {% if style %}{{ style }}{% else %}ghost{% endif %}" 
+   href="{{ href | default: '#' }}"
+   {% if href contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+  {{ label | default: 'Button' }}
+</a>

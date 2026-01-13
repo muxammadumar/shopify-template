@@ -1,11 +1,6 @@
 <section id="pricing" class="ios-section" aria-label="Pakete">
   <div class="ios-wrap">
-    <div class="ios-head">
-      <div>
-        <h2 class="ios-h2">{{ section.settings.title }}</h2>
-        <p class="ios-sub">{{ section.settings.subtitle }}</p>
-      </div>
-    </div>
+    {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
 
     <div class="ios-pricing">
       {% for block in section.blocks %}
@@ -15,14 +10,43 @@
               <h3>{{ block.settings.name }}</h3>
               <div class="sub">{{ block.settings.desc }}</div>
             </div>
-            <span class="ios-badge">{{ block.settings.tag }}</span>
+            <div style="display: flex; gap: 8px; align-items: flex-start;">
+              {% if block.settings.was != blank %}
+              <span class="ios-badge ios-badge-sale">Sale</span>
+              {% endif %}
+              <span class="ios-badge">{{ block.settings.tag }}</span>
+            </div>
           </div>
 
-          <div class="ios-price">
-            {{ block.settings.price }}
-            {% if block.settings.was != blank %}<span class="ios-was">{{ block.settings.was }}</span>{% endif %}
+          {% if block.settings.price != blank %}
+          <div class="ios-price-wrapper">
+            {% if block.settings.was != blank %}
+              {% assign price_clean = block.settings.price | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
+              {% assign was_clean = block.settings.was | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
+              {% if was_clean > 0 and price_clean > 0 %}
+                {% assign discount_amount = was_clean | minus: price_clean %}
+                {% assign discount_percent = discount_amount | times: 100 | divided_by: was_clean %}
+                <div class="ios-discount-badge">-{{ discount_percent }}%</div>
+              {% endif %}
+            {% endif %}
+            <div class="ios-price">
+              {{ block.settings.price }}
+              {% if block.settings.was != blank %}<span class="ios-was">{{ block.settings.was }}</span>{% endif %}
+            </div>
           </div>
+          {% endif %}
 
+          {% assign has_features = false %}
+          {% for i in (1..5) %}
+            {% assign key = 'feat' | append: i %}
+            {% assign v = block.settings[key] %}
+            {% if v != blank %}
+              {% assign has_features = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if has_features %}
           <ul class="ios-list">
             {% for i in (1..5) %}
               {% assign key = 'feat' | append: i %}
@@ -30,17 +54,54 @@
               {% if v != blank %}<li>{{ v }}</li>{% endif %}
             {% endfor %}
           </ul>
+          {% endif %}
 
+          {% if block.settings.button != blank %}
           <div class="cta">
-            <a class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %}" href="{{ block.settings.link }}">{{ block.settings.button }}</a>
+            <a class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %}" href="{{ block.settings.link | default: '#' }}">{{ block.settings.button }}</a>
           </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
 
-    <p style="margin:12px 0 0; color:var(--muted2); font-size:12.5px; line-height:1.6">
+    <p class="ios-text-hint">
       Texte und Pakete können im Theme Editor (Anpassen) für diese Seite bearbeitet werden.
     </p>
+    
+    {%- comment -%} Service Schema for Pricing Plans {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "{{ shop.name }}",
+      "description": "{{ section.settings.subtitle | default: 'Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem' | escape }}",
+      "provider": {
+        "@type": "Organization",
+        "name": "{{ shop.name }}"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Deutschland"
+      },
+      "offers": [
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'plan' -%}
+          {
+            "@type": "Offer",
+            "name": "{{ block.settings.name | escape }}",
+            "description": "{{ block.settings.desc | escape }}",
+            "price": "{{ block.settings.price | replace: '€', '' | replace: ',', '.' | strip }}",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+    </script>
+    {%- endif -%}
   </div>
 </section>
 

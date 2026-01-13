@@ -227,6 +227,87 @@
     ]
   },
   {
+    "name": "Navigation",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hauptnavigation"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_1_label",
+        "label": "Navigation Item 1 Label",
+        "default": "Vertrauen"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_1_link",
+        "label": "Navigation Item 1 Link",
+        "default": "#proof"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_2_label",
+        "label": "Navigation Item 2 Label",
+        "default": "Was enthalten ist"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_2_link",
+        "label": "Navigation Item 2 Link",
+        "default": "#what"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_3_label",
+        "label": "Navigation Item 3 Label",
+        "default": "So funktioniert's"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_3_link",
+        "label": "Navigation Item 3 Link",
+        "default": "#how"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_4_label",
+        "label": "Navigation Item 4 Label",
+        "default": "Marge"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_4_link",
+        "label": "Navigation Item 4 Link",
+        "default": "#profit"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_5_label",
+        "label": "Navigation Item 5 Label",
+        "default": "Pakete"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_5_link",
+        "label": "Navigation Item 5 Link",
+        "default": "#pricing"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_6_label",
+        "label": "Navigation Item 6 Label",
+        "default": "FAQ"
+      },
+      {
+        "type": "text",
+        "id": "nav_item_6_link",
+        "label": "Navigation Item 6 Link",
+        "default": "#faq"
+      }
+    ]
+  },
+  {
     "name": "Erweiterte Einstellungen",
     "settings": [
       {

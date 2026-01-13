@@ -1,0 +1,15 @@
+{% comment %}
+  Reusable card component
+  Usage: {% render 'ios-card', title: 'Title', text: 'Text', badge: 'Badge' %}
+{% endcomment %}
+
+<div class="ios-card ios-padding-card" {{ attributes | default: '' }}>
+  {% if title or badge %}
+  <div class="ios-title-row">
+    {% if title %}<h3 class="ios-text-feature-title">{{ title }}</h3>{% endif %}
+    {% if badge %}<span class="ios-badge">{{ badge }}</span>{% endif %}
+  </div>
+  {% endif %}
+  {% if text %}<p class="ios-text-feature-body">{{ text }}</p>{% endif %}
+  {{ content }}
+</div>

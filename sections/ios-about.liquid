@@ -1,0 +1,62 @@
+<section id="about" class="ios-section" aria-label="Über uns">
+  <div class="ios-wrap">
+    {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
+
+    <div class="ios-about-content">
+      {% if section.settings.content != blank %}
+      <div class="ios-glass ios-padding-card">
+        <div class="ios-about-text">
+          {{ section.settings.content }}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+      <div class="ios-grid2" style="margin-top: 14px;">
+        {% for block in section.blocks %}
+          <div class="ios-card ios-padding-card" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+            <h3 class="ios-text-feature-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+            <p class="ios-text-feature-body">{{ block.settings.text }}</p>
+            {% endif %}
+            {% if block.settings.image != blank %}
+            <div class="ios-about-image" style="margin-top: 12px;">
+              <img src="{{ block.settings.image | img_url: '600x400' }}" 
+                   alt="{{ block.settings.image.alt | default: block.settings.title | escape }}"
+                   loading="lazy"
+                   style="width: 100%; border-radius: var(--radius);">
+            </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS About",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Über uns" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Wer wir sind und was uns antreibt." },
+    { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Wir sind ein Team von Experten, das sich darauf spezialisiert hat, Dropshipping-Brands schnell und erfolgreich zu launchen.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "about_item",
+      "name": "About Item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Unsere Mission" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Wir helfen Unternehmern dabei, schnell und ohne technische Hürden in den E-Commerce einzusteigen." },
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Optional image for this item" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "iOS About" }]
+}
+{% endschema %}

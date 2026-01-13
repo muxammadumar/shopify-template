@@ -1,0 +1,47 @@
+{% comment %}
+  Reusable navigation component
+  Usage: {% render 'ios-navigation' %}
+  Navigation items can be configured in theme settings
+{% endcomment %}
+
+<nav class="ios-nav" aria-label="Navigation">
+  {% if settings.nav_item_1_label != blank %}
+  <a href="{{ settings.nav_item_1_link | default: '#' }}">{{ settings.nav_item_1_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_2_label != blank %}
+  <a href="{{ settings.nav_item_2_link | default: '#' }}">{{ settings.nav_item_2_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_3_label != blank %}
+  <a href="{{ settings.nav_item_3_link | default: '#' }}">{{ settings.nav_item_3_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_4_label != blank %}
+  <a href="{{ settings.nav_item_4_link | default: '#' }}">{{ settings.nav_item_4_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_5_label != blank %}
+  <a href="{{ settings.nav_item_5_link | default: '#' }}">{{ settings.nav_item_5_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_6_label != blank %}
+  <a href="{{ settings.nav_item_6_link | default: '#' }}">{{ settings.nav_item_6_label }}</a>
+  {% endif %}
+</nav>
+
+<div class="ios-mobile" id="iosMobileNav">
+  {% if settings.nav_item_1_label != blank %}
+  <a href="{{ settings.nav_item_1_link | default: '#' }}">{{ settings.nav_item_1_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_2_label != blank %}
+  <a href="{{ settings.nav_item_2_link | default: '#' }}">{{ settings.nav_item_2_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_3_label != blank %}
+  <a href="{{ settings.nav_item_3_link | default: '#' }}">{{ settings.nav_item_3_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_4_label != blank %}
+  <a href="{{ settings.nav_item_4_link | default: '#' }}">{{ settings.nav_item_4_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_5_label != blank %}
+  <a href="{{ settings.nav_item_5_link | default: '#' }}">{{ settings.nav_item_5_label }}</a>
+  {% endif %}
+  {% if settings.nav_item_6_label != blank %}
+  <a href="{{ settings.nav_item_6_link | default: '#' }}">{{ settings.nav_item_6_label }}</a>
+  {% endif %}
+</div>

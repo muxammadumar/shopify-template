@@ -1,0 +1,11 @@
+{% comment %}
+  Reusable section header component
+  Usage: {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
+{% endcomment %}
+
+<div class="ios-head">
+  <div>
+    <h2 class="ios-h2">{{ title | default: '' }}</h2>
+    <p class="ios-sub">{{ subtitle | default: '' }}</p>
+  </div>
+</div>

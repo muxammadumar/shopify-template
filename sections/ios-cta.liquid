@@ -2,18 +2,28 @@
   <div class="ios-wrap">
     <div class="ios-glass ios-cta-box">
       <div>
+        {% if section.settings.title != blank %}
         <h3>{{ section.settings.title }}</h3>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
         <p>{{ section.settings.subtitle }}</p>
+        {% endif %}
       </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="ios-btn primary" href="{{ section.settings.link_1 }}">{{ section.settings.button_1 }}</a>
-        <a class="ios-btn ghost" href="{{ section.settings.link_2 }}" {% if section.settings.link_2 contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+      {% if section.settings.button_1 != blank or section.settings.button_2 != blank %}
+      <div class="ios-flex-gap">
+        {% if section.settings.button_1 != blank %}
+        <a class="ios-btn primary" href="{{ section.settings.link_1 | default: '#' }}">{{ section.settings.button_1 }}</a>
+        {% endif %}
+        {% if section.settings.button_2 != blank %}
+        <a class="ios-btn ghost" href="{{ section.settings.link_2 | default: '#' }}" {% if section.settings.link_2 contains 'http' %}target="_blank" rel="noopener"{% endif %}>
           {{ section.settings.button_2 }}
         </a>
+        {% endif %}
       </div>
+      {% endif %}
     </div>
 
-    <div style="margin-top: 14px; color:var(--muted2); font-size:12.5px; line-height:1.6">
+    <div class="ios-text-hint ios-margin-top-md">
       <span>Tipp:</span> Wenn du willst, können wir einen „Jetzt kaufen“-Button für ein konkretes Shopify-Produkt hinzufügen.
     </div>
   </div>
