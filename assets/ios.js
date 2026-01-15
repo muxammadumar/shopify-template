@@ -180,7 +180,7 @@
   
   // Debug mode for development
   if(window.location.search.indexOf('debug=1') > -1){
-    console.log('LaunchHeld Theme - Debug Mode');
+    console.log('GoldBrand Theme - Debug Mode');
     console.log('Anchor links:', anchorLinks.length);
     console.log('FAQ items:', allDetails.length);
     console.log('Cookie banner:', cookieBanner ? 'Present' : 'Missing');

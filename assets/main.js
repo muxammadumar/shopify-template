@@ -113,7 +113,7 @@
     
     // Debug mode for development
     if(window.location.search.indexOf('debug=1') > -1){
-      console.log('LaunchHeld Theme - Debug Mode');
+      console.log('GoldBrand Theme - Debug Mode');
       console.log('Anchor links:', anchorLinksCount);
       console.log('FAQ items:', faqCount);
       console.log('Mobile menu:', mobileMenuInit ? 'Initialized' : 'Not found');

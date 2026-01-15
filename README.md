@@ -198,4 +198,4 @@ For theme support, visit: https://launchheld.com/support
 
 ## License
 
-Proprietary - LaunchHeld
+Proprietary - GoldBrand
