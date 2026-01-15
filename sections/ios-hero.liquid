@@ -33,16 +33,18 @@
   <div class="ios-wrap">
     <div class="ios-hero-grid">
       <div>
+        {% assign kicker_translated = 'hero.kicker' | t %}
         {% if section.settings.kicker != blank %}
         <div class="ios-kicker"><span class="ios-dot" aria-hidden="true"></span> {{ section.settings.kicker }}</div>
-        {% elsif 'hero.kicker' | t != 'hero.kicker' %}
-        <div class="ios-kicker"><span class="ios-dot" aria-hidden="true"></span> {{ 'hero.kicker' | t }}</div>
+        {% elsif kicker_translated != blank and kicker_translated != 'hero.kicker' %}
+        <div class="ios-kicker"><span class="ios-dot" aria-hidden="true"></span> {{ kicker_translated }}</div>
         {% endif %}
         <h1 class="ios-h1">{% if section.settings.heading != blank %}{{ section.settings.heading }}{% else %}{{ 'hero.heading' | t | default: shop.name }}{% endif %}</h1>
+        {% assign subheading_translated = 'hero.subheading' | t %}
         {% if section.settings.subheading != blank %}
         <p class="ios-lead">{{ section.settings.subheading }}</p>
-        {% elsif 'hero.subheading' | t != 'hero.subheading' %}
-        <p class="ios-lead">{{ 'hero.subheading' | t }}</p>
+        {% elsif subheading_translated != blank and subheading_translated != 'hero.subheading' %}
+        <p class="ios-lead">{{ subheading_translated }}</p>
         {% endif %}
 
         {% assign primary_label_value = section.settings.primary_label %}
