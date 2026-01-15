@@ -1,0 +1,153 @@
+{% comment %}
+  Product page with country selector for purchase region
+{% endcomment %}
+
+<section class="ios-section" aria-label="Product">
+  <div class="ios-wrap">
+    <div class="ios-product-grid">
+      <div class="ios-product-media">
+        {% if product.featured_image %}
+          <div class="ios-product-image">
+            <img src="{{ product.featured_image | img_url: '800x800' }}" 
+                 alt="{{ product.featured_image.alt | escape }}"
+                 loading="lazy">
+          </div>
+        {% endif %}
+        
+        {% if product.images.size > 1 %}
+          <div class="ios-product-thumbnails">
+            {% for image in product.images limit: 4 %}
+              <img src="{{ image | img_url: '200x200' }}" 
+                   alt="{{ image.alt | escape }}"
+                   loading="lazy"
+                   class="{% if forloop.first %}active{% endif %}">
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ios-product-info">
+        <h1 class="ios-h1">{{ product.title }}</h1>
+        
+        {% if product.price %}
+          <div class="ios-product-price">
+            <span class="ios-price">{{ product.price | money }}</span>
+            {% if product.compare_at_price > product.price %}
+              <span class="ios-was">{{ product.compare_at_price | money }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if product.description != blank %}
+          <div class="ios-product-description">
+            {{ product.description }}
+          </div>
+        {% endif %}
+
+        {% comment %} Country Selector for Purchase Region {% endcomment %}
+        <div class="ios-product-country-selector">
+          <h3 class="ios-h3">Select Your Country</h3>
+          <p class="ios-sub">Choose your country to see accurate pricing and shipping options.</p>
+          {% render 'ios-country-selector' %}
+        </div>
+
+        {% comment %} Product Form {% endcomment %}
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="product-form">
+          <select name="id" id="product-select" class="ios-select" style="display: none;">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}" 
+                      {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+                      {% unless variant.available %}disabled{% endunless %}>
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+            {% endfor %}
+          </select>
+          
+          {% unless product.has_only_default_variant %}
+            <div class="ios-product-variants">
+              {% for option in product.options_with_values %}
+                <div class="ios-variant-selector">
+                  <label for="option-{{ forloop.index }}">{{ option.name }}</label>
+                  <select name="options[{{ option.name | escape }}]" 
+                          id="option-{{ forloop.index }}" 
+                          class="ios-select variant-select"
+                          data-option-index="{{ forloop.index0 }}">
+                    {% for value in option.values %}
+                      <option value="{{ value | escape }}" 
+                              {% if option.selected_value == value %}selected{% endif %}>
+                        {{ value }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endfor %}
+            </div>
+          {% endunless %}
+
+          <div class="ios-product-quantity">
+            <label for="quantity">Quantity</label>
+            <input type="number" 
+                   id="quantity" 
+                   name="quantity" 
+                   value="1" 
+                   min="1" 
+                   class="ios-input">
+          </div>
+
+          <button type="submit" 
+                  name="add" 
+                  class="ios-btn primary ios-btn-large"
+                  id="add-to-cart">
+            Add to Cart
+          </button>
+        </form>
+
+        {% if product.metafields.custom.shipping_info %}
+          <div class="ios-product-shipping">
+            <p class="ios-sub">{{ product.metafields.custom.shipping_info }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  'use strict';
+  
+  // Variant selection handler
+  var variantSelects = document.querySelectorAll('.variant-select');
+  var productSelect = document.getElementById('product-select');
+  
+  if(variantSelects.length > 0 && productSelect){
+    function updateVariant(){
+      var selectedOptions = [];
+      variantSelects.forEach(function(select){
+        selectedOptions.push(select.value);
+      });
+      
+      var variantTitle = selectedOptions.join(' / ');
+      var options = productSelect.options;
+      
+      for(var i = 0; i < options.length; i++){
+        if(options[i].text.indexOf(variantTitle) === 0){
+          productSelect.value = options[i].value;
+          break;
+        }
+      }
+    }
+    
+    variantSelects.forEach(function(select){
+      select.addEventListener('change', updateVariant);
+    });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product Main",
+  "settings": []
+}
+{% endschema %}

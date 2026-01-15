@@ -29,9 +29,6 @@
     // Initialize country selector
     var countrySelectorInit = IOSTheme.initCountrySelector ? IOSTheme.initCountrySelector() : false;
     
-    // Initialize language selector
-    var languageSelectorInit = IOSTheme.initLanguageSelector ? IOSTheme.initLanguageSelector() : false;
-    
     // Initialize cookie banner (lazy loaded with requestIdleCallback)
     if(IOSTheme.initCookieBanner){
       function initCookieBanner(){
@@ -121,7 +118,6 @@
       console.log('FAQ items:', faqCount);
       console.log('Mobile menu:', mobileMenuInit ? 'Initialized' : 'Not found');
       console.log('Country selector:', countrySelectorInit ? 'Initialized' : 'Not found');
-      console.log('Language selector:', languageSelectorInit ? 'Initialized' : 'Not found');
       console.log('Reduced motion:', prefersReducedMotion);
     }
   };

@@ -16,7 +16,6 @@
       {% render 'ios-navigation' %}
 
       <div class="ios-actions">
-        {% render 'ios-language-selector' %}
         <button class="ios-burger" id="iosBurger" aria-label="{{ 'general.menu' | t }}" aria-controls="iosMobileNav" aria-expanded="false" data-menu-open="{{ 'general.menu_open' | t }}" data-menu-close="{{ 'general.menu_close' | t }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -81,12 +80,6 @@
           {% endif %}
         </div>
         {% endif %}
-
-        {% if section.settings.show_country_selector != false %}
-        <div style="margin-top: 18px;">
-          {% render 'ios-country-selector' %}
-        </div>
-        {% endif %}
       </div>
 
       <aside class="ios-glass ios-side" aria-label="{{ 'hero.short_and_clear' | t }}">
@@ -126,13 +119,6 @@
             <strong>{{ 'hero.format_value' | t }}</strong>
           </div>
         </div>
-
-        <div class="ios-tag">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          {{ 'hero.ios_style' | t }}
-        </div>
       </aside>
     </div>
   </div>
@@ -155,8 +141,7 @@
 
     { "type": "text", "id": "chip_1", "label": "Chip 1" },
     { "type": "text", "id": "chip_2", "label": "Chip 2" },
-    { "type": "text", "id": "chip_3", "label": "Chip 3" },
-    { "type": "checkbox", "id": "show_country_selector", "label": "Show Country Selector", "default": true }
+    { "type": "text", "id": "chip_3", "label": "Chip 3" }
   ],
   "presets": [{ "name": "iOS Hero" }]
 }
