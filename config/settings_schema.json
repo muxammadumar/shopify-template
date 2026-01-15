@@ -1,90 +1,91 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Rolex Dark Glass DE",
+    "theme_name": "Rolex Dark Glass",
     "theme_version": "2.0.0",
     "theme_author": "LaunchHeld",
     "theme_documentation_url": "https://launchheld.com/docs",
     "theme_support_url": "https://launchheld.com/support"
   },
   {
-    "name": "Rolex Farbpalette",
+    "name": "Rolex Color Palette",
     "settings": [
       {
         "type": "header",
-        "content": "Rolex-inspirierte Farben"
+        "content": "Rolex-inspired Colors"
       },
       {
         "type": "color",
         "id": "rolex_emerald",
-        "label": "Rolex Smaragdgrün",
+        "label": "Rolex Emerald Green",
         "default": "#0F5132",
-        "info": "Haupt-Akzentfarbe im Rolex-Stil"
+        "info": "Main accent color in Rolex style"
       },
       {
         "type": "color",
         "id": "rolex_gold",
         "label": "Rolex Gold",
         "default": "#C9A227",
-        "info": "Warme Gold-Akzente"
+        "info": "Warm gold accents"
       },
       {
         "type": "color",
         "id": "rolex_bg",
-        "label": "Hintergrundfarbe",
+        "label": "Background Color",
         "default": "#040B07",
-        "info": "Dunkler Hintergrund"
+        "info": "Dark background"
       },
       {
         "type": "header",
-        "content": "Zusätzliche Farben"
+        "content": "Additional Colors"
       },
       {
         "type": "color",
         "id": "rolex_text",
-        "label": "Textfarbe",
+        "label": "Text Color",
         "default": "#F3F4EF",
-        "info": "Helle Textfarbe für dunklen Hintergrund"
+        "info": "Light text color for dark background"
       },
       {
         "type": "color",
         "id": "rolex_bg_secondary",
-        "label": "Sekundärer Hintergrund",
+        "label": "Secondary Background",
         "default": "#061A12",
-        "info": "Leicht hellerer Hintergrund für Variationen"
+        "info": "Slightly lighter background for variations"
       }
     ]
   },
   {
-    "name": "Typografie",
+    "name": "Typography",
     "settings": [
       {
         "type": "header",
-        "content": "Schriftarten"
+        "content": "Fonts"
       },
       {
         "type": "font_picker",
         "id": "font_heading",
-        "label": "Überschriften-Schriftart",
+        "label": "Heading Font",
         "default": "assistant_n4",
-        "info": "Wird für H1, H2, H3 verwendet"
+        "info": "Used for H1, H2, H3"
       },
       {
         "type": "font_picker",
         "id": "font_body",
-        "label": "Fließtext-Schriftart",
+        "label": "Body Font",
         "default": "assistant_n4",
-        "info": "Wird für Absätze und allgemeinen Text verwendet"
+        "info": "Used for paragraphs and general text"
       },
       {
         "type": "range",
         "id": "font_size_base",
-        "label": "Basis-Schriftgröße",
+        "label": "Base Font Size",
         "min": 12,
         "max": 18,
         "step": 1,
         "unit": "px",
-        "default": 14
+        "default": 14,
+        "info": "Base font size"
       }
     ]
   },
@@ -93,36 +94,36 @@
     "settings": [
       {
         "type": "header",
-        "content": "Allgemeine Layout-Einstellungen"
+        "content": "General Layout Settings"
       },
       {
         "type": "range",
         "id": "max_width",
-        "label": "Maximale Inhaltsbreite",
+        "label": "Max Content Width",
         "min": 960,
         "max": 1400,
         "step": 20,
         "unit": "px",
         "default": 1140,
-        "info": "Maximale Breite des Inhaltsbereichs"
+        "info": "Maximum width of content area"
       },
       {
         "type": "range",
         "id": "border_radius",
-        "label": "Eckenradius",
+        "label": "Border Radius",
         "min": 0,
         "max": 30,
         "step": 2,
         "unit": "px",
         "default": 18,
-        "info": "Rundung für Karten und Buttons"
+        "info": "Rounding for cards and buttons"
       },
       {
         "type": "checkbox",
         "id": "enable_glass_effect",
-        "label": "Glasmorphismus-Effekt aktivieren",
+        "label": "Enable Glassmorphism Effect",
         "default": true,
-        "info": "Verwendet backdrop-filter für durchscheinende Karten"
+        "info": "Uses backdrop-filter for translucent cards"
       }
     ]
   },
@@ -131,75 +132,75 @@
     "settings": [
       {
         "type": "header",
-        "content": "Website-Icon"
+        "content": "Website Icon"
       },
       {
         "type": "image_picker",
         "id": "favicon",
         "label": "Favicon",
-        "info": "Wird als Browser-Tab-Icon angezeigt. Empfohlen: 32x32px oder 180x180px PNG"
+        "info": "Displayed as browser tab icon. Recommended: 32x32px or 180x180px PNG"
       }
     ]
   },
   {
-    "name": "SEO & Metadaten",
+    "name": "SEO & Metadata",
     "settings": [
       {
         "type": "header",
-        "content": "Suchmaschinenoptimierung"
+        "content": "Search Engine Optimization"
       },
       {
         "type": "text",
         "id": "meta_title",
-        "label": "Standard Meta-Titel",
-        "info": "Wird angezeigt, wenn kein spezifischer Titel gesetzt ist"
+        "label": "Default Meta Title",
+        "info": "Displayed when no specific title is set"
       },
       {
         "type": "textarea",
         "id": "meta_description",
-        "label": "Standard Meta-Beschreibung",
-        "info": "Kurze Beschreibung für Suchmaschinen (max. 160 Zeichen)"
+        "label": "Default Meta Description",
+        "info": "Short description for search engines (max. 160 characters)"
       },
       {
         "type": "image_picker",
         "id": "social_image",
-        "label": "Social Media Vorschaubild",
-        "info": "Bild für Facebook, Twitter, LinkedIn (1200x630px empfohlen)"
+        "label": "Social Media Preview Image",
+        "info": "Image for Facebook, Twitter, LinkedIn (1200x630px recommended)"
       }
     ]
   },
   {
-    "name": "DSGVO & Rechtliches",
+    "name": "GDPR & Legal",
     "settings": [
       {
         "type": "header",
-        "content": "Cookie-Banner & Datenschutz"
+        "content": "Cookie Banner & Privacy"
       },
       {
         "type": "checkbox",
         "id": "cookie_banner_enabled",
-        "label": "Cookie-Banner aktivieren",
+        "label": "Enable Cookie Banner",
         "default": true,
-        "info": "Gesetzlich erforderlich für deutsche Websites"
+        "info": "Enable cookie consent banner for GDPR compliance"
       },
       {
         "type": "text",
         "id": "cookie_banner_text",
-        "label": "Cookie-Banner Text",
-        "default": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unseren Service zu optimieren."
+        "label": "Cookie Banner Text",
+        "default": "We use cookies to improve your experience and optimize our service."
       },
       {
         "type": "text",
         "id": "privacy_policy_url",
-        "label": "Link zur Datenschutzerklärung",
-        "default": "/pages/datenschutz"
+        "label": "Privacy Policy Link",
+        "default": "/pages/privacy-policy"
       },
       {
         "type": "text",
         "id": "imprint_url",
-        "label": "Link zum Impressum",
-        "default": "/pages/impressum",
-        "info": "Impressum ist gesetzlich in Deutschland erforderlich"
+        "label": "Imprint Link",
+        "default": "/pages/imprint",
+        "info": "Legal imprint page link"
       }
     ]
   },
@@ -208,21 +209,21 @@
     "settings": [
       {
         "type": "header",
-        "content": "Performance-Optimierung"
+        "content": "Performance Optimization"
       },
       {
         "type": "checkbox",
         "id": "lazy_load_images",
-        "label": "Lazy Loading für Bilder",
+        "label": "Lazy Loading for Images",
         "default": true,
-        "info": "Lädt Bilder erst, wenn sie sichtbar werden"
+        "info": "Loads images only when they become visible"
       },
       {
         "type": "checkbox",
         "id": "preload_fonts",
-        "label": "Schriftarten vorabladen",
+        "label": "Preload Fonts",
         "default": true,
-        "info": "Verbessert die Ladezeit der ersten Darstellung"
+        "info": "Improves first paint load time"
       }
     ]
   },
@@ -231,13 +232,13 @@
     "settings": [
       {
         "type": "header",
-        "content": "Hauptnavigation"
+        "content": "Main Navigation"
       },
       {
         "type": "text",
         "id": "nav_item_1_label",
         "label": "Navigation Item 1 Label",
-        "default": "Vertrauen"
+        "default": "Trust"
       },
       {
         "type": "text",
@@ -249,7 +250,7 @@
         "type": "text",
         "id": "nav_item_2_label",
         "label": "Navigation Item 2 Label",
-        "default": "Was enthalten ist"
+        "default": "What's Included"
       },
       {
         "type": "text",
@@ -261,7 +262,7 @@
         "type": "text",
         "id": "nav_item_3_label",
         "label": "Navigation Item 3 Label",
-        "default": "So funktioniert's"
+        "default": "How It Works"
       },
       {
         "type": "text",
@@ -273,7 +274,7 @@
         "type": "text",
         "id": "nav_item_4_label",
         "label": "Navigation Item 4 Label",
-        "default": "Marge"
+        "default": "Margin"
       },
       {
         "type": "text",
@@ -285,7 +286,7 @@
         "type": "text",
         "id": "nav_item_5_label",
         "label": "Navigation Item 5 Label",
-        "default": "Pakete"
+        "default": "Packages"
       },
       {
         "type": "text",
@@ -308,30 +309,30 @@
     ]
   },
   {
-    "name": "Erweiterte Einstellungen",
+    "name": "Advanced Settings",
     "settings": [
       {
         "type": "header",
-        "content": "Benutzerdefiniertes CSS & JavaScript"
+        "content": "Custom CSS & JavaScript"
       },
       {
         "type": "html",
         "id": "custom_css",
-        "label": "Benutzerdefiniertes CSS",
-        "info": "Wird am Ende des <head> eingefügt"
+        "label": "Custom CSS",
+        "info": "Inserted at the end of <head>"
       },
       {
         "type": "html",
         "id": "custom_js",
-        "label": "Benutzerdefiniertes JavaScript",
-        "info": "Wird vor dem schließenden </body> eingefügt"
+        "label": "Custom JavaScript",
+        "info": "Inserted before closing </body>"
       },
       {
         "type": "checkbox",
         "id": "debug_mode",
-        "label": "Debug-Modus",
+        "label": "Debug Mode",
         "default": false,
-        "info": "Aktiviert zusätzliche Konsolenausgaben für Entwicklung"
+        "info": "Enables additional console output for development"
       }
     ]
   }

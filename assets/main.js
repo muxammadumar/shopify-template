@@ -62,7 +62,7 @@
           if(!btn.classList.contains('loading')){
             btn.classList.add('loading');
             var originalText = btn.textContent;
-            btn.textContent = 'Lädt...';
+            btn.textContent = 'Loading...';
             
             // Revert after navigation (or timeout)
             setTimeout(function(){

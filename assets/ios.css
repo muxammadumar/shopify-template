@@ -360,7 +360,10 @@ body{
    ============================================ */
 
 /* Hero Section */
-.ios-hero{padding: 54px 0 18px}
+.ios-hero{
+  padding: 54px 0 18px;
+  position: relative;
+}
 .ios-hero-grid{
   display:grid; 
   grid-template-columns: 1.2fr .8fr; 
@@ -424,9 +427,12 @@ body{
 }
 
 .ios-side{
-  padding: 16px; 
+  padding: 20px; 
   position:relative; 
   overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .ios-ring{
   position:absolute; 
@@ -441,48 +447,85 @@ body{
   pointer-events: none;
 }
 .ios-side h3{
-  margin: 4px 0 10px; 
-  font-size: 12px; 
-  letter-spacing:.24em; 
+  margin: 0 0 16px; 
+  font-size: 11px; 
+  letter-spacing:.28em; 
   text-transform:uppercase; 
   color:var(--muted);
+  font-weight: 700;
 }
 .ios-stat{
   display:grid; 
-  gap:10px; 
-  margin-top: 14px;
+  gap:12px; 
+  margin-top: 0;
+  flex: 1;
 }
 .ios-stat-row{
   display:flex; 
   justify-content:space-between; 
-  gap:10px;
-  padding: 12px 12px;
+  align-items: center;
+  gap:12px;
+  padding: 14px 16px;
   border-radius: 14px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.12);
+  background: linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.04) 100%);
+  transition: all .2s ease;
+  position: relative;
+}
+.ios-stat-row:hover{
+  border-color: rgba(201,162,39,.25);
+  background: linear-gradient(135deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.06) 100%);
+  transform: translateY(-1px);
+}
+.ios-stat-row::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--emerald2) 100%);
+  border-radius: 14px 0 0 14px;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.ios-stat-row:hover::before{
+  opacity: 1;
 }
 .ios-stat-row span{
   color:var(--muted);
   font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .ios-stat-row strong{
-  font-size: 13px; 
-  font-weight: 780;
+  font-size: 14px; 
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -.2px;
 }
 .ios-tag{
   display:inline-flex; 
   align-items:center; 
   gap:8px;
-  margin-top: 12px;
-  padding: 8px 10px;
+  margin-top: 16px;
+  padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(201,162,39,.10);
-  border:1px solid rgba(201,162,39,.22);
-  color: rgba(243,244,239,.92);
+  background: linear-gradient(135deg, rgba(201,162,39,.15) 0%, rgba(201,162,39,.08) 100%);
+  border:1px solid rgba(201,162,39,.25);
+  color: rgba(243,244,239,.95);
   font-size: 12px;
+  font-weight: 680;
   width: fit-content;
   width: -moz-fit-content;
   width: -webkit-fit-content;
+  transition: all .2s ease;
+}
+.ios-tag:hover{
+  background: linear-gradient(135deg, rgba(201,162,39,.20) 0%, rgba(201,162,39,.12) 100%);
+  border-color: rgba(201,162,39,.35);
+  transform: translateY(-1px);
 }
 
 /* Utility Classes */

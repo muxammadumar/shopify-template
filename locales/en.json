@@ -19,7 +19,6 @@
   },
   "language": {
     "select": "Select language",
-    "german": "Deutsch",
     "english": "English",
     "current": "Current language"
   },
@@ -40,7 +39,17 @@
     "basis_value": "Shopify + Supplier",
     "format": "Format",
     "format_value": "Ready-to-launch Brand Base",
-    "ios_style": "✨ iOS‑style glass landing"
+    "ios_style": "✨ iOS‑style glass landing",
+    "brand": "LaunchHeld",
+    "tagline": "All‑in‑one dropshipping brand",
+    "kicker": "Your brand ready in 48 hours",
+    "heading": "Custom Dropshipping Brand: Shop, Branding, Ads & Socials – all in one",
+    "subheading": "We build the foundation for your brand and shop so you can go live quickly without tech stress.",
+    "primary_label": "Start Brand",
+    "secondary_label": "How it works",
+    "chip_1": "Up to 48 hours",
+    "chip_2": "1:1 onboarding",
+    "chip_3": "One-time payment"
   },
   "pricing": {
     "packages": "Packages",

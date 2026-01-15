@@ -5,11 +5,11 @@
 <div class="ios-topbar">
   <div class="ios-wrap">
     <div class="ios-topbar-inner">
-      <a class="ios-brand" href="#top" aria-label="{{ section.settings.brand | default: shop.name | escape }}">
+      <a class="ios-brand" href="#top" aria-label="{% if section.settings.brand != blank %}{{ section.settings.brand | escape }}{% else %}{{ 'hero.brand' | t | default: shop.name | escape }}{% endif %}">
         <div class="ios-mark" aria-hidden="true"></div>
         <div>
-          <strong>{{ section.settings.brand | default: shop.name }}</strong>
-          <span>{{ section.settings.tagline | default: '' }}</span>
+          <strong>{% if section.settings.brand != blank %}{{ section.settings.brand }}{% else %}{{ 'hero.brand' | t | default: shop.name }}{% endif %}</strong>
+          <span>{% if section.settings.tagline != blank %}{{ section.settings.tagline }}{% else %}{{ 'hero.tagline' | t }}{% endif %}</span>
         </div>
       </a>
 
@@ -17,24 +17,13 @@
 
       <div class="ios-actions">
         {% render 'ios-language-selector' %}
-              <div class="ios-actions">
-        {% render 'ios-language-selector' %}
-        
-        {% comment %} DEBUG: Remove this after checking {% endcomment %}
-        <div style="background: yellow; padding: 10px; color: black; font-size: 12px;">
-          Locales: {{ shop.published_locales.size }} | 
-          Current: {{ request.locale.iso_code }}
-        </div>
-        {% comment %} END DEBUG {% endcomment %}
-        
-        <button class="ios-burger" id="iosBurger" ...
         <button class="ios-burger" id="iosBurger" aria-label="{{ 'general.menu' | t }}" aria-controls="iosMobileNav" aria-expanded="false" data-menu-open="{{ 'general.menu_open' | t }}" data-menu-close="{{ 'general.menu_close' | t }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
             <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
         <a class="ios-btn ghost" href="#pricing">{{ 'general.view_packages' | t }}</a>
-        <a class="ios-btn primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
+        <a class="ios-btn primary" href="{{ section.settings.primary_link }}">{% if section.settings.primary_label != blank %}{{ section.settings.primary_label }}{% else %}{{ 'hero.primary_label' | t }}{% endif %}</a>
       </div>
     </div>
   </div>
@@ -46,33 +35,47 @@
       <div>
         {% if section.settings.kicker != blank %}
         <div class="ios-kicker"><span class="ios-dot" aria-hidden="true"></span> {{ section.settings.kicker }}</div>
+        {% elsif 'hero.kicker' | t != 'hero.kicker' %}
+        <div class="ios-kicker"><span class="ios-dot" aria-hidden="true"></span> {{ 'hero.kicker' | t }}</div>
         {% endif %}
-        <h1 class="ios-h1">{{ section.settings.heading | default: shop.name }}</h1>
+        <h1 class="ios-h1">{% if section.settings.heading != blank %}{{ section.settings.heading }}{% else %}{{ 'hero.heading' | t | default: shop.name }}{% endif %}</h1>
         {% if section.settings.subheading != blank %}
         <p class="ios-lead">{{ section.settings.subheading }}</p>
+        {% elsif 'hero.subheading' | t != 'hero.subheading' %}
+        <p class="ios-lead">{{ 'hero.subheading' | t }}</p>
         {% endif %}
 
-        {% if section.settings.primary_label != blank or section.settings.secondary_label != blank %}
+        {% assign primary_label_value = section.settings.primary_label %}
+        {% if primary_label_value == blank %}{% assign primary_label_value = 'hero.primary_label' | t %}{% endif %}
+        {% assign secondary_label_value = section.settings.secondary_label %}
+        {% if secondary_label_value == blank %}{% assign secondary_label_value = 'hero.secondary_label' | t %}{% endif %}
+        {% if primary_label_value != blank or secondary_label_value != blank %}
         <div class="ios-flex-gap ios-margin-top-sm">
-          {% if section.settings.primary_label != blank %}
-          <a class="ios-btn primary" href="{{ section.settings.primary_link | default: '#' }}">{{ section.settings.primary_label }}</a>
+          {% if primary_label_value != blank %}
+          <a class="ios-btn primary" href="{{ section.settings.primary_link | default: '#cta' }}">{{ primary_label_value }}</a>
           {% endif %}
-          {% if section.settings.secondary_label != blank %}
-          <a class="ios-btn ghost" href="{{ section.settings.secondary_link | default: '#' }}">{{ section.settings.secondary_label }}</a>
+          {% if secondary_label_value != blank %}
+          <a class="ios-btn ghost" href="{{ section.settings.secondary_link | default: '#how' }}">{{ secondary_label_value }}</a>
           {% endif %}
         </div>
         {% endif %}
 
-        {% if section.settings.chip_1 != blank or section.settings.chip_2 != blank or section.settings.chip_3 != blank %}
+        {% assign chip_1_value = section.settings.chip_1 %}
+        {% if chip_1_value == blank %}{% assign chip_1_value = 'hero.chip_1' | t %}{% endif %}
+        {% assign chip_2_value = section.settings.chip_2 %}
+        {% if chip_2_value == blank %}{% assign chip_2_value = 'hero.chip_2' | t %}{% endif %}
+        {% assign chip_3_value = section.settings.chip_3 %}
+        {% if chip_3_value == blank %}{% assign chip_3_value = 'hero.chip_3' | t %}{% endif %}
+        {% if chip_1_value != blank or chip_2_value != blank or chip_3_value != blank %}
         <div class="ios-chips" aria-label="{{ 'hero.important_benefits' | t }}">
-          {% if section.settings.chip_1 != blank %}
-          <div class="ios-chip">⏱️ <b>{{ section.settings.chip_1 }}</b></div>
+          {% if chip_1_value != blank %}
+          <div class="ios-chip">⏱️ <b>{{ chip_1_value }}</b></div>
           {% endif %}
-          {% if section.settings.chip_2 != blank %}
-          <div class="ios-chip">🤝 <b>{{ section.settings.chip_2 }}</b></div>
+          {% if chip_2_value != blank %}
+          <div class="ios-chip">🤝 <b>{{ chip_2_value }}</b></div>
           {% endif %}
-          {% if section.settings.chip_3 != blank %}
-          <div class="ios-chip">💳 <b>{{ section.settings.chip_3 }}</b></div>
+          {% if chip_3_value != blank %}
+          <div class="ios-chip">💳 <b>{{ chip_3_value }}</b></div>
           {% endif %}
         </div>
         {% endif %}
@@ -89,12 +92,45 @@
         <h3>{{ 'hero.short_and_clear' | t }}</h3>
 
         <div class="ios-stat">
-          <div class="ios-stat-row"><span>{{ 'hero.duration' | t }}</span><strong>{{ 'hero.duration_value' | t }}</strong></div>
-          <div class="ios-stat-row"><span>{{ 'hero.basis' | t }}</span><strong>{{ 'hero.basis_value' | t }}</strong></div>
-          <div class="ios-stat-row"><span>{{ 'hero.format' | t }}</span><strong>{{ 'hero.format_value' | t }}</strong></div>
+          <div class="ios-stat-row">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.6;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              {{ 'hero.duration' | t }}
+            </span>
+            <strong>{{ 'hero.duration_value' | t }}</strong>
+          </div>
+          <div class="ios-stat-row">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.6;">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              {{ 'hero.basis' | t }}
+            </span>
+            <strong>{{ 'hero.basis_value' | t }}</strong>
+          </div>
+          <div class="ios-stat-row">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.6;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+              </svg>
+              {{ 'hero.format' | t }}
+            </span>
+            <strong>{{ 'hero.format_value' | t }}</strong>
+          </div>
         </div>
 
-        <div class="ios-tag">{{ 'hero.ios_style' | t }}</div>
+        <div class="ios-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          {{ 'hero.ios_style' | t }}
+        </div>
       </aside>
     </div>
   </div>
@@ -104,20 +140,20 @@
 {
   "name": "iOS Hero",
   "settings": [
-    { "type": "text", "id": "brand", "label": "Brand", "default": "LaunchHeld" },
-    { "type": "text", "id": "tagline", "label": "Tagline", "default": "All‑in‑one dropshipping brand" },
-    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Deine Brand in 48 Stunden startklar" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Individuelle Dropshipping‑Brand: Shop, Branding, Ads & Socials – alles in einem" },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Wir bauen die Grundlage für Brand und Shop, damit du ohne Tech‑Stress schnell live gehen kannst." },
+    { "type": "text", "id": "brand", "label": "Brand", "default": "" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "" },
 
-    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Brand starten" },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "" },
     { "type": "text", "id": "primary_link", "label": "Primary button link", "default": "#cta" },
-    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "So funktioniert’s" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "" },
     { "type": "text", "id": "secondary_link", "label": "Secondary button link", "default": "#how" },
 
-    { "type": "text", "id": "chip_1", "label": "Chip 1", "default": "Bis zu 48 Stunden" },
-    { "type": "text", "id": "chip_2", "label": "Chip 2", "default": "1:1 onboarding" },
-    { "type": "text", "id": "chip_3", "label": "Chip 3", "default": "Einmalzahlung" },
+    { "type": "text", "id": "chip_1", "label": "Chip 1", "default": "" },
+    { "type": "text", "id": "chip_2", "label": "Chip 2", "default": "" },
+    { "type": "text", "id": "chip_3", "label": "Chip 3", "default": "" },
     { "type": "checkbox", "id": "show_country_selector", "label": "Show Country Selector", "default": true }
   ],
   "presets": [{ "name": "iOS Hero" }]
