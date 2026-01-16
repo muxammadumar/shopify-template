@@ -384,6 +384,7 @@
     },
     "cta": {
       "type": "ios-cta",
+      "disabled": true,
       "settings": {
         "title": "Ready to start in 48 hours?",
         "subtitle": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base.",
