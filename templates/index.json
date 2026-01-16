@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,45 +15,90 @@
         "brand": "GoldBrand",
         "tagline": "All‑in‑one dropshipping brand",
         "kicker": "Your brand ready in 48 hours",
-        "heading": "Custom Dropshipping Brand: Shop, Branding, Ads & Socials – all in one",
-        "subheading": "We build the foundation for your brand and shop so you can go live quickly without tech stress.",
-        "primary_label": "Start Brand",
+        "heading": "Your Fully Built Dropshipping Brand — Ready to Sell",
+        "subheading": "We deliver a complete, dropshipping brand with product, design, apps and structure — so you can start selling immediately without any technical skills or setup work.",
+        "primary_label": "Get Your Store",
         "primary_link": "#cta",
         "secondary_label": "How it works",
         "secondary_link": "#how",
         "chip_1": "Up to 48 hours",
-        "chip_2": "1:1 Onboarding",
+        "chip_2": "No Technical Skills Required",
         "chip_3": "One-time payment"
+      }
+    },
+    "proof": {
+      "type": "ios-proof",
+      "blocks": {
+        "b1": {
+          "type": "badge",
+          "settings": {
+            "label": "Brand Assets Included"
+          }
+        },
+        "b2": {
+          "type": "badge",
+          "settings": {
+            "label": "Product & Supplier Set Up"
+          }
+        },
+        "b3": {
+          "type": "badge",
+          "settings": {
+            "label": "Conversion-Focused Design"
+          }
+        },
+        "b4": {
+          "type": "badge",
+          "settings": {
+            "label": "Built to Sell from Day One"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "title": "From Zero to Sales — Faster Than You Think",
+        "subtitle": "Everything you need to start selling fast.",
+        "quote_highlight": "What makes this a brand, not just a store?",
+        "quote_rest": "You receive a fully built, ready-to-sell dropshipping brand — including product selection, brand assets, store structure, and a conversion-focused layout designed to generate sales from day one."
+      }
+    },
+    "about": {
+      "type": "ios-about",
+      "settings": {
+        "title": "About Us",
+        "subtitle": "Who we are and what drives us.",
+        "content": "<p>We build ready-to-sell dropshipping brands — fully structured Shopify setups designed to start generating sales from day one.<br/><br/>Our focus is simple: remove complexity, save you time, and deliver a clean, conversion-ready foundation so you can focus on marketing and growth.<br/><br/></p>"
       }
     },
     "features": {
       "type": "ios-features",
-      "settings": {
-        "title": "Why it works",
-        "subtitle": "Less stress, faster launch."
-      },
       "blocks": {
         "f1": {
           "type": "feature",
           "settings": {
-            "title": "Quick Start",
-            "text": "You get the foundation for brand and shop to test demand without weeks of prep work.",
+            "title": "Ready to Sell from Day One",
+            "text": "You receive a fully built dropshipping brand — structured to launch fast and start generating sales without weeks of setup.",
             "icon": "bolt"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "title": "Personal Support",
-            "text": "Support during launch, setup and first steps.",
+            "title": "No Technical Complexity",
+            "text": "Everything is already set up and optimized, so you can focus on marketing instead of tools, setup, or configuration.",
             "icon": "chat"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "title": "Clear Costs",
-            "text": "One-time payment per package – no subscription required.",
+            "title": "Simple, One-Time Pricing",
+            "text": "One clear payment per package. No subscriptions, no hidden fees, no ongoing commitments.",
             "icon": "creditcard"
           }
         }
@@ -53,19 +107,19 @@
         "f1",
         "f2",
         "f3"
-      ]
+      ],
+      "settings": {
+        "title": "Launch Without Complexity",
+        "subtitle": "Less stress, faster launch."
+      }
     },
     "what": {
       "type": "ios-included",
-      "settings": {
-        "title": "What's Included",
-        "subtitle": "Shop, Packaging and Basic Marketing Assets – all in one."
-      },
       "blocks": {
         "i1": {
           "type": "item",
           "settings": {
-            "title": "Shopify Store (Ready to Launch)",
+            "title": "Ready-to-Sell Shopify Store",
             "text": "Responsive Design, Conversion Structure and Handover of Access.",
             "badge": "Store"
           }
@@ -81,16 +135,16 @@
         "i3": {
           "type": "item",
           "settings": {
-            "title": "Product + Supplier",
-            "text": "\"Sell → Supplier ships\" – no own warehouse.",
+            "title": "Product & Supplier Setup",
+            "text": "Ready for direct fulfillment, without holding inventory.",
             "badge": "Product"
           }
         },
         "i4": {
           "type": "item",
           "settings": {
-            "title": "Onboarding",
-            "text": "1:1 Call and clear Next Steps for your start.",
+            "title": "24/7 Store Support",
+            "text": "Get help whenever needed — before and after launch.",
             "badge": "Support"
           }
         }
@@ -100,7 +154,11 @@
         "i2",
         "i3",
         "i4"
-      ]
+      ],
+      "settings": {
+        "title": "What's Included",
+        "subtitle": "Shop, Packaging and Basic Marketing Assets – all in one."
+      }
     },
     "how": {
       "type": "ios-steps",
@@ -112,29 +170,29 @@
         "s1": {
           "type": "step",
           "settings": {
-            "title": "You Choose a Package",
-            "text": "Starter / Pro / Premium – matching your pace and support level."
+            "title": "Choose Your Package",
+            "text": "Starter / Pro / Premium"
           }
         },
         "s2": {
           "type": "step",
           "settings": {
-            "title": "We Build Your Brand",
-            "text": "Shopify + visual system + preparation for marketing."
+            "title": "We Build & Deliver Your Store",
+            "text": "We create a fully built, ready-to-sell dropshipping brand on Shopify — including structure, brand assets, and setup."
           }
         },
         "s3": {
           "type": "step",
           "settings": {
-            "title": "You Start Traffic",
+            "title": "Automated Order Fulfillment",
             "text": "You sell – fulfillment runs through the supplier."
           }
         },
         "s4": {
           "type": "step",
           "settings": {
-            "title": "You Optimize & Scale",
-            "text": "You improve Offer, Creatives and Conversion."
+            "title": "Ready for Growth",
+            "text": "The foundation is already built, allowing you to test offers, creatives, and scale when ready."
           }
         }
       },
@@ -143,42 +201,29 @@
         "s2",
         "s3",
         "s4"
-      ]
-    },
-    "profit": {
-      "type": "ios-profit",
+      ],
       "settings": {
-        "title": "Example Margin (Model)",
-        "subtitle": "Typical model: You sell higher, supplier delivers cheaper.",
-        "sell_label": "Selling Price",
-        "sell_value": "$39.99",
-        "cost_label": "Supplier Price (incl. Shipping)",
-        "cost_value": "$9.99",
-        "profit_label": "Gross Margin (Example)",
-        "profit_value": "≈ $30"
+        "title": "How It Works",
+        "subtitle": "From order to launch — simple and clear."
       }
     },
     "pricing": {
       "type": "ios-pricing",
-      "settings": {
-        "title": "Packages",
-        "subtitle": "Choose your support level and assets."
-      },
       "blocks": {
         "p1": {
           "type": "plan",
           "settings": {
             "name": "Starter",
+            "desc": "",
             "tag": "One-time",
             "price": "$49.95",
             "was": "$69.95",
-            "desc": "Small Start",
             "featured": false,
-            "feat1": "Complete Shopify Store",
-            "feat2": "Product + Supplier (Basic)",
-            "feat3": "Logo + Basic Branding",
+            "feat1": "Fully Built Dropshipping Brand",
+            "feat2": "Product & Supplier Connected",
+            "feat3": "Clean Brand Identity (Logo + Colors)",
             "feat4": "1 Ad Creative",
-            "feat5": "Legal Templates (Basic)",
+            "feat5": "Essential Legal Pages",
             "button": "Choose Starter",
             "link": "#cta"
           }
@@ -187,16 +232,16 @@
           "type": "plan",
           "settings": {
             "name": "Pro",
+            "desc": "",
             "tag": "Popular",
             "price": "$79.95",
             "was": "$99.95",
-            "desc": "For a Safe Launch",
             "featured": true,
             "feat1": "Everything from Starter",
-            "feat2": "1:1 Onboarding Call",
-            "feat3": "Social Setup",
-            "feat4": "3 Products + Supplier",
-            "feat5": "Brand Visuals",
+            "feat2": "Up to 3 Products + Supplier Connected",
+            "feat3": "Extended Brand Assets & Visuals",
+            "feat4": "Conversion-Focused Store Structure",
+            "feat5": "Priority Store Delivery",
             "button": "Choose Pro",
             "link": "#cta"
           }
@@ -205,16 +250,16 @@
           "type": "plan",
           "settings": {
             "name": "Premium",
+            "desc": "",
             "tag": "Scale",
             "price": "$149.95",
             "was": "$179.95",
-            "desc": "Custom with Support",
             "featured": false,
             "feat1": "Everything from Pro",
-            "feat2": "SEO Optimization",
-            "feat3": "90 Days Support",
-            "feat4": "Daily Winning Variants",
-            "feat5": "Weekly 1:1 Sessions",
+            "feat2": "Multi-Product Store (Up to 5 Products)",
+            "feat3": "High-Performance Store Structure",
+            "feat4": "Premium Brand Assets & Visuals",
+            "feat5": "Priority Store Delivery",
             "button": "Choose Premium",
             "link": "#cta"
           }
@@ -224,131 +269,15 @@
         "p1",
         "p2",
         "p3"
-      ]
-    },
-    "faq": {
-      "type": "ios-faq",
+      ],
+      "disabled": true,
       "settings": {
-        "title": "FAQ",
-        "subtitle": "Short answers to common questions."
-      },
-      "blocks": {
-        "q1": {
-          "type": "qa",
-          "settings": {
-            "q": "How do I get access to the store?",
-            "a": "After setup, we transfer the Shopify access to you and give you clear start steps."
-          }
-        },
-        "q2": {
-          "type": "qa",
-          "settings": {
-            "q": "Do I need technical skills?",
-            "a": "No. The format is designed for quick start – with guidance if needed."
-          }
-        },
-        "q3": {
-          "type": "qa",
-          "settings": {
-            "q": "What platform does the store run on?",
-            "a": "Shopify – ideal for catalog, checkout and basic setup."
-          }
-        },
-        "q4": {
-          "type": "qa",
-          "settings": {
-            "q": "Is there support after purchase?",
-            "a": "Yes. You get support and a contact for launch questions and first steps."
-          }
-        },
-        "q5": {
-          "type": "qa",
-          "settings": {
-            "q": "Can I customize the store after launch?",
-            "a": "Yes, absolutely. You get full access to the Shopify store and can customize design, products and content anytime."
-          }
-        },
-        "q6": {
-          "type": "qa",
-          "settings": {
-            "q": "What happens if I have questions during setup?",
-            "a": "You get direct support throughout the entire process. We're available for questions and guide you step by step."
-          }
-        }
-      },
-      "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6"
-      ]
-    },
-    "cta": {
-      "type": "ios-cta",
-      "settings": {
-        "title": "Ready to start in 48 hours?",
-        "subtitle": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base.",
-        "button_1": "Choose Package",
-        "link_1": "#pricing"
-      }
-    },
-    "proof": {
-      "type": "ios-proof",
-      "settings": {
-        "title": "Trust & Results",
-        "subtitle": "Clear focus: go live quickly and test directly.",
-        "quote_highlight": "You don't just get a store,",
-        "quote_rest": "but a ready-to-launch brand base including structure, assets and next steps."
-      },
-      "blocks": {
-        "b1": {
-          "type": "badge",
-          "settings": {
-            "label": "48h Delivery"
-          }
-        },
-        "b2": {
-          "type": "badge",
-          "settings": {
-            "label": "One-time Payment"
-          }
-        },
-        "b3": {
-          "type": "badge",
-          "settings": {
-            "label": "Shopify-ready"
-          }
-        },
-        "b4": {
-          "type": "badge",
-          "settings": {
-            "label": "Brand Assets"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ]
-    },
-    "about": {
-      "type": "ios-about",
-      "settings": {
-        "title": "About Us",
-        "subtitle": "Who we are and what drives us.",
-        "content": "<p>We are a team of experts specializing in launching dropshipping brands quickly and successfully. Our goal is to make it easier for entrepreneurs to get started in e-commerce.</p>"
+        "title": "Packages",
+        "subtitle": "Choose the setup that fits your launch goals."
       }
     },
     "reviews": {
       "type": "ios-reviews",
-      "settings": {
-        "title": "What Our Customers Say",
-        "subtitle": "Real experiences from entrepreneurs who started with us."
-      },
       "blocks": {
         "r1": {
           "type": "review",
@@ -362,7 +291,7 @@
           "type": "review",
           "settings": {
             "name": "Mark T.",
-            "text": "Was able to start selling in less than a week. First sales came faster than I expected. Definitely one of the best investments I made in e-commerce.",
+            "text": "I liked how straightforward the whole process was.\nNo unnecessary steps - just a ready-to-sell store delivered on time.\nPerfect for getting started without technical hassle.",
             "rating": 5
           }
         },
@@ -379,7 +308,95 @@
         "r1",
         "r2",
         "r3"
-      ]
+      ],
+      "settings": {
+        "title": "What Our Customers Say",
+        "subtitle": "Real experiences from entrepreneurs who started with us."
+      }
+    },
+    "profit": {
+      "type": "ios-profit",
+      "settings": {
+        "title": "Example Margin (Illustration)",
+        "subtitle": "A simplified example of how a dropshipping margin can look.",
+        "sell_label": "Selling Price",
+        "sell_value": "$49.99",
+        "cost_label": "Supplier Price (incl. Shipping)",
+        "cost_value": "$14.99",
+        "profit_label": "Gross Margin (Example)",
+        "profit_value": "≈ $35"
+      }
+    },
+    "faq": {
+      "type": "ios-faq",
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "How do I get access to the store?",
+            "a": "After setup, we transfer the Shopify store to the email address you provided. You’ll receive a confirmation message with access details, allowing you to log in and start managing your store."
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Do I need technical skills?",
+            "a": "No. Everything is already set up and ready to use. You don’t need any technical knowledge to launch and manage the store"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "What platform does the store run on?",
+            "a": "We create stores using the Shopify platform."
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "q": "Is there support after purchase?",
+            "a": "Yes. Support is available if you need assistance with store-related questions after delivery."
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "q": "Can I customize the store after launch?",
+            "a": "Yes. You receive full access to the Shopify store and can customize the design, products, and content at any time."
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "q": "What happens if I have questions during setup?",
+            "a": "You can contact support if you have store-related questions. Everything is already set up, so no technical assistance is required."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Short answers to common questions."
+      }
+    },
+    "cta": {
+      "type": "ios-cta",
+      "disabled": true,
+      "settings": {
+        "title": "Ready to start in 48 hours?",
+        "subtitle": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base.",
+        "button_1": "Choose Package",
+        "link_1": "#pricing",
+        "button_2": "Open Original",
+        "link_2": "https://launchheld.com/products/individuelle-dropshipping-brand"
+      }
     }
   },
   "order": [
