@@ -210,16 +210,16 @@
           "type": "plan",
           "settings": {
             "name": "Starter",
-            "desc": "Small Start",
+            "desc": "",
             "tag": "One-time",
             "price": "$49.95",
             "was": "$69.95",
             "featured": false,
-            "feat1": "Complete Shopify Store",
-            "feat2": "Product + Supplier (Basic)",
-            "feat3": "Logo + Basic Branding",
+            "feat1": "Ready-to-Sell Shopify Store",
+            "feat2": "Product & Supplier Connected",
+            "feat3": "Clean Brand Identity (Logo + Colors)",
             "feat4": "1 Ad Creative",
-            "feat5": "Legal Templates (Basic)",
+            "feat5": "Essential Legal Pages",
             "button": "Choose Starter",
             "link": "#cta"
           }
@@ -228,16 +228,16 @@
           "type": "plan",
           "settings": {
             "name": "Pro",
-            "desc": "For a Safe Launch",
+            "desc": "",
             "tag": "Popular",
             "price": "$79.95",
             "was": "$99.95",
             "featured": true,
             "feat1": "Everything from Starter",
-            "feat2": "1:1 Onboarding Call",
-            "feat3": "Social Setup",
-            "feat4": "3 Products + Supplier",
-            "feat5": "Brand Visuals",
+            "feat2": "Up to 3 Products + Supplier Connected",
+            "feat3": "Extended Brand Assets & Visuals",
+            "feat4": "Conversion-Focused Store Structure",
+            "feat5": "Priority Store Delivery",
             "button": "Choose Pro",
             "link": "#cta"
           }
@@ -246,16 +246,16 @@
           "type": "plan",
           "settings": {
             "name": "Premium",
-            "desc": "Custom with Support",
+            "desc": "",
             "tag": "Scale",
             "price": "$149.95",
             "was": "$179.95",
             "featured": false,
             "feat1": "Everything from Pro",
-            "feat2": "SEO Optimization",
-            "feat3": "90 Days Support",
-            "feat4": "Daily Winning Variants",
-            "feat5": "Weekly 1:1 Sessions",
+            "feat2": "Multi-Product Store (Up to 5 Products)",
+            "feat3": "High-Performance Store Structure",
+            "feat4": "Premium Brand Assets & Visuals",
+            "feat5": "Priority Store Delivery",
             "button": "Choose Premium",
             "link": "#cta"
           }
@@ -268,7 +268,7 @@
       ],
       "settings": {
         "title": "Packages",
-        "subtitle": "Choose your support level and assets."
+        "subtitle": "Choose the setup that fits your launch goals."
       }
     },
     "reviews": {
