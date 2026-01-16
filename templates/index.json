@@ -330,42 +330,42 @@
           "type": "qa",
           "settings": {
             "q": "How do I get access to the store?",
-            "a": "After setup, we transfer the Shopify access to you and give you clear start steps."
+            "a": "After setup, we transfer the Shopify store to the email address you provided. You’ll receive a confirmation message with access details, allowing you to log in and start managing your store."
           }
         },
         "q2": {
           "type": "qa",
           "settings": {
             "q": "Do I need technical skills?",
-            "a": "No. The format is designed for quick start – with guidance if needed."
+            "a": "No. Everything is already set up and ready to use. You don’t need any technical knowledge to launch and manage the store"
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
             "q": "What platform does the store run on?",
-            "a": "Shopify – ideal for catalog, checkout and basic setup."
+            "a": "We create stores using the Shopify platform."
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
             "q": "Is there support after purchase?",
-            "a": "Yes. You get support and a contact for launch questions and first steps."
+            "a": "Yes. Support is available if you need assistance with store-related questions after delivery."
           }
         },
         "q5": {
           "type": "qa",
           "settings": {
             "q": "Can I customize the store after launch?",
-            "a": "Yes, absolutely. You get full access to the Shopify store and can customize design, products and content anytime."
+            "a": "Yes. You receive full access to the Shopify store and can customize the design, products, and content at any time."
           }
         },
         "q6": {
           "type": "qa",
           "settings": {
             "q": "What happens if I have questions during setup?",
-            "a": "You get direct support throughout the entire process. We're available for questions and guide you step by step."
+            "a": "You can contact support if you have store-related questions. Everything is already set up, so no technical assistance is required."
           }
         }
       },
