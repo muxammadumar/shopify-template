@@ -166,29 +166,29 @@
         "s1": {
           "type": "step",
           "settings": {
-            "title": "You Choose a Package",
-            "text": "Starter / Pro / Premium – matching your pace and support level."
+            "title": "Choose Your Package",
+            "text": "Starter / Pro / Premium"
           }
         },
         "s2": {
           "type": "step",
           "settings": {
-            "title": "We Build Your Brand",
-            "text": "Shopify + visual system + preparation for marketing."
+            "title": "We Build & Deliver Your Store",
+            "text": "We create a fully built, ready-to-sell dropshipping brand on Shopify — including structure, brand assets, and setup."
           }
         },
         "s3": {
           "type": "step",
           "settings": {
-            "title": "You Start Traffic",
+            "title": "Automated Order Fulfillment",
             "text": "You sell – fulfillment runs through the supplier."
           }
         },
         "s4": {
           "type": "step",
           "settings": {
-            "title": "You Optimize & Scale",
-            "text": "You improve Offer, Creatives and Conversion."
+            "title": "Ready for Growth",
+            "text": "The foundation is already built, allowing you to test offers, creatives, and scale when ready."
           }
         }
       },
@@ -199,8 +199,8 @@
         "s4"
       ],
       "settings": {
-        "title": "So funktioniert’s",
-        "subtitle": "Step by step from package to first sales."
+        "title": "How It Works",
+        "subtitle": "From order to launch — simple and clear."
       }
     },
     "pricing": {
