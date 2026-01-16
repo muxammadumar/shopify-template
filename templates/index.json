@@ -72,7 +72,7 @@
       "settings": {
         "title": "About Us",
         "subtitle": "Who we are and what drives us.",
-        "content": "<p>We are a team of experts specializing in launching dropshipping brands quickly and successfully. Our goal is to make it easier for entrepreneurs to get started in e-commerce.</p>"
+        "content": "<p>We build ready-to-sell dropshipping brands — fully structured Shopify setups designed to start generating sales from day one.<br/><br/>Our focus is simple: remove complexity, save you time, and deliver a clean, conversion-ready foundation so you can focus on marketing and growth.<br/><br/></p>"
       }
     },
     "features": {
@@ -81,24 +81,24 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "title": "Quick Start",
-            "text": "You get the foundation for brand and shop to test demand without weeks of prep work.",
+            "title": "Ready to Sell from Day One",
+            "text": "You receive a fully built dropshipping brand — structured to launch fast and start generating sales without weeks of setup.",
             "icon": "bolt"
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "title": "Personal Support",
-            "text": "Support during launch, setup and first steps.",
+            "title": "No Technical Complexity",
+            "text": "Everything is already set up and optimized, so you can focus on marketing instead of tools, setup, or configuration.",
             "icon": "chat"
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "title": "Clear Costs",
-            "text": "One-time payment per package – no subscription required.",
+            "title": "Simple, One-Time Pricing",
+            "text": "One clear payment per package. No subscriptions, no hidden fees, no ongoing commitments.",
             "icon": "creditcard"
           }
         }
@@ -119,7 +119,7 @@
         "i1": {
           "type": "item",
           "settings": {
-            "title": "Shopify Store (Ready to Launch)",
+            "title": "Ready-to-Sell Shopify Store",
             "text": "Responsive Design, Conversion Structure and Handover of Access.",
             "badge": "Store"
           }
@@ -135,16 +135,16 @@
         "i3": {
           "type": "item",
           "settings": {
-            "title": "Produkt + Lieferant",
-            "text": "„Verkaufen → Lieferant versendet“ – ohne eigenes Lager.",
+            "title": "Product & Supplier Setup",
+            "text": "Ready for direct fulfillment, without holding inventory.",
             "badge": "Product"
           }
         },
         "i4": {
           "type": "item",
           "settings": {
-            "title": "Onboarding",
-            "text": "1:1 Call and clear Next Steps for your start.",
+            "title": "24/7 Store Support",
+            "text": "Get help whenever needed — before and after launch.",
             "badge": "Support"
           }
         }
