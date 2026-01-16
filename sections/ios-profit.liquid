@@ -1,15 +1,16 @@
-<section id="profit" class="ios-section" aria-label="Beispiel‑Marge">
+<section id="profit" class="ios-section" aria-label="Example Margin">
   <div class="ios-wrap">
     {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
 
     <div class="ios-profit">
       <div class="ios-glass ios-padding-card">
-        <h3 class="ios-text-feature-title" style="margin-bottom:6px">Szenario „Erster Verkauf"</h3>
+        <h3 class="ios-text-feature-title" style="margin-bottom:6px">Scenario "First Sale"</h3>
         <p class="ios-text-feature-body">
-          Der Kunde bezahlt, der Lieferant versendet automatisch. Du fokussierst dich auf Marketing und Wachstum.
+          Example product: home decor product<br>
+          The customer pays, and the supplier automatically ships the product.
         </p>
 
-        <div class="ios-calc" aria-label="Berechnung">
+        <div class="ios-calc" aria-label="Calculation">
           <div class="ios-row"><span>{{ section.settings.sell_label }}</span><b>{{ section.settings.sell_value }}</b></div>
           <div class="ios-row"><span>{{ section.settings.cost_label }}</span><b>{{ section.settings.cost_value }}</b></div>
           <div class="ios-row total"><span>{{ section.settings.profit_label }}</span><b>{{ section.settings.profit_value }}</b></div>
@@ -17,14 +18,14 @@
       </div>
 
       <div class="ios-card ios-padding-card">
-        <h3 class="ios-text-feature-title" style="margin-bottom:6px">Was danach passiert</h3>
+        <h3 class="ios-text-feature-title" style="margin-bottom:6px">What Happens Next</h3>
         <p class="ios-text-feature-body">
-          Nach dem Versand erhält der Kunde Updates und Tracking. Bei Fragen wendet er sich an deinen Brand‑Store.
+          After the order is placed, the customer receives shipping updates and tracking information. Any order-related inquiries are handled through your brand store.
         </p>
         <ul class="ios-list">
-          <li>Versand beim Lieferanten – ohne deine Beteiligung</li>
-          <li>Automatische Benachrichtigungen/Status</li>
-          <li>Du konzentrierst dich auf Werbung und Conversion</li>
+          <li>Order fulfillment is handled by the supplier — no manual involvement required</li>
+          <li>Automatic notifications and order status updates</li>
+          <li>You focus on marketing and conversion</li>
         </ul>
       </div>
     </div>
@@ -35,17 +36,17 @@
 {
   "name": "iOS Profit",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Beispiel‑Marge (Modell)" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Typisches Modell: Du verkaufst teurer, der Lieferant liefert günstiger." },
+    { "type": "text", "id": "title", "label": "Title", "default": "Example Margin (Model)" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Typical model: You sell at a higher price, the supplier delivers at a lower cost." },
 
-    { "type": "text", "id": "sell_label", "label": "Sell label", "default": "Verkaufspreis" },
-    { "type": "text", "id": "sell_value", "label": "Sell value", "default": "39,99 €" },
+    { "type": "text", "id": "sell_label", "label": "Sell label", "default": "Selling price" },
+    { "type": "text", "id": "sell_value", "label": "Sell value", "default": "$39.99" },
 
-    { "type": "text", "id": "cost_label", "label": "Cost label", "default": "Lieferantenpreis (inkl. Versand)" },
-    { "type": "text", "id": "cost_value", "label": "Cost value", "default": "9,99 €" },
+    { "type": "text", "id": "cost_label", "label": "Cost label", "default": "Supplier price (incl. shipping)" },
+    { "type": "text", "id": "cost_value", "label": "Cost value", "default": "$9.99" },
 
-    { "type": "text", "id": "profit_label", "label": "Profit label", "default": "Brutto‑Marge (Beispiel)" },
-    { "type": "text", "id": "profit_value", "label": "Profit value", "default": "≈ 30 €" }
+    { "type": "text", "id": "profit_label", "label": "Profit label", "default": "Gross margin (Example)" },
+    { "type": "text", "id": "profit_value", "label": "Profit value", "default": "≈ $30" }
   ],
   "presets": [{ "name": "iOS Profit" }]
 }

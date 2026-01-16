@@ -1,4 +1,4 @@
-<section id="reviews" class="ios-section" aria-label="Bewertungen">
+<section id="reviews" class="ios-section" aria-label="Reviews">
   <div class="ios-wrap">
     {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
 
@@ -26,7 +26,7 @@
       {% endfor %}
     </div>
     {% else %}
-    <p class="ios-sub">Keine Bewertungen vorhanden.</p>
+    <p class="ios-sub">No reviews available.</p>
     {% endif %}
 
     {%- comment -%} Review Schema for SEO {%- endcomment -%}
@@ -70,8 +70,8 @@
 {
   "name": "iOS Reviews",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Was unsere Kunden sagen" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Echte Erfahrungen von Unternehmern, die mit uns gestartet sind." }
+    { "type": "text", "id": "title", "label": "Title", "default": "What Our Customers Say" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Real experiences from entrepreneurs who started with us." }
   ],
   "blocks": [
     {

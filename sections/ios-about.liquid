@@ -1,4 +1,4 @@
-<section id="about" class="ios-section" aria-label="Über uns">
+<section id="about" class="ios-section" aria-label="About Us">
   <div class="ios-wrap">
     {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
 
@@ -41,17 +41,17 @@
 {
   "name": "iOS About",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Über uns" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Wer wir sind und was uns antreibt." },
-    { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Wir sind ein Team von Experten, das sich darauf spezialisiert hat, Dropshipping-Brands schnell und erfolgreich zu launchen.</p>" }
+    { "type": "text", "id": "title", "label": "Title", "default": "About Us" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Who we are and what drives us." },
+    { "type": "richtext", "id": "content", "label": "Content", "default": "<p>We are a team of experts specializing in launching dropshipping brands quickly and successfully.</p>" }
   ],
   "blocks": [
     {
       "type": "about_item",
       "name": "About Item",
       "settings": [
-        { "type": "text", "id": "title", "label": "Title", "default": "Unsere Mission" },
-        { "type": "textarea", "id": "text", "label": "Text", "default": "Wir helfen Unternehmern dabei, schnell und ohne technische Hürden in den E-Commerce einzusteigen." },
+        { "type": "text", "id": "title", "label": "Title", "default": "Our Mission" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "We help entrepreneurs quickly enter e-commerce without technical barriers." },
         { "type": "image_picker", "id": "image", "label": "Image", "info": "Optional image for this item" }
       ]
     }

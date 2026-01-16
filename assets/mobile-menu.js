@@ -101,7 +101,7 @@
         if(e.key === 'Escape' && mobileNav.classList.contains('open')){
           mobileNav.classList.remove('open');
           burger.setAttribute('aria-expanded', 'false');
-          burger.setAttribute('aria-label', 'Menü öffnen');
+          burger.setAttribute('aria-label', 'Open menu');
           if(removeFocusTrap) {
             removeFocusTrap();
             removeFocusTrap = null;

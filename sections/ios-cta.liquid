@@ -9,22 +9,15 @@
         <p>{{ section.settings.subtitle }}</p>
         {% endif %}
       </div>
-      {% if section.settings.button_1 != blank or section.settings.button_2 != blank %}
+      {% if section.settings.button_1 != blank %}
       <div class="ios-flex-gap">
-        {% if section.settings.button_1 != blank %}
         <a class="ios-btn primary" href="{{ section.settings.link_1 | default: '#' }}">{{ section.settings.button_1 }}</a>
-        {% endif %}
-        {% if section.settings.button_2 != blank %}
-        <a class="ios-btn ghost" href="{{ section.settings.link_2 | default: '#' }}" {% if section.settings.link_2 contains 'http' %}target="_blank" rel="noopener"{% endif %}>
-          {{ section.settings.button_2 }}
-        </a>
-        {% endif %}
       </div>
       {% endif %}
     </div>
 
     <div class="ios-text-hint ios-margin-top-md">
-      <span>Tipp:</span> Wenn du willst, können wir einen „Jetzt kaufen“-Button für ein konkretes Shopify-Produkt hinzufügen.
+      <span>Tip:</span> If you want, we can add a "Buy now" button for a specific Shopify product.
     </div>
   </div>
 </section>
@@ -33,12 +26,10 @@
 {
   "name": "iOS CTA",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Bereit, in 48 Stunden zu starten?" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Wähle ein Paket – wir erstellen den Launch‑Plan und übergeben dir eine startklare Brand‑Basis." },
-    { "type": "text", "id": "button_1", "label": "Button 1 text", "default": "Paket wählen" },
-    { "type": "text", "id": "link_1", "label": "Button 1 link", "default": "#pricing" },
-    { "type": "text", "id": "button_2", "label": "Button 2 text", "default": "Original öffnen" },
-    { "type": "text", "id": "link_2", "label": "Button 2 link", "default": "https://launchheld.com/products/individuelle-dropshipping-brand" }
+    { "type": "text", "id": "title", "label": "Title", "default": "Ready to launch in 48 hours?" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base." },
+    { "type": "text", "id": "button_1", "label": "Button 1 text", "default": "Choose Package" },
+    { "type": "text", "id": "link_1", "label": "Button 1 link", "default": "#pricing" }
   ],
   "presets": [{ "name": "iOS CTA" }]
 }

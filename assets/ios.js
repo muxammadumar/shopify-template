@@ -49,7 +49,7 @@
       e.stopPropagation();
       var isOpen = mobileNav.classList.toggle('open');
       burger.setAttribute('aria-expanded', isOpen);
-      burger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
       
       // Trap focus in mobile menu when open
       if(isOpen){
@@ -65,7 +65,7 @@
         if(!isClickInside){
           mobileNav.classList.remove('open');
           burger.setAttribute('aria-expanded', 'false');
-          burger.setAttribute('aria-label', 'Menü öffnen');
+          burger.setAttribute('aria-label', 'Open menu');
         }
       }
     });
@@ -75,7 +75,7 @@
       if(e.key === 'Escape' && mobileNav.classList.contains('open')){
         mobileNav.classList.remove('open');
         burger.setAttribute('aria-expanded', 'false');
-        burger.setAttribute('aria-label', 'Menü öffnen');
+        burger.setAttribute('aria-label', 'Open menu');
         burger.focus();
       }
     });
@@ -133,7 +133,7 @@
       if(!btn.classList.contains('loading')){
         btn.classList.add('loading');
         var originalText = btn.textContent;
-        btn.textContent = 'Lädt...';
+        btn.textContent = 'Loading...';
         
         // Revert after navigation (or timeout)
         setTimeout(function(){

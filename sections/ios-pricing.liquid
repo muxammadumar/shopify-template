@@ -76,14 +76,14 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "{{ shop.name }}",
-      "description": "{{ section.settings.subtitle | default: 'Individuelle Dropshipping-Brand: Shop, Branding, Ads & Socials – alles in einem' | escape }}",
+      "description": "{{ section.settings.subtitle | default: 'Custom Dropshipping Brand: Shop, Branding, Ads & Socials – all in one' | escape }}",
       "provider": {
         "@type": "Organization",
         "name": "{{ shop.name }}"
       },
       "areaServed": {
         "@type": "Country",
-        "name": "Deutschland"
+        "name": "United States"
       },
       "offers": [
         {%- for block in section.blocks -%}
@@ -109,8 +109,8 @@
 {
   "name": "iOS Pricing",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Pakete" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Wähle dein Support‑Level und die Assets." }
+    { "type": "text", "id": "title", "label": "Title", "default": "Packages" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Choose your support level and assets." }
   ],
   "blocks": [
     {
@@ -118,19 +118,19 @@
       "name": "Plan",
       "settings": [
         { "type": "text", "id": "name", "label": "Name", "default": "Starter" },
-        { "type": "text", "id": "desc", "label": "Description", "default": "Kleiner Start" },
+        { "type": "text", "id": "desc", "label": "Description", "default": "Small Start" },
         { "type": "text", "id": "tag", "label": "Tag", "default": "One‑time" },
-        { "type": "text", "id": "price", "label": "Price", "default": "49,95 €" },
-        { "type": "text", "id": "was", "label": "Was price", "default": "69,95 €" },
+        { "type": "text", "id": "price", "label": "Price", "default": "$49.95" },
+        { "type": "text", "id": "was", "label": "Was price", "default": "$69.95" },
         { "type": "checkbox", "id": "featured", "label": "Featured", "default": false },
 
-        { "type": "text", "id": "feat1", "label": "Feature 1", "default": "Vollständiger Shopify‑Store" },
-        { "type": "text", "id": "feat2", "label": "Feature 2", "default": "Produkt + Lieferant (Basis)" },
+        { "type": "text", "id": "feat1", "label": "Feature 1", "default": "Complete Shopify Store" },
+        { "type": "text", "id": "feat2", "label": "Feature 2", "default": "Product + Supplier (Basic)" },
         { "type": "text", "id": "feat3", "label": "Feature 3", "default": "Logo + Basic Branding" },
-        { "type": "text", "id": "feat4", "label": "Feature 4", "default": "1 Ad‑Creative" },
-        { "type": "text", "id": "feat5", "label": "Feature 5", "default": "Rechtliche Vorlagen (Basis)" },
+        { "type": "text", "id": "feat4", "label": "Feature 4", "default": "1 Ad Creative" },
+        { "type": "text", "id": "feat5", "label": "Feature 5", "default": "Legal Templates (Basic)" },
 
-        { "type": "text", "id": "button", "label": "Button text", "default": "Wählen" },
+        { "type": "text", "id": "button", "label": "Button text", "default": "Choose" },
         { "type": "text", "id": "link", "label": "Button link", "default": "#cta" }
       ]
     }

@@ -10,7 +10,7 @@
         "subheading": "We build the foundation for your brand and shop so you can go live quickly without tech stress.",
         "primary_label": "Start Brand",
         "primary_link": "#cta",
-        "secondary_label": "So funktioniert’s",
+        "secondary_label": "How it works",
         "secondary_link": "#how",
         "chip_1": "Up to 48 hours",
         "chip_2": "1:1 Onboarding",
@@ -81,8 +81,8 @@
         "i3": {
           "type": "item",
           "settings": {
-            "title": "Produkt + Lieferant",
-            "text": "„Verkaufen → Lieferant versendet“ – ohne eigenes Lager.",
+            "title": "Product + Supplier",
+            "text": "\"Sell → Supplier ships\" – no own warehouse.",
             "badge": "Product"
           }
         },
@@ -105,7 +105,7 @@
     "how": {
       "type": "ios-steps",
       "settings": {
-        "title": "So funktioniert’s",
+        "title": "How it works",
         "subtitle": "Step by step from package to first sales."
       },
       "blocks": {
@@ -291,9 +291,7 @@
         "title": "Ready to start in 48 hours?",
         "subtitle": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base.",
         "button_1": "Choose Package",
-        "link_1": "#pricing",
-        "button_2": "Open Original",
-        "link_2": "https://launchheld.com/products/individuelle-dropshipping-brand"
+        "link_1": "#pricing"
       }
     },
     "proof": {

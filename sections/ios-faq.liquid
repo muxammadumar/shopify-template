@@ -23,7 +23,7 @@
       {% endfor %}
     </div>
     {% else %}
-    <p class="ios-sub">Keine FAQ-Einträge vorhanden.</p>
+    <p class="ios-sub">No FAQ entries available.</p>
     {% endif %}
     
     {%- comment -%} FAQPage Schema for SEO {%- endcomment -%}
@@ -57,15 +57,15 @@
   "name": "iOS FAQ",
   "settings": [
     { "type": "text", "id": "title", "label": "Title", "default": "FAQ" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Kurze Antworten auf häufige Fragen." }
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Short answers to frequently asked questions." }
   ],
   "blocks": [
     {
       "type": "qa",
       "name": "Q&A",
       "settings": [
-        { "type": "text", "id": "q", "label": "Question", "default": "Frage" },
-        { "type": "textarea", "id": "a", "label": "Answer", "default": "Antwort" }
+        { "type": "text", "id": "q", "label": "Question", "default": "Question" },
+        { "type": "textarea", "id": "a", "label": "Answer", "default": "Answer" }
       ]
     }
   ],
