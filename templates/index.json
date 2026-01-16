@@ -266,6 +266,7 @@
         "p2",
         "p3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Packages",
         "subtitle": "Choose the setup that fits your launch goals."
@@ -286,7 +287,7 @@
           "type": "review",
           "settings": {
             "name": "Mark T.",
-            "text": "Was able to start selling in less than a week. First sales came faster than I expected. Definitely one of the best investments I made in e-commerce.",
+            "text": "I liked how straightforward the whole process was.\nNo unnecessary steps - just a ready-to-sell store delivered on time.\nPerfect for getting started without technical hassle.",
             "rating": 5
           }
         },
@@ -312,14 +313,14 @@
     "profit": {
       "type": "ios-profit",
       "settings": {
-        "title": "Example Margin (Model)",
-        "subtitle": "Typical model: You sell higher, supplier delivers cheaper.",
+        "title": "Example Margin (Illustration)",
+        "subtitle": "A simplified example of how a dropshipping margin can look.",
         "sell_label": "Selling Price",
-        "sell_value": "$39.99",
+        "sell_value": "$49.99",
         "cost_label": "Supplier Price (incl. Shipping)",
-        "cost_value": "$9.99",
+        "cost_value": "$14.99",
         "profit_label": "Gross Margin (Example)",
-        "profit_value": "≈ $30"
+        "profit_value": "≈ $35"
       }
     },
     "faq": {
