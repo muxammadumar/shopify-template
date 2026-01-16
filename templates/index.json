@@ -32,25 +32,25 @@
         "b1": {
           "type": "badge",
           "settings": {
-            "label": "48h Delivery"
+            "label": "Brand Assets Included"
           }
         },
         "b2": {
           "type": "badge",
           "settings": {
-            "label": "One-time Payment"
+            "label": "Product & Supplier Set Up"
           }
         },
         "b3": {
           "type": "badge",
           "settings": {
-            "label": "Shopify-ready"
+            "label": "Conversion-Focused Design"
           }
         },
         "b4": {
           "type": "badge",
           "settings": {
-            "label": "Brand Assets"
+            "label": "Built to Sell from Day One"
           }
         }
       },
@@ -61,10 +61,10 @@
         "b4"
       ],
       "settings": {
-        "title": "Trust & Results",
-        "subtitle": "Clear focus: go live quickly and test directly.",
-        "quote_highlight": "You don't just get a store,",
-        "quote_rest": "but a ready-to-launch brand base including structure, assets and next steps."
+        "title": "From Zero to Sales — Faster Than You Think",
+        "subtitle": "Everything you need to start selling fast.",
+        "quote_highlight": "What makes this a brand, not just a store?",
+        "quote_rest": "You receive a fully built, ready-to-sell dropshipping brand — including product selection, brand assets, store structure, and a conversion-focused layout designed to generate sales from day one."
       }
     },
     "about": {
