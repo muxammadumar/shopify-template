@@ -257,7 +257,6 @@
         "p2",
         "p3"
       ],
-      "disabled": true,
       "settings": {
         "title": "Packages",
         "subtitle": "Choose the setup that fits your launch goals."
