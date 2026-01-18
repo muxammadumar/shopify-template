@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,7 +15,7 @@
         "brand": "GoldBrand",
         "tagline": "All‑in‑one dropshipping brand",
         "kicker": "Your brand ready in 48 hours",
-        "heading": "Your Fully Built Dropshipping Brand — Ready to Sell",
+        "heading": "Dropshipping Store with Brand Identity",
         "subheading": "We deliver a complete, dropshipping brand with product, design, apps and structure — so you can start selling immediately without any technical skills or setup work.",
         "primary_label": "Get Your Store",
         "primary_link": "#cta",
@@ -203,8 +212,8 @@
             "name": "Starter",
             "desc": "",
             "tag": "One-time",
-            "price": "$49.95",
-            "was": "$69.95",
+            "price": "$79.95",
+            "was": "$149.95",
             "featured": false,
             "feat1": "Fully Built Dropshipping Brand",
             "feat2": "Product & Supplier Connected",
@@ -221,8 +230,8 @@
             "name": "Pro",
             "desc": "",
             "tag": "Popular",
-            "price": "$79.95",
-            "was": "$99.95",
+            "price": "$149.95",
+            "was": "$199.95",
             "featured": true,
             "feat1": "Everything from Starter",
             "feat2": "Up to 3 Products + Supplier Connected",
@@ -239,12 +248,12 @@
             "name": "Premium",
             "desc": "",
             "tag": "Scale",
-            "price": "$149.95",
-            "was": "$179.95",
+            "price": "$299.95",
+            "was": "$399.95",
             "featured": false,
             "feat1": "Everything from Pro",
             "feat2": "Multi-Product Store (Up to 5 Products)",
-            "feat3": "High-Performance Store Structure",
+            "feat3": "High-Performance Scaling Store Structure",
             "feat4": "Premium Brand Assets & Visuals",
             "feat5": "Priority Store Delivery",
             "button": "Choose Premium",
@@ -379,9 +388,7 @@
         "title": "Ready to start in 48 hours?",
         "subtitle": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base.",
         "button_1": "Choose Package",
-        "link_1": "#pricing",
-        "button_2": "Open Original",
-        "link_2": "https://launchheld.com/products/individuelle-dropshipping-brand"
+        "link_1": "#pricing"
       }
     }
   },
