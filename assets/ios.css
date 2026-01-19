@@ -1266,7 +1266,7 @@ details[open] .ios-chev{
 .ios-contact-info{
   margin-bottom: 32px;
   border-radius: var(--radius2);
-  background: linear-gradient(135deg, #4A90E2 0%, #7B68EE 50%, #9B59B6 100%);
+  background: linear-gradient(135deg, var(--emerald2) 0%, rgba(201,162,39,.25) 50%, var(--emerald) 100%);
   padding: 32px;
   position: relative;
   overflow: hidden;
@@ -1280,7 +1280,7 @@ details[open] .ios-chev{
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,162,39,.15) 0%, transparent 70%);
   pointer-events: none;
 }
 .ios-contact-info-content{
