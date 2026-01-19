@@ -52,5 +52,18 @@
   "pricing": {
     "packages": "Packages",
     "edit_hint": "Texts and packages can be edited in the Theme Editor (Customize) for this page."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We are fluent in 6 languages and are working towards offering support in additional languages as well to get even closer to you!",
+    "info_title": "Contact Information",
+    "info_description": "We are easily reachable through email, phone, and WhatsApp, striving to provide convenient and seamless communication options tailored to your needs.",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_subject": "Subject",
+    "form_message": "Message",
+    "send_button": "Send message",
+    "success_message": "Thank you! Your message has been sent successfully.",
+    "error_message": "Please correct the errors below:"
   }
 }

@@ -6,7 +6,7 @@
   <div class="ios-wrap">
     <div class="ios-topbar-inner">
       <a class="ios-brand" href="#top" aria-label="{% if section.settings.brand != blank %}{{ section.settings.brand | escape }}{% else %}{{ 'hero.brand' | t | default: shop.name | escape }}{% endif %}">
-        <div class="ios-mark" aria-hidden="true"></div>
+        <img src="{{ 'logo.png' | asset_url }}" alt="{% if section.settings.brand != blank %}{{ section.settings.brand | escape }}{% else %}{{ 'hero.brand' | t | default: shop.name | escape }}{% endif %}" class="ios-mark" aria-hidden="true">
         <div>
           <strong>{% if section.settings.brand != blank %}{{ section.settings.brand }}{% else %}{{ 'hero.brand' | t | default: shop.name }}{% endif %}</strong>
           <span>{% if section.settings.tagline != blank %}{{ section.settings.tagline }}{% else %}{{ 'hero.tagline' | t }}{% endif %}</span>

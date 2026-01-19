@@ -1,0 +1,160 @@
+{% comment %}
+  Contact/Support Page Section
+  Includes contact information card and contact form
+{% endcomment %}
+
+<section class="ios-section ios-contact" aria-label="Contact Support">
+  <div class="ios-wrap">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+    {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
+    {% endif %}
+
+    {% comment %} Contact Information Card {% endcomment %}
+    <div class="ios-contact-info">
+      <div class="ios-contact-info-content">
+        <h2 class="ios-contact-info-title">
+          {% if section.settings.info_title != blank %}
+            {{ section.settings.info_title }}
+          {% else %}
+            {{ 'contact.info_title' | t }}
+          {% endif %}
+        </h2>
+        <p class="ios-contact-info-description">
+          {% if section.settings.info_description != blank %}
+            {{ section.settings.info_description }}
+          {% else %}
+            {{ 'contact.info_description' | t }}
+          {% endif %}
+        </p>
+        <div class="ios-contact-details">
+          <a href="mailto:support@goldbrand.shop" class="ios-contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>support@goldbrand.shop</span>
+          </a>
+          <a href="tel:+15074104666" class="ios-contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+1 (507) 410-4666</span>
+          </a>
+          {% if section.settings.show_social != false %}
+          <a href="https://instagram.com/privatily" target="_blank" rel="noopener noreferrer" class="ios-contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>@privatily</span>
+          </a>
+          <a href="https://twitter.com/privatily" target="_blank" rel="noopener noreferrer" class="ios-contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+            <span>@privatily</span>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% comment %} Contact Form {% endcomment %}
+    <div class="ios-contact-form-wrapper">
+      {% form 'contact', class: 'ios-contact-form' %}
+        {% if form.posted_successfully? %}
+          <div class="ios-form-success">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>{{ 'contact.success_message' | t | default: 'Thank you! Your message has been sent successfully.' }}</span>
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="ios-form-errors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div>
+              <strong>{{ 'contact.error_message' | t | default: 'Please correct the errors below:' }}</strong>
+              {{ form.errors | default_errors }}
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="ios-form-group">
+          <label for="contact_name" class="ios-form-label">
+            {{ 'contact.form_name' | t | default: 'Name' }}
+          </label>
+          <input 
+            type="text" 
+            id="contact_name" 
+            name="contact[name]" 
+            class="ios-input" 
+            required
+            value="{% if form.name %}{{ form.name }}{% endif %}">
+        </div>
+
+        <div class="ios-form-group">
+          <label for="contact_email" class="ios-form-label">
+            {{ 'contact.form_email' | t | default: 'Email' }}
+          </label>
+          <input 
+            type="email" 
+            id="contact_email" 
+            name="contact[email]" 
+            class="ios-input" 
+            required
+            value="{% if form.email %}{{ form.email }}{% endif %}">
+        </div>
+
+        <div class="ios-form-group">
+          <label for="contact_subject" class="ios-form-label">
+            {{ 'contact.form_subject' | t | default: 'Subject' }}
+          </label>
+          <input 
+            type="text" 
+            id="contact_subject" 
+            name="contact[subject]" 
+            class="ios-input" 
+            required
+            value="{% if form.subject %}{{ form.subject }}{% endif %}">
+        </div>
+
+        <div class="ios-form-group">
+          <label for="contact_message" class="ios-form-label">
+            {{ 'contact.form_message' | t | default: 'Message' }}
+          </label>
+          <textarea 
+            id="contact_message" 
+            name="contact[body]" 
+            class="ios-textarea" 
+            rows="6" 
+            required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+
+        <button type="submit" class="ios-btn primary ios-btn-large">
+          {{ 'contact.send_button' | t | default: 'Send message' }}
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS Contact",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Page Title", "default": "Get in Touch" },
+    { "type": "textarea", "id": "subtitle", "label": "Page Subtitle", "default": "We are fluent in 6 languages and are working towards offering support in additional languages as well to get even closer to you!" },
+    { "type": "text", "id": "info_title", "label": "Contact Info Title", "default": "Contact Information" },
+    { "type": "textarea", "id": "info_description", "label": "Contact Info Description", "default": "We are easily reachable through email, phone, and WhatsApp, striving to provide convenient and seamless communication options tailored to your needs." },
+    { "type": "checkbox", "id": "show_social", "label": "Show Social Media Links", "default": true }
+  ],
+  "presets": [{ "name": "iOS Contact" }]
+}
+{% endschema %}

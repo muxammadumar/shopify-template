@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "ios-contact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
