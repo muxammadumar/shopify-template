@@ -40,6 +40,20 @@
   }
   
   /**
+   * Update mobile menu top position based on topbar height
+   */
+  function updateMobileMenuPosition(){
+    var topbar = document.querySelector('.ios-topbar');
+    var mobileNav = document.getElementById('iosMobileNav');
+    
+    if(topbar && mobileNav){
+      var topbarHeight = topbar.offsetHeight;
+      mobileNav.style.setProperty('--topbar-height', topbarHeight + 'px');
+      mobileNav.setAttribute('data-topbar-height', topbarHeight);
+    }
+  }
+  
+  /**
    * Initialize mobile menu functionality
    */
   IOSTheme.initMobileMenu = function(){
@@ -50,6 +64,16 @@
       if(!burger || !mobileNav) {
         return false;
       }
+      
+      // Set initial topbar height for mobile menu positioning
+      updateMobileMenuPosition();
+      
+      // Update position on window resize
+      var resizeTimer;
+      window.addEventListener('resize', function(){
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateMobileMenuPosition, 100);
+      });
       
       var removeFocusTrap = null;
       
