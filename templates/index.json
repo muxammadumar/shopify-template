@@ -15,14 +15,14 @@
         "brand": "GoldBrand",
         "tagline": "All‑in‑one dropshipping brand",
         "kicker": "Your brand ready in 48 hours",
-        "heading": "Dropshipping Store with Brand Identity",
-        "subheading": "We deliver a complete, dropshipping brand with product, design, apps and structure — so you can start selling immediately without any technical skills or setup work.",
+        "heading": "Your Own Branded Shopify Store in 48 Hours",
+        "subheading": "Get a professionally set up store with a unique brand, curated products, and automated order fulfillment. No technical skills required — we handle everything for you",
         "primary_label": "Get Your Store",
         "primary_link": "#cta",
         "secondary_label": "How it works",
         "secondary_link": "#how",
         "chip_1": "Up to 48 hours",
-        "chip_2": "No Technical Skills Required",
+        "chip_2": "No Technical Skills",
         "chip_3": "One-time payment"
       }
     },
@@ -61,7 +61,7 @@
         "b4"
       ],
       "settings": {
-        "title": "From Zero to Sales — Faster Than You Think",
+        "title": "From Zero to Sales",
         "subtitle": "Everything you need to start selling fast.",
         "quote_highlight": "What makes this a brand, not just a store?",
         "quote_rest": "You receive a fully built, ready-to-sell dropshipping brand — including product selection, brand assets, store structure, and a conversion-focused layout designed to generate sales from day one."
@@ -136,7 +136,7 @@
           "type": "item",
           "settings": {
             "title": "Product & Supplier Setup",
-            "text": "Ready for direct fulfillment, without holding inventory.",
+            "text": "Supplier automatically ships orders directly to your customer.",
             "badge": "Product"
           }
         },
@@ -173,8 +173,8 @@
         "s2": {
           "type": "step",
           "settings": {
-            "title": "We Build & Deliver Your Store",
-            "text": "We create a fully built, ready-to-sell dropshipping brand on Shopify — including structure, brand assets, and setup."
+            "title": "Store Built & Delivered",
+            "text": "We Build & Deliver Your Shopify Store\nA ready-to-launch store with products, supplier, and branding set up."
           }
         },
         "s3": {
@@ -215,9 +215,9 @@
             "price": "$79.95",
             "was": "$149.95",
             "featured": false,
-            "feat1": "Fully Built Dropshipping Brand",
+            "feat1": "Complete Shopify Store",
             "feat2": "Product & Supplier Connected",
-            "feat3": "Clean Brand Identity (Logo + Colors)",
+            "feat3": "Brand Identity (Logo + Colors)",
             "feat4": "1 Ad Creative",
             "feat5": "Essential Legal Pages",
             "button": "Choose Starter",
@@ -252,7 +252,7 @@
             "was": "$399.95",
             "featured": false,
             "feat1": "Everything from Pro",
-            "feat2": "Multi-Product Store (Up to 5 Products)",
+            "feat2": "Up to 5 Products + Supplier Connected",
             "feat3": "High-Performance Scaling Store Structure",
             "feat4": "Premium Brand Assets & Visuals",
             "feat5": "Priority Store Delivery",
