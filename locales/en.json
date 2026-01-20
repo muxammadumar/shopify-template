@@ -50,8 +50,7 @@
     "chip_3": "One-time payment"
   },
   "pricing": {
-    "packages": "Packages",
-    "edit_hint": "Texts and packages can be edited in the Theme Editor (Customize) for this page."
+    "packages": "Packages"
   },
   "contact": {
     "title": "Get in Touch",
