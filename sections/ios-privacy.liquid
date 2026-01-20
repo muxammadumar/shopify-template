@@ -20,8 +20,10 @@
         <div class="ios-privacy-text">
           {% if section.settings.content != blank %}
             {{ section.settings.content }}
-          {% else %}
+          {% elsif page.content != blank %}
             {{ page.content }}
+          {% else %}
+            <p>Privacy policy content will appear here. Please add content in the page editor or theme customizer.</p>
           {% endif %}
         </div>
       </div>
