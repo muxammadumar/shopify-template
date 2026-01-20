@@ -1613,6 +1613,86 @@ details[open] .ios-chev {
   color: var(--muted);
 }
 
+/* Privacy Policy Page Styles */
+.ios-privacy {
+  padding: 52px 0;
+}
+
+.ios-privacy-content {
+  margin-top: 18px;
+}
+
+.ios-privacy-last-updated {
+  margin: 0 0 24px;
+  font-size: 13px;
+  color: var(--muted2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ios-privacy-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.ios-privacy-text p {
+  margin: 0 0 16px;
+}
+
+.ios-privacy-text p:last-child {
+  margin-bottom: 0;
+}
+
+.ios-privacy-text h2 {
+  margin: 32px 0 16px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.3px;
+}
+
+.ios-privacy-text h2:first-child {
+  margin-top: 0;
+}
+
+.ios-privacy-text h3 {
+  margin: 24px 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -.2px;
+}
+
+.ios-privacy-text ul,
+.ios-privacy-text ol {
+  margin: 12px 0 16px;
+  padding-left: 24px;
+  color: var(--muted);
+}
+
+.ios-privacy-text li {
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+.ios-privacy-text a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity .2s ease;
+}
+
+.ios-privacy-text a:hover {
+  opacity: 0.8;
+}
+
+.ios-privacy-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* Cookie Banner (GDPR) */
 .ios-cookie-banner {
   position: fixed;
@@ -1797,6 +1877,30 @@ details[open] .ios-chev {
 
   .ios-contact-form-wrapper {
     padding: 24px
+  }
+
+  /* Privacy page mobile adjustments */
+  .ios-privacy {
+    padding: 32px 0
+  }
+
+  .ios-privacy-text {
+    font-size: 14px
+  }
+
+  .ios-privacy-text h2 {
+    font-size: 20px;
+    margin-top: 28px
+  }
+
+  .ios-privacy-text h3 {
+    font-size: 16px;
+    margin-top: 20px
+  }
+
+  .ios-privacy-text ul,
+  .ios-privacy-text ol {
+    padding-left: 20px
   }
 }
 

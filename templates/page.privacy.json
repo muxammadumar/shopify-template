@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "ios-privacy",
+      "settings": {
+        "title": "Privacy Policy",
+        "subtitle": "How we collect, use, and protect your personal information.",
+        "last_updated": "January 20, 2026"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

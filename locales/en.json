@@ -64,5 +64,10 @@
     "send_button": "Send message",
     "success_message": "Thank you! Your message has been sent successfully.",
     "error_message": "Please correct the errors below:"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "How we collect, use, and protect your personal information.",
+    "last_updated": "Last updated"
   }
 }

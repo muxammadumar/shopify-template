@@ -1,0 +1,68 @@
+{% comment %}
+  Privacy Policy Page Section
+  Displays the privacy policy content in a readable format
+{% endcomment %}
+
+<section class="ios-section ios-privacy" aria-label="Privacy Policy">
+  <div class="ios-wrap">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+    {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
+    {% endif %}
+
+    <div class="ios-privacy-content">
+      <div class="ios-glass ios-padding-card">
+        {% if section.settings.last_updated != blank %}
+        <p class="ios-privacy-last-updated">
+          {{ 'privacy.last_updated' | t | default: 'Last updated' }}: {{ section.settings.last_updated }}
+        </p>
+        {% endif %}
+
+        <div class="ios-privacy-text">
+          {% if section.settings.content != blank %}
+            {{ section.settings.content }}
+          {% else %}
+            {{ page.content }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "iOS Privacy Policy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page Title",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Page Subtitle",
+      "default": "How we collect, use, and protect your personal information."
+    },
+    {
+      "type": "text",
+      "id": "last_updated",
+      "label": "Last Updated Date",
+      "default": "January 20, 2026",
+      "info": "Date when the privacy policy was last updated"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Privacy Policy Content",
+      "info": "If left empty, the page content will be used. You can paste the full privacy policy text here."
+    }
+  ],
+  "presets": [
+    {
+      "name": "iOS Privacy Policy"
+    }
+  ]
+}
+{% endschema %}
