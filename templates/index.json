@@ -136,7 +136,7 @@
           "type": "item",
           "settings": {
             "title": "Product & Supplier Setup",
-            "text": "Ready for direct fulfillment, without holding inventory.",
+            "text": "Supplier automatically ships orders directly to your customer.",
             "badge": "Product"
           }
         },
