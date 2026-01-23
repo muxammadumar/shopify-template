@@ -181,7 +181,7 @@
           "type": "step",
           "settings": {
             "title": "Automated Order Fulfillment",
-            "text": "You sell – fulfillment runs through the supplier."
+            "text": "You sell — the supplier ships the product directly to your customer."
           }
         },
         "s4": {
