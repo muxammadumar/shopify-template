@@ -309,6 +309,29 @@
     ]
   },
   {
+    "name": "Analytics & Tracking",
+    "settings": [
+      {
+        "type": "header",
+        "content": "TikTok Pixel"
+      },
+      {
+        "type": "checkbox",
+        "id": "tiktok_pixel_enabled",
+        "label": "Enable TikTok Pixel",
+        "default": true,
+        "info": "Enable TikTok Analytics pixel for tracking and conversion measurement"
+      },
+      {
+        "type": "text",
+        "id": "tiktok_pixel_id",
+        "label": "TikTok Pixel ID",
+        "default": "D5PPB1RC77U6BSHUF0LG",
+        "info": "Your TikTok Pixel ID from TikTok Ads Manager"
+      }
+    ]
+  },
+  {
     "name": "Advanced Settings",
     "settings": [
       {
