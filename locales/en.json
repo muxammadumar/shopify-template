@@ -69,5 +69,25 @@
     "title": "Privacy Policy",
     "subtitle": "How we collect, use, and protect your personal information.",
     "last_updated": "Last updated"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "view_cart": "View cart",
+    "item_count": "{{ count }} item",
+    "item_count_other": "{{ count }} items",
+    "quantity": "Quantity",
+    "quantity_for": "Quantity for {{ title }}",
+    "increase_quantity": "Increase quantity",
+    "decrease_quantity": "Decrease quantity",
+    "remove_item": "Remove {{ title }}",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "total": "Total",
+    "shipping_note": "Shipping and taxes calculated at checkout",
+    "continue_shopping": "Continue Shopping",
+    "update": "Update Cart",
+    "checkout": "Checkout",
+    "empty_title": "Your cart is empty",
+    "empty_message": "Looks like you haven't added anything to your cart yet."
   }
 }
