@@ -6,7 +6,9 @@
     "view_packages": "View Packages",
     "accept": "Accept",
     "decline": "Decline",
-    "skip_to_content": "Skip to main content"
+    "skip_to_content": "Skip to main content",
+    "support": "Support",
+    "policies": "Policies"
   },
   "cookie_banner": {
     "title": "🍪 Cookies & Privacy",

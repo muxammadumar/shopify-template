@@ -54,6 +54,8 @@
     {% if settings.nav_item_6_label != blank %}
     <a href="{{ settings.nav_item_6_link | default: '#' }}">{{ settings.nav_item_6_label }}</a>
     {% endif %}
+    <a href="/pages/contact">{{ 'general.support' | t | default: 'Support' }}</a>
+    <a href="/pages/privacy">{{ 'general.policies' | t | default: 'Policies' }}</a>
     <a href="/cart" class="ios-mobile-cart-link">
       {{ 'cart.view_cart' | t }}
       {% if cart.item_count > 0 %}
