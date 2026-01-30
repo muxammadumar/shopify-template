@@ -350,9 +350,6 @@
               mobileLink.style.display = 'none';
             }
           }
-
-          // Dispatch event for other scripts
-          document.dispatchEvent(new CustomEvent('cart:updated', { detail: { count: count } }));
         })
         .catch(function(error) {
           console.error('Failed to update cart count:', error);
