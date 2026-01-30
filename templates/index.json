@@ -220,7 +220,9 @@
             "feat3": "Brand Identity (Logo + Colors)",
             "feat4": "1 Ad Creative",
             "feat5": "Essential Legal Pages",
-            "button": "Choose Starter"
+            "product": "starter",
+            "button": "Choose Starter",
+            "link": "#cta"
           }
         },
         "p2": {
@@ -237,7 +239,9 @@
             "feat3": "Extended Brand Assets & Visuals",
             "feat4": "Conversion-Focused Store Structure",
             "feat5": "Priority Store Delivery",
-            "button": "Choose Pro"
+            "product": "pro",
+            "button": "Choose Pro",
+            "link": "#cta"
           }
         },
         "p3": {
@@ -254,7 +258,9 @@
             "feat3": "High-Performance Scaling Store Structure",
             "feat4": "Premium Brand Assets & Visuals",
             "feat5": "Priority Store Delivery",
-            "button": "Choose Premium"
+            "product": "premium",
+            "button": "Choose Premium",
+            "link": "#cta"
           }
         }
       },
