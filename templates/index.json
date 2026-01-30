@@ -220,8 +220,7 @@
             "feat3": "Brand Identity (Logo + Colors)",
             "feat4": "1 Ad Creative",
             "feat5": "Essential Legal Pages",
-            "button": "Choose Starter",
-            "link": "https://buy.stripe.com/3cI7sLb2j9TigAm7iF0sU02"
+            "button": "Choose Starter"
           }
         },
         "p2": {
@@ -238,8 +237,7 @@
             "feat3": "Extended Brand Assets & Visuals",
             "feat4": "Conversion-Focused Store Structure",
             "feat5": "Priority Store Delivery",
-            "button": "Choose Pro",
-            "link": "https://buy.stripe.com/4gM4gz3zR6H63NAbyV0sU01"
+            "button": "Choose Pro"
           }
         },
         "p3": {
@@ -256,8 +254,7 @@
             "feat3": "High-Performance Scaling Store Structure",
             "feat4": "Premium Brand Assets & Visuals",
             "feat5": "Priority Store Delivery",
-            "button": "Choose Premium",
-            "link": "https://buy.stripe.com/00w8wPgmD4yYabYdH30sU00"
+            "button": "Choose Premium"
           }
         }
       },

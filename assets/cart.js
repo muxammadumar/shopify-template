@@ -16,6 +16,15 @@
     bindEvents: function() {
       var self = this;
       
+      // Add to cart from pricing section
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('.ios-add-to-cart-btn');
+        if (btn && !btn.disabled) {
+          e.preventDefault();
+          self.addToCart(btn);
+        }
+      });
+
       // Quantity controls
       document.addEventListener('click', function(e) {
         var btn = e.target.closest('[data-action="increase"], [data-action="decrease"]');
@@ -179,6 +188,137 @@
     refreshCart: function() {
       // Reload the page to show updated cart
       window.location.reload();
+    },
+
+    addToCart: function(btn) {
+      var self = this;
+      var variantId = btn.getAttribute('data-variant-id');
+      var productId = btn.getAttribute('data-product-id');
+      var productTitle = btn.getAttribute('data-product-title') || 'Product';
+
+      if (!variantId) {
+        this.showNotification('Error: Product variant not found', 'error');
+        return;
+      }
+
+      // Show loading state
+      var btnText = btn.querySelector('.btn-text');
+      var btnLoading = btn.querySelector('.btn-loading');
+      btn.disabled = true;
+      if (btnText) btnText.style.display = 'none';
+      if (btnLoading) btnLoading.style.display = 'inline';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: [{
+            id: variantId,
+            quantity: 1
+          }]
+        })
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        // Success
+        self.showNotification(productTitle + ' added to cart!', 'success');
+        self.updateCartCount();
+        
+        // Reset button state after a short delay
+        setTimeout(function() {
+          btn.disabled = false;
+          if (btnText) btnText.style.display = '';
+          if (btnLoading) btnLoading.style.display = 'none';
+        }, 1000);
+      })
+      .catch(function(error) {
+        console.error('Add to cart error:', error);
+        self.showNotification('Failed to add product to cart. Please try again.', 'error');
+        
+        // Reset button state
+        btn.disabled = false;
+        if (btnText) btnText.style.display = '';
+        if (btnLoading) btnLoading.style.display = 'none';
+      });
+    },
+
+    showNotification: function(message, type) {
+      type = type || 'success';
+      
+      // Remove existing notification if any
+      var existing = document.querySelector('.ios-cart-notification');
+      if (existing) {
+        existing.remove();
+      }
+
+      // Create notification element
+      var notification = document.createElement('div');
+      notification.className = 'ios-cart-notification ios-cart-notification-' + type;
+      notification.textContent = message;
+      
+      // Add styles if not already in page
+      if (!document.getElementById('ios-cart-notification-styles')) {
+        var style = document.createElement('style');
+        style.id = 'ios-cart-notification-styles';
+        style.textContent = `
+          .ios-cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            animation: ios-notification-slide-in 0.3s ease-out;
+            max-width: 400px;
+            font-size: 14px;
+            line-height: 1.5;
+          }
+          .ios-cart-notification-success {
+            background-color: #10b981;
+            color: white;
+          }
+          .ios-cart-notification-error {
+            background-color: #ef4444;
+            color: white;
+          }
+          @keyframes ios-notification-slide-in {
+            from {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+          @media (max-width: 768px) {
+            .ios-cart-notification {
+              top: 10px;
+              right: 10px;
+              left: 10px;
+              max-width: none;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      document.body.appendChild(notification);
+
+      // Auto remove after 3 seconds
+      setTimeout(function() {
+        notification.style.animation = 'ios-notification-slide-in 0.3s ease-out reverse';
+        setTimeout(function() {
+          if (notification.parentNode) {
+            notification.remove();
+          }
+        }, 300);
+      }, 3000);
     },
 
     updateCartCount: function() {

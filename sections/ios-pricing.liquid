@@ -18,22 +18,44 @@
             </div>
           </div>
 
-          {% if block.settings.price != blank %}
-          <div class="ios-price-wrapper">
-            {% if block.settings.was != blank %}
-              {% assign price_clean = block.settings.price | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
-              {% assign was_clean = block.settings.was | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
-              {% if was_clean > 0 and price_clean > 0 %}
-                {% assign discount_amount = was_clean | minus: price_clean %}
-                {% assign discount_percent = discount_amount | times: 100 | divided_by: was_clean %}
+          {% assign product = block.settings.product %}
+          {% if product %}
+            {% assign variant = product.selected_or_first_available_variant %}
+            {% assign current_price = variant.price %}
+            {% assign compare_price = variant.compare_at_price %}
+            
+            {% if compare_price and compare_price > current_price %}
+              {% assign discount_amount = compare_price | minus: current_price %}
+              {% assign discount_percent = discount_amount | times: 100 | divided_by: compare_price %}
+            {% endif %}
+            
+            <div class="ios-price-wrapper">
+              {% if discount_percent %}
                 <div class="ios-discount-badge">-{{ discount_percent }}%</div>
               {% endif %}
-            {% endif %}
-            <div class="ios-price">
-              {{ block.settings.price }}
-              {% if block.settings.was != blank %}<span class="ios-was">{{ block.settings.was }}</span>{% endif %}
+              <div class="ios-price">
+                {{ current_price | money }}
+                {% if compare_price and compare_price > current_price %}
+                  <span class="ios-was">{{ compare_price | money }}</span>
+                {% endif %}
+              </div>
             </div>
-          </div>
+          {% elsif block.settings.price != blank %}
+            <div class="ios-price-wrapper">
+              {% if block.settings.was != blank %}
+                {% assign price_clean = block.settings.price | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
+                {% assign was_clean = block.settings.was | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
+                {% if was_clean > 0 and price_clean > 0 %}
+                  {% assign discount_amount = was_clean | minus: price_clean %}
+                  {% assign discount_percent = discount_amount | times: 100 | divided_by: was_clean %}
+                  <div class="ios-discount-badge">-{{ discount_percent }}%</div>
+                {% endif %}
+              {% endif %}
+              <div class="ios-price">
+                {{ block.settings.price }}
+                {% if block.settings.was != blank %}<span class="ios-was">{{ block.settings.was }}</span>{% endif %}
+              </div>
+            </div>
           {% endif %}
 
           {% assign has_features = false %}
@@ -58,7 +80,30 @@
 
           {% if block.settings.button != blank %}
           <div class="cta">
-            <a class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %}" href="{{ block.settings.link | default: '#' }}">{{ block.settings.button }}</a>
+            {% assign product = block.settings.product %}
+            {% if product %}
+              {% assign variant = product.selected_or_first_available_variant %}
+              {% if variant.available %}
+                <button type="button" 
+                        class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %} ios-add-to-cart-btn"
+                        data-product-id="{{ product.id }}"
+                        data-variant-id="{{ variant.id }}"
+                        data-product-title="{{ product.title | escape }}">
+                  <span class="btn-text">{{ block.settings.button }}</span>
+                  <span class="btn-loading" style="display: none;">Adding...</span>
+                </button>
+              {% else %}
+                <button type="button" 
+                        class="ios-btn ghost" 
+                        disabled>
+                  Unavailable
+                </button>
+              {% endif %}
+            {% elsif block.settings.link != blank %}
+              <a class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %}" href="{{ block.settings.link }}">{{ block.settings.button }}</a>
+            {% else %}
+              <button type="button" class="ios-btn {% if block.settings.featured %}primary{% else %}ghost{% endif %}" disabled>{{ block.settings.button }}</button>
+            {% endif %}
           </div>
           {% endif %}
         </div>
@@ -88,9 +133,15 @@
             "@type": "Offer",
             "name": "{{ block.settings.name | escape }}",
             "description": "{{ block.settings.desc | escape }}",
-            "price": "{{ block.settings.price | replace: '€', '' | replace: ',', '.' | strip }}",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock"
+            {%- if block.settings.product -%}
+              "price": "{{ block.settings.product.selected_or_first_available_variant.price | divided_by: 100.0 }}",
+              "priceCurrency": "{{ cart.currency.iso_code | default: 'USD' }}",
+              "availability": "{% if block.settings.product.selected_or_first_available_variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}"
+            {%- else -%}
+              "price": "{{ block.settings.price | replace: '€', '' | replace: ',', '.' | strip }}",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock"
+            {%- endif -%}
           }{%- unless forloop.last -%},{%- endunless -%}
           {%- endif -%}
         {%- endfor -%}
@@ -126,8 +177,9 @@
         { "type": "text", "id": "feat4", "label": "Feature 4", "default": "1 Ad Creative" },
         { "type": "text", "id": "feat5", "label": "Feature 5", "default": "Legal Templates (Basic)" },
 
+        { "type": "product", "id": "product", "label": "Product" },
         { "type": "text", "id": "button", "label": "Button text", "default": "Choose" },
-        { "type": "text", "id": "link", "label": "Button link", "default": "#cta" }
+        { "type": "text", "id": "link", "label": "Button link (fallback if no product)", "default": "#cta", "info": "Only used if no product is selected" }
       ]
     }
   ],
