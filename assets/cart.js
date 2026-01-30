@@ -100,12 +100,22 @@
       if (!input) return;
 
       var cartItem = input.closest('.ios-cart-item');
-      if (cartItem) {
-        cartItem.classList.add('ios-loading');
-      }
+      if (!cartItem) return;
 
-      var formData = new FormData(form);
-      formData.set('updates[]', quantity);
+      // Store original value for error recovery
+      var originalValue = input.value;
+
+      // Update input value in DOM immediately for better UX
+      input.value = quantity;
+
+      // Show loading state
+      cartItem.classList.add('ios-loading');
+
+      // Get all current quantities from DOM (including the updated one)
+      var updates = this.getAllCurrentQuantities();
+      
+      // Ensure the specific item being updated has the correct quantity
+      updates[itemKey] = quantity;
 
       fetch('/cart/update.js', {
         method: 'POST',
@@ -113,19 +123,33 @@
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          updates: this.getUpdatesObject(formData)
+          updates: updates
         })
       })
       .then(function(response) {
+        if (!response.ok) {
+          return response.json().then(function(data) {
+            throw new Error(data.description || 'Failed to update cart');
+          });
+        }
         return response.json();
       })
       .then(function(cart) {
+        if (!cart || typeof cart.item_count === 'undefined') {
+          throw new Error('Invalid cart response');
+        }
         self.refreshCart();
       })
       .catch(function(error) {
         console.error('Cart update error:', error);
-        if (cartItem) cartItem.classList.remove('ios-loading');
-        alert('Failed to update cart. Please try again.');
+        
+        // Revert input value on error
+        input.value = originalValue;
+        cartItem.classList.remove('ios-loading');
+        
+        // Show user-friendly error message
+        var errorMessage = error.message || 'Failed to update cart. Please try again.';
+        self.showNotification(errorMessage, 'error');
       });
     },
 
@@ -134,16 +158,23 @@
       var cartItem = document.querySelector('.ios-cart-item[data-cart-item-key="' + itemKey + '"]');
       if (!cartItem) return;
 
-      cartItem.classList.add('ios-loading');
-
-      var form = document.querySelector('.ios-cart-form');
-      if (!form) return;
-
-      var input = form.querySelector('.ios-quantity-input[data-item-key="' + itemKey + '"]');
+      var input = cartItem.querySelector('.ios-quantity-input[data-item-key="' + itemKey + '"]');
       if (!input) return;
 
-      var formData = new FormData(form);
-      formData.set('updates[]', 0);
+      // Store original value for error recovery
+      var originalValue = input.value;
+
+      // Update input value in DOM immediately
+      input.value = 0;
+
+      // Show loading state
+      cartItem.classList.add('ios-loading');
+
+      // Get all current quantities from DOM
+      var updates = this.getAllCurrentQuantities();
+      
+      // Set the specific item to 0 (remove it)
+      updates[itemKey] = 0;
 
       fetch('/cart/update.js', {
         method: 'POST',
@@ -151,13 +182,22 @@
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          updates: this.getUpdatesObject(formData)
+          updates: updates
         })
       })
       .then(function(response) {
+        if (!response.ok) {
+          return response.json().then(function(data) {
+            throw new Error(data.description || 'Failed to remove item');
+          });
+        }
         return response.json();
       })
       .then(function(cart) {
+        if (!cart || typeof cart.item_count === 'undefined') {
+          throw new Error('Invalid cart response');
+        }
+        
         if (cart.item_count === 0) {
           window.location.reload();
         } else {
@@ -166,12 +206,18 @@
       })
       .catch(function(error) {
         console.error('Cart remove error:', error);
+        
+        // Revert input value on error
+        input.value = originalValue;
         cartItem.classList.remove('ios-loading');
-        alert('Failed to remove item. Please try again.');
+        
+        // Show user-friendly error message
+        var errorMessage = error.message || 'Failed to remove item. Please try again.';
+        self.showNotification(errorMessage, 'error');
       });
     },
 
-    getUpdatesObject: function(formData) {
+    getAllCurrentQuantities: function() {
       var updates = {};
       var inputs = document.querySelectorAll('.ios-quantity-input');
       inputs.forEach(function(input) {
@@ -179,7 +225,9 @@
         if (cartItem) {
           var key = cartItem.getAttribute('data-cart-item-key');
           var qty = parseInt(input.value, 10) || 0;
-          updates[key] = qty;
+          if (key) {
+            updates[key] = qty;
+          }
         }
       });
       return updates;
