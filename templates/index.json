@@ -32,25 +32,25 @@
         "b1": {
           "type": "badge",
           "settings": {
-            "label": "Brand Assets Included"
+            "label": "Professionally Built"
           }
         },
         "b2": {
           "type": "badge",
           "settings": {
-            "label": "Product & Supplier Set Up"
+            "label": "Structured for Sales"
           }
         },
         "b3": {
           "type": "badge",
           "settings": {
-            "label": "Conversion-Focused Design"
+            "label": "Optimized for Conversions"
           }
         },
         "b4": {
           "type": "badge",
           "settings": {
-            "label": "Built to Sell from Day One"
+            "label": "Immediate Launch"
           }
         }
       },
@@ -61,10 +61,10 @@
         "b4"
       ],
       "settings": {
-        "title": "From Zero to Sales",
-        "subtitle": "Everything you need to start selling fast.",
-        "quote_highlight": "What makes this a brand, not just a store?",
-        "quote_rest": "You receive a fully built, ready-to-sell dropshipping brand — including product selection, brand assets, store structure, and a conversion-focused layout designed to generate sales from day one."
+        "title": "Skip the setup. Start selling.",
+        "subtitle": "We handle the build. You focus on sales.",
+        "quote_highlight": "Why this works?",
+        "quote_rest": "Everything is already built before you start.\nThe brand, products, suppliers, and structure are fully set up — so instead of building or guessing, you go straight to launch and sales."
       }
     },
     "about": {
