@@ -82,7 +82,7 @@
           "type": "feature",
           "settings": {
             "title": "Ready to Sell from Day One",
-            "text": "You receive a fully built dropshipping brand — structured to launch fast and start generating sales without weeks of setup.",
+            "text": "You receive a ready Shopify brand — structured to go live fast and start generating sales without weeks of setup",
             "icon": "bolt"
           }
         },
@@ -90,7 +90,7 @@
           "type": "feature",
           "settings": {
             "title": "No Technical Complexity",
-            "text": "Everything is already set up and optimized, so you can focus on marketing instead of tools, setup, or configuration.",
+            "text": "Everything is already prepared, so you can focus on marketing instead of technical setup.",
             "icon": "chat"
           }
         },
@@ -98,7 +98,7 @@
           "type": "feature",
           "settings": {
             "title": "Simple, One-Time Pricing",
-            "text": "One clear payment per package. No subscriptions, no hidden fees, no ongoing commitments.",
+            "text": "One clear payment per package. No subscriptions. No hidden fees.",
             "icon": "creditcard"
           }
         }
@@ -119,8 +119,8 @@
         "i1": {
           "type": "item",
           "settings": {
-            "title": "Ready-to-Sell Shopify Store",
-            "text": "Responsive Design, Conversion Structure and Handover of Access.",
+            "title": "Shopify Brand",
+            "text": "An individually designed, custom-branded Shopify store",
             "badge": "Store"
           }
         },
@@ -143,7 +143,7 @@
         "i4": {
           "type": "item",
           "settings": {
-            "title": "24/7 Store Support",
+            "title": "Store Support",
             "text": "Get help whenever needed — before and after launch.",
             "badge": "Support"
           }
@@ -156,8 +156,8 @@
         "i4"
       ],
       "settings": {
-        "title": "What's Included",
-        "subtitle": "Shop, Packaging and Basic Marketing Assets – all in one."
+        "title": "Included in Every Package",
+        "subtitle": "Everything you need to launch — already prepared."
       }
     },
     "how": {
