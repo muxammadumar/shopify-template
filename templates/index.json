@@ -221,7 +221,7 @@
             "feat4": "1 Ad Creative",
             "feat5": "Essential Legal Pages",
             "product": "starter",
-            "button": "Choose Starter",
+            "button": "Add to cart",
             "link": "#cta"
           }
         },
@@ -240,7 +240,7 @@
             "feat4": "Conversion-Focused Store Structure",
             "feat5": "Priority Store Delivery",
             "product": "pro",
-            "button": "Choose Pro",
+            "button": "Add to cart",
             "link": "#cta"
           }
         },
@@ -259,7 +259,7 @@
             "feat4": "Premium Brand Assets & Visuals",
             "feat5": "Priority Store Delivery",
             "product": "premium",
-            "button": "Choose Premium",
+            "button": "Add to cart",
             "link": "#cta"
           }
         }
