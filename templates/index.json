@@ -338,36 +338,36 @@
         "q2": {
           "type": "qa",
           "settings": {
-            "q": "Do I need technical skills?",
-            "a": "No. Everything is already set up and ready to use. You don’t need any technical knowledge to launch and manage the store"
+            "q": "Do you offer a guarantee or refunds?",
+            "a": "Yes, we offer a refund guarantee for up to 90 days.\nIf the store is actively used according to our instructions but does not meet your expectations, you may request a refund."
           }
         },
         "q3": {
           "type": "qa",
           "settings": {
-            "q": "What platform does the store run on?",
-            "a": "We create stores using the Shopify platform."
+            "q": "What platform do you build the store on?",
+            "a": "We build all stores on Shopify — a secure and scalable e-commerce platform."
           }
         },
         "q4": {
           "type": "qa",
           "settings": {
-            "q": "Is there support after purchase?",
-            "a": "Yes. Support is available if you need assistance with store-related questions after delivery."
+            "q": "Is support available after purchase?",
+            "a": "Yes. We offer ongoing support to assist you with store-related questions after your store is delivered."
           }
         },
         "q5": {
           "type": "qa",
           "settings": {
-            "q": "Can I customize the store after launch?",
-            "a": "Yes. You receive full access to the Shopify store and can customize the design, products, and content at any time."
+            "q": "Do I need any prior experience to manage the store?",
+            "a": "No prior experience is required. Our service is designed to be beginner-friendly.\n\nYou receive a fully built Shopify store that’s ready to manage and launch without any technical skills. We provide clear instructions and post-delivery support to help you get started and answer any questions you may have along the way."
           }
         },
         "q6": {
           "type": "qa",
           "settings": {
-            "q": "What happens if I have questions during setup?",
-            "a": "You can contact support if you have store-related questions. Everything is already set up, so no technical assistance is required."
+            "q": "How quickly will I receive my branded dropshipping store after purchase?",
+            "a": "Most stores are delivered within 48 hours after purchase, with Pro and Premium packages handled as a priority."
           }
         }
       },
