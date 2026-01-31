@@ -181,14 +181,14 @@
           "type": "step",
           "settings": {
             "title": "Automated Order Fulfillment",
-            "text": "After you make a sale, the connected supplier automatically ships the product — no action required from you."
+            "text": "After you make a sale, the connected supplier automatically ships the product"
           }
         },
         "s4": {
           "type": "step",
           "settings": {
-            "title": "Ready for Growth",
-            "text": "The foundation is already in place, so you can test offers, creatives, and scale when ready."
+            "title": "Ready to Scale",
+            "text": "The store is already set up — just test ads and scale."
           }
         }
       },
@@ -331,8 +331,8 @@
         "q1": {
           "type": "qa",
           "settings": {
-            "q": "How do I get access to the store?",
-            "a": "After setup, we transfer the Shopify store to the email address you provided. You’ll receive a confirmation message with access details, allowing you to log in and start managing your store."
+            "q": "How will I get access to my store after purchase?",
+            "a": "Once your Shopify store is completed, we’ll transfer full ownership to the email address you provide.\nYou’ll receive step-by-step instructions along with direct support to help you get started smoothly."
           }
         },
         "q2": {
