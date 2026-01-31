@@ -50,7 +50,7 @@
         "b4": {
           "type": "badge",
           "settings": {
-            "label": "Immediate Launch"
+            "label": "Launch-Ready"
           }
         }
       },
