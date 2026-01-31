@@ -181,14 +181,14 @@
           "type": "step",
           "settings": {
             "title": "Automated Order Fulfillment",
-            "text": "You sell — the supplier ships the product directly to your customer."
+            "text": "After you make a sale, the connected supplier automatically ships the product — no action required from you."
           }
         },
         "s4": {
           "type": "step",
           "settings": {
             "title": "Ready for Growth",
-            "text": "The foundation is already built, allowing you to test offers, creatives, and scale when ready."
+            "text": "The foundation is already in place, so you can test offers, creatives, and scale when ready."
           }
         }
       },
