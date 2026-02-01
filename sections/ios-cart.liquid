@@ -6,8 +6,13 @@
   <div class="ios-wrap">
     {% if cart.item_count > 0 %}
       <div class="ios-cart-header">
-        <h1 class="ios-h1">{{ 'cart.title' | t }}</h1>
-        <p class="ios-sub">{{ 'cart.item_count' | t: count: cart.item_count }}</p>
+        <div>
+          <h1 class="ios-h1">{{ 'cart.title' | t }}</h1>
+          <p class="ios-sub">{{ 'cart.item_count' | t: count: cart.item_count }}</p>
+        </div>
+        <div class="ios-cart-language-selector">
+          {% render 'ios-language-selector' %}
+        </div>
       </div>
 
       <form action="/cart" method="post" novalidate class="ios-cart-form">
@@ -35,6 +40,39 @@
                 {% unless item.product.has_only_default_variant %}
                   <p class="ios-cart-item-variant">{{ item.variant.title }}</p>
                 {% endunless %}
+                
+                {% if item.product.description != blank %}
+                  <div class="ios-cart-item-description">
+                    <p>{{ item.product.description | strip_html | truncate: 120 }}</p>
+                  </div>
+                {% endif %}
+                
+                {% if item.product.metafields.custom.features != blank %}
+                  <div class="ios-cart-item-features">
+                    <ul>
+                      {% assign features = item.product.metafields.custom.features | split: ',' %}
+                      {% for feature in features limit: 3 %}
+                        <li>{{ feature | strip }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+                
+                <div class="ios-cart-item-language">
+                  <span class="ios-cart-language-label">{{ 'cart.language' | t | default: 'Language' }}:</span>
+                  <span class="ios-cart-language-value">
+                    {%- assign locale_code = request.locale.iso_code -%}
+                    {%- if locale_code == 'en' -%}🇬🇧 United Kingdom
+                    {%- elsif locale_code == 'de' -%}🇩🇪 Deutschland
+                    {%- elsif locale_code == 'fr' -%}🇫🇷 France
+                    {%- elsif locale_code == 'it' -%}🇮🇹 Italia
+                    {%- elsif locale_code == 'es' -%}🇪🇸 España
+                    {%- elsif locale_code == 'nl' -%}🇳🇱 Nederland
+                    {%- else -%}🇺🇸 United States
+                    {%- endif -%}
+                  </span>
+                </div>
+                
                 <div class="ios-cart-item-price">
                   <span class="ios-price">{{ item.final_price | money }}</span>
                   {% if item.original_price != item.final_price %}
