@@ -6,13 +6,8 @@
   <div class="ios-wrap">
     {% if cart.item_count > 0 %}
       <div class="ios-cart-header">
-        <div>
-          <h1 class="ios-h1">{{ 'cart.title' | t }}</h1>
-          <p class="ios-sub">{{ 'cart.item_count' | t: count: cart.item_count }}</p>
-        </div>
-        <div class="ios-cart-language-selector">
-          {% render 'ios-language-selector' %}
-        </div>
+        <h1 class="ios-h1">{{ 'cart.title' | t }}</h1>
+        <p class="ios-sub">{{ 'cart.item_count' | t: count: cart.item_count }}</p>
       </div>
 
       <form action="/cart" method="post" novalidate class="ios-cart-form">
@@ -58,19 +53,20 @@
                   </div>
                 {% endif %}
                 
-                <div class="ios-cart-item-language">
-                  <span class="ios-cart-language-label">{{ 'cart.language' | t | default: 'Language' }}:</span>
-                  <span class="ios-cart-language-value">
-                    {%- assign locale_code = request.locale.iso_code -%}
-                    {%- if locale_code == 'en' -%}🇬🇧 United Kingdom
-                    {%- elsif locale_code == 'de' -%}🇩🇪 Deutschland
-                    {%- elsif locale_code == 'fr' -%}🇫🇷 France
-                    {%- elsif locale_code == 'it' -%}🇮🇹 Italia
-                    {%- elsif locale_code == 'es' -%}🇪🇸 España
-                    {%- elsif locale_code == 'nl' -%}🇳🇱 Nederland
-                    {%- else -%}🇺🇸 United States
-                    {%- endif -%}
-                  </span>
+                <div class="ios-cart-item-country">
+                  <label class="ios-cart-country-label">{{ 'cart.shipping_country' | t | default: 'Shipping to' }}:</label>
+                  <select class="ios-cart-country-select" data-item-key="{{ item.key }}">
+                    <option value="US" {% if item.properties['_country'] == 'US' or item.properties['_country'] == blank %}selected{% endif %}>🇺🇸 United States</option>
+                    <option value="DE" {% if item.properties['_country'] == 'DE' %}selected{% endif %}>🇩🇪 Deutschland</option>
+                    <option value="GB" {% if item.properties['_country'] == 'GB' %}selected{% endif %}>🇬🇧 United Kingdom</option>
+                    <option value="CA" {% if item.properties['_country'] == 'CA' %}selected{% endif %}>🇨🇦 Canada</option>
+                    <option value="AU" {% if item.properties['_country'] == 'AU' %}selected{% endif %}>🇦🇺 Australia</option>
+                    <option value="FR" {% if item.properties['_country'] == 'FR' %}selected{% endif %}>🇫🇷 France</option>
+                    <option value="IT" {% if item.properties['_country'] == 'IT' %}selected{% endif %}>🇮🇹 Italia</option>
+                    <option value="ES" {% if item.properties['_country'] == 'ES' %}selected{% endif %}>🇪🇸 España</option>
+                    <option value="NL" {% if item.properties['_country'] == 'NL' %}selected{% endif %}>🇳🇱 Nederland</option>
+                    <option value="CH" {% if item.properties['_country'] == 'CH' %}selected{% endif %}>🇨🇭 Schweiz</option>
+                  </select>
                 </div>
                 
                 <div class="ios-cart-item-price">

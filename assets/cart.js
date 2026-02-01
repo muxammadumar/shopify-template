@@ -50,6 +50,13 @@
         }
       });
 
+      // Country selection changes
+      document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('ios-cart-country-select')) {
+          self.handleCountryChange(e.target);
+        }
+      });
+
       // Update cart count when cart changes (for cart drawer/updates)
       document.addEventListener('cart:updated', function() {
         self.updateCartCount();
@@ -82,6 +89,24 @@
       } else {
         this.updateQuantity(itemKey, qty);
       }
+    },
+
+    handleCountryChange: function(select) {
+      var itemKey = select.getAttribute('data-item-key');
+      var country = select.value;
+      var flag = select.options[select.selectedIndex].getAttribute('data-flag') || select.options[select.selectedIndex].text.substring(0, 2);
+      
+      // Store country selection in localStorage for persistence
+      try {
+        var cartCountries = JSON.parse(localStorage.getItem('cart_countries') || '{}');
+        cartCountries[itemKey] = country;
+        localStorage.setItem('cart_countries', JSON.stringify(cartCountries));
+      } catch(e) {
+        console.error('Failed to store country selection:', e);
+      }
+      
+      // Show notification
+      this.showNotification('Shipping country updated to ' + select.options[select.selectedIndex].text, 'success');
     },
 
     handleRemoveItem: function(btn) {

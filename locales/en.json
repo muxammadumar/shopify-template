@@ -8,7 +8,8 @@
     "decline": "Decline",
     "skip_to_content": "Skip to main content",
     "support": "Support",
-    "policies": "Policies"
+    "policies": "Policies",
+    "back_to_home": "Back to Home"
   },
   "cookie_banner": {
     "title": "🍪 Cookies & Privacy",
@@ -90,6 +91,7 @@
     "update": "Update Cart",
     "checkout": "Checkout",
     "empty_title": "Your cart is empty",
-    "empty_message": "Looks like you haven't added anything to your cart yet."
+    "empty_message": "Looks like you haven't added anything to your cart yet.",
+    "shipping_country": "Shipping to"
   }
 }
