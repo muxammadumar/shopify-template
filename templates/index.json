@@ -366,8 +366,8 @@
         "q6": {
           "type": "qa",
           "settings": {
-            "q": "How quickly will I receive my branded dropshipping store after purchase?",
-            "a": "Most stores are delivered within 48 hours after purchase, with Pro and Premium packages handled as a priority."
+            "q": "Can I choose the language of my store?",
+            "a": "Yes. You can choose the language in which you want to receive your Shopify store.\nThe language can be selected directly in the cart before checkout."
           }
         }
       },
