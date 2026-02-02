@@ -1,8 +1,23 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "ios-contact",
-      "settings": {}
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "info_title": "Contact Information",
+        "info_description": "We are easily reachable through email, phone, and WhatsApp, striving to provide convenient and seamless communication options tailored to your needs.",
+        "show_social": true
+      }
     }
   },
   "order": [
