@@ -92,6 +92,6 @@
     "checkout": "Checkout",
     "empty_title": "Your cart is empty",
     "empty_message": "Looks like you haven't added anything to your cart yet.",
-    "shipping_country": "Shipping to"
+    "store_language": "Store language"
   }
 }

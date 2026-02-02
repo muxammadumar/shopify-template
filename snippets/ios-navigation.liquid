@@ -5,9 +5,6 @@
 {% endcomment %}
 
 <nav class="ios-nav" aria-label="Navigation">
-  {% if settings.nav_item_1_label != blank %}
-  <a href="{{ settings.nav_item_1_link | default: '#' }}">{{ settings.nav_item_1_label }}</a>
-  {% endif %}
   {% if settings.nav_item_2_label != blank %}
   <a href="{{ settings.nav_item_2_link | default: '#' }}">{{ settings.nav_item_2_label }}</a>
   {% endif %}

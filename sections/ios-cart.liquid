@@ -54,7 +54,7 @@
                 {% endif %}
                 
                 <div class="ios-cart-item-country">
-                  <label class="ios-cart-country-label">{{ 'cart.shipping_country' | t | default: 'Shipping to' }}:</label>
+                  <label class="ios-cart-country-label">{{ 'cart.store_language' | t | default: 'Store language' }}:</label>
                   <select class="ios-cart-country-select" data-item-key="{{ item.key }}">
                     <option value="US" {% if item.properties['_country'] == 'US' or item.properties['_country'] == blank %}selected{% endif %}>🇺🇸 United States</option>
                     <option value="DE" {% if item.properties['_country'] == 'DE' %}selected{% endif %}>🇩🇪 Deutschland</option>
@@ -148,7 +148,6 @@
               <span>{{ 'cart.total' | t }}</span>
               <strong class="ios-price">{{ cart.total_price | money }}</strong>
             </div>
-            <p class="ios-cart-note">{{ 'cart.shipping_note' | t }}</p>
           </div>
 
           <div class="ios-cart-actions">
