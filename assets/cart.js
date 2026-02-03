@@ -294,25 +294,24 @@
         })
       })
       .then(function(response) {
-        return response.json();
+        return response.json().then(function(data) {
+          return { ok: response.ok, data: data };
+        });
       })
-      .then(function(data) {
-        // Success
-        self.showNotification(productTitle + ' added to cart!', 'success');
-        self.updateCartCount();
-        
-        // Reset button state after a short delay
-        setTimeout(function() {
+      .then(function(result) {
+        if (result.ok) {
+          self.updateCartCount();
+          window.location.href = '/cart';
+        } else {
+          self.showNotification(result.data.description || 'Failed to add product to cart. Please try again.', 'error');
           btn.disabled = false;
           if (btnText) btnText.style.display = '';
           if (btnLoading) btnLoading.style.display = 'none';
-        }, 1000);
+        }
       })
       .catch(function(error) {
         console.error('Add to cart error:', error);
         self.showNotification('Failed to add product to cart. Please try again.', 'error');
-        
-        // Reset button state
         btn.disabled = false;
         if (btnText) btnText.style.display = '';
         if (btnLoading) btnLoading.style.display = 'none';
