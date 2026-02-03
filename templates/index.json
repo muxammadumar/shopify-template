@@ -379,6 +379,9 @@
         "q5",
         "q6"
       ],
+      "custom_css": [
+        "a {color: white}"
+      ],
       "settings": {
         "title": "FAQ",
         "subtitle": "Short answers to common questions."
