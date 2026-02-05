@@ -203,6 +203,10 @@
         "subtitle": "From order to launch — simple and clear."
       }
     },
+    "landing_video": {
+      "type": "ios-landing-video",
+      "settings": {}
+    },
     "pricing": {
       "type": "ios-pricing",
       "blocks": {
@@ -274,10 +278,6 @@
         "subtitle": "Choose the setup that fits your launch goals."
       }
     },
-    "landing_video": {
-      "type": "ios-landing-video",
-      "settings": {}
-    },
     "reviews": {
       "type": "ios-reviews",
       "blocks": {
@@ -313,7 +313,7 @@
       ],
       "settings": {
         "title": "What Our Customers Say",
-        "subtitle": "Real experiences from entrepreneurs who started with us."
+        "subtitle": ""
       }
     },
     "profit": {
@@ -384,7 +384,7 @@
         "q6"
       ],
       "custom_css": [
-        "a {color: white}"
+        "a {color: white;}"
       ],
       "settings": {
         "title": "FAQ",
