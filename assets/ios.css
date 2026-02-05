@@ -850,6 +850,28 @@ body {
   width: 100%;
 }
 
+/* Landing Video Section */
+.ios-landing-video {
+  padding-top: 0;
+  padding-bottom: 52px;
+}
+
+.ios-video-wrap {
+  width: 100%;
+  border-radius: var(--radius2);
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  background: rgba(0, 0, 0, .2);
+}
+
+.ios-landing-video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
 /* FAQ Section */
 .ios-faq {
   display: grid;
@@ -1881,6 +1903,10 @@ details[open] .ios-chev {
 
   .ios-section {
     padding: 32px 0
+  }
+
+  .ios-landing-video {
+    padding-bottom: 32px
   }
 
   .ios-hero {

@@ -1,0 +1,30 @@
+{% comment %}
+  Landing video section – appears before Packages, matches page style
+{% endcomment %}
+<section class="ios-section ios-landing-video" aria-label="Video">
+  <div class="ios-wrap">
+    <div class="ios-video-wrap">
+      <video
+        class="ios-landing-video-player"
+        src="{{ 'landing-video.MP4' | asset_url }}"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-label="Landing video">
+      </video>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Video",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Landing Video"
+    }
+  ]
+}
+{% endschema %}

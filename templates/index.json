@@ -274,6 +274,10 @@
         "subtitle": "Choose the setup that fits your launch goals."
       }
     },
+    "landing_video": {
+      "type": "ios-landing-video",
+      "settings": {}
+    },
     "reviews": {
       "type": "ios-reviews",
       "blocks": {
@@ -405,6 +409,7 @@
     "features",
     "what",
     "how",
+    "landing_video",
     "pricing",
     "reviews",
     "profit",
