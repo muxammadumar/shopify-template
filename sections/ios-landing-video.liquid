@@ -8,7 +8,6 @@
         class="ios-landing-video-player"
         src="{{ 'landing-video.MP4' | asset_url }}"
         autoplay
-        muted
         loop
         playsinline
         aria-label="Landing video">
@@ -16,6 +15,20 @@
     </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var video = document.querySelector('.ios-landing-video-player');
+  if (!video) return;
+  function enableSound() {
+    video.muted = false;
+    video.play().catch(function() {});
+  }
+  document.addEventListener('click', enableSound, { once: true });
+  document.addEventListener('touchstart', enableSound, { once: true });
+  document.addEventListener('keydown', enableSound, { once: true });
+})();
+</script>
 
 {% schema %}
 {
