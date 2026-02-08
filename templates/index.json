@@ -67,14 +67,6 @@
         "quote_rest": "products, suppliers, structure, and automation.\nYou skip weeks of setup and go straight to launch and sales."
       }
     },
-    "about": {
-      "type": "ios-about",
-      "settings": {
-        "title": "About Us",
-        "subtitle": "Who we are and what drives us.",
-        "content": "<p>We were created to simplify the launch of strong e-commerce brands.</p><p>Our team brings together design, branding, marketing, and technical expertise to turn Shopify stores into recognizable, trust-driven brands.</p><p>Not just a store — a complete brand, ready to launch.</p>"
-      }
-    },
     "pricing": {
       "type": "ios-pricing",
       "blocks": {
@@ -311,6 +303,7 @@
         "r2",
         "r3"
       ],
+      "disabled": true,
       "settings": {
         "title": "What Our Customers Say",
         "subtitle": ""
@@ -327,6 +320,14 @@
         "cost_value": "$14.99",
         "profit_label": "Gross Margin (Example)",
         "profit_value": "≈ $35"
+      }
+    },
+    "about": {
+      "type": "ios-about",
+      "settings": {
+        "title": "About Us",
+        "subtitle": "Who we are and what drives us.",
+        "content": "<p>We were created to simplify the launch of strong e-commerce brands.</p><p>Our team brings together design, branding, marketing, and technical expertise to turn Shopify stores into recognizable, trust-driven brands.</p><p>Not just a store — a complete brand, ready to launch.</p>"
       }
     },
     "faq": {
@@ -405,7 +406,6 @@
   "order": [
     "main",
     "proof",
-    "about",
     "pricing",
     "features",
     "what",
@@ -413,6 +413,7 @@
     "landing_video",
     "reviews",
     "profit",
+    "about",
     "faq",
     "cta"
   ]
