@@ -75,6 +75,77 @@
         "content": "<p>We were created to simplify the launch of strong e-commerce brands.</p><p>Our team brings together design, branding, marketing, and technical expertise to turn Shopify stores into recognizable, trust-driven brands.</p><p>Not just a store — a complete brand, ready to launch.</p>"
       }
     },
+    "pricing": {
+      "type": "ios-pricing",
+      "blocks": {
+        "p1": {
+          "type": "plan",
+          "settings": {
+            "name": "Starter",
+            "desc": "",
+            "tag": "One-time",
+            "price": "$79.95",
+            "was": "$149.95",
+            "featured": false,
+            "feat1": "Complete Shopify Store",
+            "feat2": "1 Winning Products + Supplier",
+            "feat3": "1 Ad Creative",
+            "feat4": "Brand Identity (Logo + Colors)",
+            "feat5": "Essential Legal Pages",
+            "product": "starter",
+            "button": "Add to cart",
+            "link": "#cta"
+          }
+        },
+        "p2": {
+          "type": "plan",
+          "settings": {
+            "name": "Pro",
+            "desc": "",
+            "tag": "Popular",
+            "price": "$149.95",
+            "was": "$229.95",
+            "featured": true,
+            "feat1": "Everything from Starter",
+            "feat2": "3 Winning Products + Supplier",
+            "feat3": "Automated lead capture system",
+            "feat4": "Payment & checkout setup",
+            "feat5": "Priority Store Delivery",
+            "product": "pro",
+            "button": "Add to cart",
+            "link": "#cta"
+          }
+        },
+        "p3": {
+          "type": "plan",
+          "settings": {
+            "name": "Premium",
+            "desc": "",
+            "tag": "Scale",
+            "price": "199.95",
+            "was": "$249.95",
+            "featured": false,
+            "feat1": "Everything from Pro",
+            "feat2": "5  Winning Products + Supplier",
+            "feat3": "Private 1:1 onboarding call",
+            "feat4": "Premium theme customized for your brand",
+            "feat5": "Personal Manager",
+            "product": "premium",
+            "button": "Add to cart",
+            "link": "#cta"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "title": "Packages",
+        "subtitle": "Choose the setup that fits your launch goals."
+      }
+    },
     "features": {
       "type": "ios-features",
       "blocks": {
@@ -207,77 +278,6 @@
       "type": "ios-landing-video",
       "settings": {}
     },
-    "pricing": {
-      "type": "ios-pricing",
-      "blocks": {
-        "p1": {
-          "type": "plan",
-          "settings": {
-            "name": "Starter",
-            "desc": "",
-            "tag": "One-time",
-            "price": "$79.95",
-            "was": "$149.95",
-            "featured": false,
-            "feat1": "Complete Shopify Store",
-            "feat2": "1 Winning Products + Supplier",
-            "feat3": "1 Ad Creative",
-            "feat4": "Brand Identity (Logo + Colors)",
-            "feat5": "Essential Legal Pages",
-            "product": "starter",
-            "button": "Add to cart",
-            "link": "#cta"
-          }
-        },
-        "p2": {
-          "type": "plan",
-          "settings": {
-            "name": "Pro",
-            "desc": "",
-            "tag": "Popular",
-            "price": "$149.95",
-            "was": "$229.95",
-            "featured": true,
-            "feat1": "Everything from Starter",
-            "feat2": "3 Winning Products + Supplier",
-            "feat3": "Automated lead capture system",
-            "feat4": "Payment & checkout setup",
-            "feat5": "Priority Store Delivery",
-            "product": "pro",
-            "button": "Add to cart",
-            "link": "#cta"
-          }
-        },
-        "p3": {
-          "type": "plan",
-          "settings": {
-            "name": "Premium",
-            "desc": "",
-            "tag": "Scale",
-            "price": "199.95",
-            "was": "$249.95",
-            "featured": false,
-            "feat1": "Everything from Pro",
-            "feat2": "5  Winning Products + Supplier",
-            "feat3": "Private 1:1 onboarding call",
-            "feat4": "Premium theme customized for your brand",
-            "feat5": "Personal Manager",
-            "product": "premium",
-            "button": "Add to cart",
-            "link": "#cta"
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3"
-      ],
-      "settings": {
-        "title": "Packages",
-        "subtitle": "Choose the setup that fits your launch goals."
-      }
-    },
     "reviews": {
       "type": "ios-reviews",
       "blocks": {
@@ -406,11 +406,11 @@
     "main",
     "proof",
     "about",
+    "pricing",
     "features",
     "what",
     "how",
     "landing_video",
-    "pricing",
     "reviews",
     "profit",
     "faq",
