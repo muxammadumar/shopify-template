@@ -31,24 +31,28 @@
       "blocks": {
         "b1": {
           "type": "badge",
+          "disabled": true,
           "settings": {
             "label": "Professionally Built"
           }
         },
         "b2": {
           "type": "badge",
+          "disabled": true,
           "settings": {
             "label": "Structured for Sales"
           }
         },
         "b3": {
           "type": "badge",
+          "disabled": true,
           "settings": {
             "label": "Optimized for Conversions"
           }
         },
         "b4": {
           "type": "badge",
+          "disabled": true,
           "settings": {
             "label": "Launch-Ready"
           }
