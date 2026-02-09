@@ -17,32 +17,32 @@
    ============================================ */
 :root {
   /* palette */
-  --bg0: #040B07;
-  --bg1: #06120C;
-  --bg2: #061A12;
-  --emerald: #0B3D2E;
+  --bg0: #040b07;
+  --bg1: #06120c;
+  --bg2: #061a12;
+  --emerald: #0b3d2e;
   /* rolex-ish dark green */
-  --emerald2: #0F5132;
-  --gold: #C9A227;
+  --emerald2: #0f5132;
+  --gold: #c9a227;
   /* warm gold accent */
-  --text: #F3F4EF;
-  --muted: rgba(243, 244, 239, .72);
-  --muted2: rgba(243, 244, 239, .55);
+  --text: #f3f4ef;
+  --muted: rgba(243, 244, 239, 0.72);
+  --muted2: rgba(243, 244, 239, 0.55);
 
   /* glass */
-  --card: rgba(255, 255, 255, .08);
-  --card2: rgba(255, 255, 255, .06);
-  --stroke: rgba(255, 255, 255, .12);
-  --stroke2: rgba(201, 162, 39, .20);
-  --shadow: 0 30px 70px rgba(0, 0, 0, .55);
-  --shadow2: 0 16px 40px rgba(0, 0, 0, .45);
+  --card: rgba(255, 255, 255, 0.08);
+  --card2: rgba(255, 255, 255, 0.06);
+  --stroke: rgba(255, 255, 255, 0.12);
+  --stroke2: rgba(201, 162, 39, 0.2);
+  --shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  --shadow2: 0 16px 40px rgba(0, 0, 0, 0.45);
   --radius: 18px;
   --radius2: 26px;
   --max: 1140px;
 
   /* buttons */
-  --accent: #0F5132;
-  --accent2: rgba(201, 162, 39, .95);
+  --accent: #0f5132;
+  --accent2: rgba(201, 162, 39, 0.95);
 
   /* z-index scale */
   --z-skip: 9999;
@@ -53,33 +53,54 @@
 
 /* Fallback for browsers without CSS custom properties */
 .no-cssvar body {
-  color: #F3F4EF;
-  background: #040B07;
+  color: #f3f4ef;
+  background: #040b07;
 }
 
 /* ============================================
    2. RESET & BASE STYLES
    ============================================ */
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html {
   height: 100%;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 body {
   height: 100%;
   margin: 0;
   color: var(--text);
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, system-ui, sans-serif;
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Arial,
+    system-ui,
+    sans-serif;
   /* Simplified background - fixed gradient rendering */
   background-color: var(--bg0);
   background-image:
-    radial-gradient(ellipse 1000px 520px at 15% -10%, rgba(11, 61, 46, .4) 0%, transparent 50%),
-    radial-gradient(ellipse 900px 520px at 85% 0%, rgba(201, 162, 39, .15) 0%, transparent 55%),
-    radial-gradient(ellipse 900px 520px at 55% 110%, rgba(15, 81, 50, .2) 0%, transparent 50%),
+    radial-gradient(
+      ellipse 1000px 520px at 15% -10%,
+      rgba(11, 61, 46, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 900px 520px at 85% 0%,
+      rgba(201, 162, 39, 0.15) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 900px 520px at 55% 110%,
+      rgba(15, 81, 50, 0.2) 0%,
+      transparent 50%
+    ),
     linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
   background-attachment: fixed;
   /* Fixed: Remove problematic overflow-x */
@@ -108,7 +129,7 @@ body {
   height: auto;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(10, 20, 14, .85);
+  background: rgba(10, 20, 14, 0.85);
   border: 1px solid var(--stroke);
   box-shadow: var(--shadow2);
   color: var(--text);
@@ -124,7 +145,7 @@ body {
 }
 
 .ios-section {
-  padding: 52px 0
+  padding: 52px 0;
 }
 
 .ios-head {
@@ -138,14 +159,14 @@ body {
 .ios-h2 {
   margin: 0;
   font-size: 20px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   font-weight: 780;
 }
 
 .ios-h3 {
   margin: 0;
   font-size: 18px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   font-weight: 750;
 }
 
@@ -163,7 +184,11 @@ body {
 
 /* Glass Morphism Components */
 .ios-glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .10) 0%, rgba(255, 255, 255, .06) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
   border: 1px solid var(--stroke);
   box-shadow: var(--shadow2);
   border-radius: var(--radius2);
@@ -175,13 +200,21 @@ body {
 /* Fallback for browsers without backdrop-filter support */
 @supports not (backdrop-filter: blur(1px)) {
   .ios-glass {
-    background: linear-gradient(180deg, rgba(6, 18, 12, .92) 0%, rgba(4, 11, 7, .88) 100%);
-    border: 1px solid rgba(255, 255, 255, .18);
+    background: linear-gradient(
+      180deg,
+      rgba(6, 18, 12, 0.92) 0%,
+      rgba(4, 11, 7, 0.88) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 }
 
 .ios-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .08) 0%, rgba(255, 255, 255, .05) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
   border: 1px solid var(--stroke);
   box-shadow: var(--shadow2);
   border-radius: var(--radius);
@@ -192,14 +225,23 @@ body {
 /* Fallback for browsers without backdrop-filter support */
 @supports not (backdrop-filter: blur(1px)) {
   .ios-card {
-    background: linear-gradient(180deg, rgba(6, 18, 12, .88) 0%, rgba(4, 11, 7, .82) 100%);
-    border: 1px solid rgba(255, 255, 255, .14);
+    background: linear-gradient(
+      180deg,
+      rgba(6, 18, 12, 0.88) 0%,
+      rgba(4, 11, 7, 0.82) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.14);
   }
 }
 
 .ios-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(201, 162, 39, .35) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.35) 50%,
+    transparent 100%
+  );
   margin: 26px 0;
 }
 
@@ -218,7 +260,11 @@ body {
   background: var(--card);
   color: var(--text);
   text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
   /* Prevent text selection on buttons */
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -242,18 +288,26 @@ body {
 }
 
 .ios-btn.primary {
-  background: linear-gradient(180deg, rgba(15, 81, 50, .98) 0%, rgba(11, 61, 46, .88) 100%);
-  border-color: rgba(15, 81, 50, .55);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 81, 50, 0.98) 0%,
+    rgba(11, 61, 46, 0.88) 100%
+  );
+  border-color: rgba(15, 81, 50, 0.55);
 }
 
 .ios-btn.gold {
-  background: linear-gradient(180deg, rgba(201, 162, 39, .98) 0%, rgba(201, 162, 39, .78) 100%);
-  border-color: rgba(201, 162, 39, .55);
-  color: rgba(6, 18, 12, .95);
+  background: linear-gradient(
+    180deg,
+    rgba(201, 162, 39, 0.98) 0%,
+    rgba(201, 162, 39, 0.78) 100%
+  );
+  border-color: rgba(201, 162, 39, 0.55);
+  color: rgba(6, 18, 12, 0.95);
 }
 
 .ios-btn.ghost {
-  background: rgba(255, 255, 255, .06);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* Navigation */
@@ -261,15 +315,15 @@ body {
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
-  background: rgba(4, 11, 7, .75);
-  border-bottom: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(4, 11, 7, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
 }
 
 @supports not (backdrop-filter: blur(1px)) {
   .ios-topbar {
-    background: rgba(4, 11, 7, .95);
+    background: rgba(4, 11, 7, 0.95);
   }
 }
 
@@ -314,7 +368,7 @@ body {
 
 .ios-brand strong {
   display: block;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   color: var(--text);
 }
 
@@ -338,7 +392,7 @@ body {
   padding: 8px 10px;
   border-radius: 12px;
   border: 1px solid transparent;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .ios-nav a:hover {
@@ -367,11 +421,11 @@ body {
   background: var(--card2);
   color: var(--text);
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .ios-burger:hover {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--stroke2);
 }
 
@@ -389,11 +443,16 @@ body {
   max-height: 0;
   overflow: hidden;
   padding: 0;
-  background: rgba(4, 11, 7, .95);
-  border-bottom: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(4, 11, 7, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
-  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-100%);
@@ -401,7 +460,7 @@ body {
 
 @supports not (backdrop-filter: blur(1px)) {
   .ios-mobile {
-    background: rgba(4, 11, 7, .98);
+    background: rgba(4, 11, 7, 0.98);
   }
 }
 
@@ -427,13 +486,13 @@ body {
   background: var(--card2);
   color: var(--muted);
   text-decoration: none;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   font-size: 14px;
 }
 
 .ios-mobile a:hover,
 .ios-mobile a:focus {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--text);
   border-color: var(--stroke2);
 }
@@ -450,7 +509,7 @@ body {
 
 .ios-hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 22px;
   align-items: stretch;
 }
@@ -472,7 +531,7 @@ body {
   height: 8px;
   border-radius: 99px;
   background: var(--gold);
-  box-shadow: 0 0 0 7px rgba(201, 162, 39, .14);
+  box-shadow: 0 0 0 7px rgba(201, 162, 39, 0.14);
   flex-shrink: 0;
 }
 
@@ -532,16 +591,22 @@ body {
   height: 320px;
   border-radius: 999px;
   /* Simplified ring gradient */
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, .10) 0%, rgba(255, 255, 255, .10) 44%, rgba(255, 255, 255, .02) 45%, rgba(255, 255, 255, .02) 100%);
-  border: 1px solid rgba(255, 255, 255, .10);
-  filter: drop-shadow(0 22px 50px rgba(0, 0, 0, .55));
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 44%,
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.55));
   pointer-events: none;
 }
 
 .ios-side h3 {
   margin: 0 0 16px;
   font-size: 11px;
-  letter-spacing: .28em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 700;
@@ -561,20 +626,28 @@ body {
   gap: 12px;
   padding: 14px 16px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, .12);
-  background: linear-gradient(135deg, rgba(255, 255, 255, .08) 0%, rgba(255, 255, 255, .04) 100%);
-  transition: all .2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  transition: all 0.2s ease;
   position: relative;
 }
 
 .ios-stat-row:hover {
-  border-color: rgba(201, 162, 39, .25);
-  background: linear-gradient(135deg, rgba(255, 255, 255, .10) 0%, rgba(255, 255, 255, .06) 100%);
+  border-color: rgba(201, 162, 39, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
   transform: translateY(-1px);
 }
 
 .ios-stat-row::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -583,7 +656,7 @@ body {
   background: linear-gradient(180deg, var(--gold) 0%, var(--emerald2) 100%);
   border-radius: 14px 0 0 14px;
   opacity: 0;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .ios-stat-row:hover::before {
@@ -602,7 +675,7 @@ body {
   font-size: 14px;
   font-weight: 800;
   color: var(--text);
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
 
 .ios-tag {
@@ -612,20 +685,28 @@ body {
   margin-top: 16px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(201, 162, 39, .15) 0%, rgba(201, 162, 39, .08) 100%);
-  border: 1px solid rgba(201, 162, 39, .25);
-  color: rgba(243, 244, 239, .95);
+  background: linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.15) 0%,
+    rgba(201, 162, 39, 0.08) 100%
+  );
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  color: rgba(243, 244, 239, 0.95);
   font-size: 12px;
   font-weight: 680;
   width: fit-content;
   width: -moz-fit-content;
   width: -webkit-fit-content;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .ios-tag:hover {
-  background: linear-gradient(135deg, rgba(201, 162, 39, .20) 0%, rgba(201, 162, 39, .12) 100%);
-  border-color: rgba(201, 162, 39, .35);
+  background: linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.2) 0%,
+    rgba(201, 162, 39, 0.12) 100%
+  );
+  border-color: rgba(201, 162, 39, 0.35);
   transform: translateY(-1px);
 }
 
@@ -693,9 +774,9 @@ body {
   font-size: 11px;
   padding: 6px 8px;
   border-radius: 999px;
-  background: rgba(201, 162, 39, .10);
-  border: 1px solid rgba(201, 162, 39, .18);
-  color: rgba(243, 244, 239, .78);
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  color: rgba(243, 244, 239, 0.78);
   flex-shrink: 0;
 }
 
@@ -719,7 +800,7 @@ body {
   padding: 14px;
   border-radius: var(--radius);
   border: 1px solid var(--stroke);
-  background: rgba(0, 0, 0, .18);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .ios-num {
@@ -728,9 +809,9 @@ body {
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: rgba(11, 61, 46, .55);
-  border: 1px solid rgba(201, 162, 39, .22);
-  color: rgba(243, 244, 239, .95);
+  background: rgba(11, 61, 46, 0.55);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  color: rgba(243, 244, 239, 0.95);
   font-weight: 900;
   flex-shrink: 0;
 }
@@ -751,7 +832,7 @@ body {
 /* Profit Calculator Section */
 .ios-profit {
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 14px;
 }
 
@@ -767,8 +848,8 @@ body {
   gap: 10px;
   padding: 10px 12px;
   border-radius: 14px;
-  background: rgba(0, 0, 0, .18);
-  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 13.5px;
 }
 
@@ -781,12 +862,16 @@ body {
 }
 
 .ios-row.total {
-  background: linear-gradient(180deg, rgba(11, 61, 46, .55) 0%, rgba(0, 0, 0, .18) 100%);
-  border-color: rgba(201, 162, 39, .22);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 61, 46, 0.55) 0%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  border-color: rgba(201, 162, 39, 0.22);
 }
 
 .ios-row.total b {
-  color: rgba(243, 244, 239, .98);
+  color: rgba(243, 244, 239, 0.98);
 }
 
 /* Pricing Section */
@@ -799,12 +884,12 @@ body {
 .ios-plan {
   padding: 18px;
   border-radius: var(--radius2);
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 .ios-plan.featured {
-  outline: 2px solid rgba(201, 162, 39, .22);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, .55);
+  outline: 2px solid rgba(201, 162, 39, 0.22);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
   transform: translateY(-4px);
 }
 
@@ -848,7 +933,7 @@ body {
 .ios-was {
   margin-left: 8px;
   font-size: 12.5px;
-  color: rgba(243, 244, 239, .40);
+  color: rgba(243, 244, 239, 0.4);
   text-decoration: line-through;
   font-weight: 650;
 }
@@ -880,7 +965,7 @@ body {
   border-radius: var(--radius2);
   overflow: hidden;
   border: 1px solid var(--stroke);
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .ios-landing-video-player {
@@ -902,7 +987,7 @@ body {
   padding: 12px 12px;
   border-radius: var(--radius);
   border: 1px solid var(--stroke);
-  background: rgba(0, 0, 0, .18);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .ios-summary {
@@ -928,11 +1013,11 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 999px;
-  border: 1px solid rgba(201, 162, 39, .20);
-  background: rgba(201, 162, 39, .10);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  background: rgba(201, 162, 39, 0.1);
   display: grid;
   place-items: center;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
   flex: 0 0 auto;
 }
 
@@ -965,7 +1050,7 @@ details[open] .ios-chev {
   margin: 0;
   font-size: 22px;
   font-weight: 920;
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
 
 .ios-cta-box p {
@@ -982,7 +1067,7 @@ details[open] .ios-chev {
 
 .ios-proof-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 14px;
 }
 
@@ -996,11 +1081,11 @@ details[open] .ios-chev {
 .ios-logo {
   padding: 10px 12px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(255, 255, 255, .10);
-  color: rgba(243, 244, 239, .80);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(243, 244, 239, 0.8);
   font-size: 12.5px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
 .ios-quote {
@@ -1011,7 +1096,7 @@ details[open] .ios-chev {
 }
 
 .ios-quote b {
-  color: rgba(243, 244, 239, .95);
+  color: rgba(243, 244, 239, 0.95);
 }
 
 .ios-mini {
@@ -1021,8 +1106,8 @@ details[open] .ios-chev {
 }
 
 .ios-mini .ios-row {
-  background: rgba(255, 255, 255, .06);
-  border-color: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* About Section */
@@ -1098,7 +1183,7 @@ details[open] .ios-chev {
 }
 
 .ios-star-empty {
-  color: rgba(201, 162, 39, .3);
+  color: rgba(201, 162, 39, 0.3);
 }
 
 .ios-review-text {
@@ -1142,12 +1227,12 @@ details[open] .ios-chev {
   font-size: 14px;
   font-weight: 680;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   text-align: left;
 }
 
 .ios-country-trigger:hover {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--stroke2);
 }
 
@@ -1158,7 +1243,7 @@ details[open] .ios-chev {
 
 .ios-country-selector[aria-expanded="true"] .ios-country-trigger {
   border-color: var(--stroke2);
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ios-country-selector[aria-expanded="true"] .ios-country-chevron {
@@ -1178,7 +1263,7 @@ details[open] .ios-chev {
 
 .ios-country-chevron {
   flex-shrink: 0;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
   color: var(--muted);
 }
 
@@ -1190,7 +1275,11 @@ details[open] .ios-chev {
   margin: 0;
   padding: 8px;
   list-style: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, .08) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
   border: 1px solid var(--stroke);
   border-radius: var(--radius);
   box-shadow: var(--shadow2);
@@ -1210,7 +1299,7 @@ details[open] .ios-chev {
   padding: 10px 12px;
   border-radius: 10px;
   cursor: pointer;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   color: var(--text);
   font-size: 14px;
   display: flex;
@@ -1220,12 +1309,12 @@ details[open] .ios-chev {
 
 .ios-country-list li:hover,
 .ios-country-list li:focus {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   outline: none;
 }
 
 .ios-country-list li[aria-selected="true"] {
-  background: rgba(201, 162, 39, .15);
+  background: rgba(201, 162, 39, 0.15);
   border: 1px solid var(--stroke2);
 }
 
@@ -1259,12 +1348,12 @@ details[open] .ios-chev {
   font-size: 13px;
   font-weight: 680;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   text-align: left;
 }
 
 .ios-language-trigger:hover {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--stroke2);
 }
 
@@ -1275,7 +1364,7 @@ details[open] .ios-chev {
 
 .ios-language-selector[aria-expanded="true"] .ios-language-trigger {
   border-color: var(--stroke2);
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ios-language-selector[aria-expanded="true"] .ios-language-chevron {
@@ -1296,7 +1385,7 @@ details[open] .ios-chev {
 
 .ios-language-chevron {
   flex-shrink: 0;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
   color: var(--muted);
 }
 
@@ -1307,7 +1396,11 @@ details[open] .ios-chev {
   margin: 0;
   padding: 8px;
   list-style: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, .08) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
   border: 1px solid var(--stroke);
   border-radius: var(--radius);
   box-shadow: var(--shadow2);
@@ -1326,7 +1419,7 @@ details[open] .ios-chev {
   padding: 10px 12px;
   border-radius: 10px;
   cursor: pointer;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   color: var(--text);
   font-size: 14px;
   display: flex;
@@ -1336,16 +1429,16 @@ details[open] .ios-chev {
 
 .ios-language-list li:hover,
 .ios-language-list li:focus {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   outline: none;
 }
 
 .ios-language-list li[aria-selected="true"] {
-  background: rgba(201, 162, 39, .15);
+  background: rgba(201, 162, 39, 0.15);
   border: 1px solid var(--stroke2);
 }
 
-@media(max-width: 640px) {
+@media (max-width: 640px) {
   .ios-language-selector-wrapper {
     order: -1;
   }
@@ -1403,8 +1496,8 @@ details[open] .ios-chev {
   border-radius: var(--radius);
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all .2s ease;
-  opacity: .6;
+  transition: all 0.2s ease;
+  opacity: 0.6;
 }
 
 .ios-product-thumbnails img:hover,
@@ -1489,7 +1582,7 @@ details[open] .ios-chev {
   color: var(--text);
   font-size: 14px;
   font-family: inherit;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .ios-select:focus,
@@ -1549,8 +1642,8 @@ details[open] .ios-chev {
 .ios-contact-info {
   margin-bottom: 32px;
   border-radius: var(--radius2);
-  background: rgba(15, 81, 50, .15);
-  border: 1px solid rgba(15, 81, 50, .25);
+  background: rgba(15, 81, 50, 0.15);
+  border: 1px solid rgba(15, 81, 50, 0.25);
   padding: 32px;
   position: relative;
   overflow: hidden;
@@ -1560,14 +1653,18 @@ details[open] .ios-chev {
 }
 
 .ios-contact-info::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -20%;
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 162, 39, .15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 162, 39, 0.15) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -1581,12 +1678,12 @@ details[open] .ios-chev {
   font-size: 24px;
   font-weight: 800;
   color: white;
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
 
 .ios-contact-info-description {
   margin: 0 0 24px;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14.5px;
   line-height: 1.7;
   max-width: 65ch;
@@ -1606,7 +1703,7 @@ details[open] .ios-chev {
   text-decoration: none;
   font-size: 14.5px;
   padding: 10px 0;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .ios-contact-item:hover {
@@ -1619,7 +1716,7 @@ details[open] .ios-chev {
 }
 
 .ios-contact-form-wrapper {
-  background: rgba(255, 255, 255, .05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--stroke);
   border-radius: var(--radius2);
   padding: 32px;
@@ -1629,7 +1726,11 @@ details[open] .ios-chev {
 
 @supports not (backdrop-filter: blur(1px)) {
   .ios-contact-form-wrapper {
-    background: linear-gradient(180deg, rgba(6, 18, 12, .92) 0%, rgba(4, 11, 7, .88) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(6, 18, 12, 0.92) 0%,
+      rgba(4, 11, 7, 0.88) 100%
+    );
   }
 }
 
@@ -1661,7 +1762,7 @@ details[open] .ios-chev {
   font-family: inherit;
   resize: vertical;
   min-height: 120px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   line-height: 1.6;
 }
 
@@ -1682,20 +1783,28 @@ details[open] .ios-chev {
 }
 
 .ios-form-success {
-  background: linear-gradient(135deg, rgba(15, 81, 50, .25) 0%, rgba(11, 61, 46, .20) 100%);
-  border: 1px solid rgba(15, 81, 50, .40);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 81, 50, 0.25) 0%,
+    rgba(11, 61, 46, 0.2) 100%
+  );
+  border: 1px solid rgba(15, 81, 50, 0.4);
   color: var(--text);
 }
 
 .ios-form-success svg {
-  color: #0F5132;
+  color: #0f5132;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .ios-form-errors {
-  background: linear-gradient(135deg, rgba(220, 38, 38, .15) 0%, rgba(185, 28, 28, .10) 100%);
-  border: 1px solid rgba(220, 38, 38, .30);
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.15) 0%,
+    rgba(185, 28, 28, 0.1) 100%
+  );
+  border: 1px solid rgba(220, 38, 38, 0.3);
   color: var(--text);
 }
 
@@ -1756,7 +1865,7 @@ details[open] .ios-chev {
   font-size: 22px;
   font-weight: 700;
   color: var(--text);
-  letter-spacing: -.3px;
+  letter-spacing: -0.3px;
 }
 
 .ios-privacy-text h2:first-child {
@@ -1768,7 +1877,7 @@ details[open] .ios-chev {
   font-size: 18px;
   font-weight: 600;
   color: var(--text);
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
 
 .ios-privacy-text ul,
@@ -1787,7 +1896,7 @@ details[open] .ios-chev {
   color: var(--gold);
   text-decoration: underline;
   text-underline-offset: 2px;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .ios-privacy-text a:hover {
@@ -1806,11 +1915,11 @@ details[open] .ios-chev {
   left: 0;
   right: 0;
   z-index: var(--z-overlay);
-  background: rgba(4, 11, 7, .95);
-  border-top: 1px solid rgba(201, 162, 39, .22);
+  background: rgba(4, 11, 7, 0.95);
+  border-top: 1px solid rgba(201, 162, 39, 0.22);
   padding: 16px 0;
   transform: translateY(100%);
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
 }
@@ -1851,68 +1960,68 @@ details[open] .ios-chev {
    ============================================ */
 @media (max-width: 980px) {
   .ios-hero-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-grid3 {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-grid2 {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-profit {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-pricing {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-plan.featured {
-    transform: none
+    transform: none;
   }
 
   .ios-faq {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-proof-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-reviews-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-brands-grid {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 
   .ios-product-grid {
     grid-template-columns: 1fr;
-    gap: 24px
+    gap: 24px;
   }
 
   .ios-product-media {
-    position: static
+    position: static;
   }
 
   .ios-nav {
-    display: none
+    display: none;
   }
 
   .ios-burger {
     display: inline-grid;
-    place-items: center
+    place-items: center;
   }
 
   /* Hide CTA buttons on mobile */
   .ios-actions a {
-    display: none
+    display: none;
   }
-  
+
   /* Ensure hamburger menu is positioned correctly */
   .ios-burger {
     position: fixed;
@@ -1922,38 +2031,38 @@ details[open] .ios-chev {
   }
 
   .ios-mobile.open {
-    display: block
+    display: block;
   }
 
   /* Improve mobile spacing */
   .ios-section {
-    padding: 40px 0
+    padding: 40px 0;
   }
 
   .ios-hero {
-    padding: 40px 0 18px
+    padding: 40px 0 18px;
   }
 
   .ios-h1 {
-    font-size: clamp(28px, 7vw, 48px)
+    font-size: clamp(28px, 7vw, 48px);
   }
 }
 
 @media (max-width: 640px) {
   .ios-wrap {
-    padding: 0 16px
+    padding: 0 16px;
   }
 
   .ios-section {
-    padding: 32px 0
+    padding: 32px 0;
   }
 
   .ios-landing-video {
-    padding-bottom: 32px
+    padding-bottom: 32px;
   }
 
   .ios-hero {
-    padding: 32px 0 12px
+    padding: 32px 0 12px;
   }
 
   /* Ensure pricing badges are visible on mobile */
@@ -1987,90 +2096,90 @@ details[open] .ios-chev {
   }
 
   .ios-cta {
-    padding: 24px 0 48px
+    padding: 24px 0 48px;
   }
 
   /* Stack CTA buttons vertically on small screens */
   .ios-cta-box {
     flex-direction: column;
-    align-items: flex-start
+    align-items: flex-start;
   }
 
   .ios-cookie-content {
     flex-direction: column;
-    align-items: flex-start
+    align-items: flex-start;
   }
 
   .ios-cookie-actions {
-    width: 100%
+    width: 100%;
   }
 
   .ios-cookie-actions .ios-btn {
-    flex: 1
+    flex: 1;
   }
 
   /* Product page mobile adjustments */
   .ios-product-grid {
-    gap: 20px
+    gap: 20px;
   }
 
   .ios-product-price .ios-price {
-    font-size: 28px
+    font-size: 28px;
   }
 
   .ios-product-thumbnails img {
     width: 60px;
-    height: 60px
+    height: 60px;
   }
 
   /* Contact page mobile adjustments */
   .ios-contact-back {
     margin-bottom: 24px;
   }
-  
+
   .ios-contact-back {
     margin-bottom: 24px;
   }
-  
+
   .ios-contact-info {
-    padding: 24px
+    padding: 24px;
   }
 
   .ios-contact-info-title {
-    font-size: 20px
+    font-size: 20px;
   }
 
   .ios-contact-form-wrapper {
-    padding: 24px
+    padding: 24px;
   }
-  
+
   .ios-cart-header {
     text-align: center;
     margin-bottom: 24px;
   }
-  
+
   .ios-cart-item {
     padding: 14px;
     gap: 12px;
   }
-  
+
   .ios-cart-item-description {
     font-size: 12px;
     margin: 6px 0;
   }
-  
+
   .ios-cart-item-features {
     margin: 6px 0;
   }
-  
+
   .ios-cart-item-features ul {
     font-size: 11px;
   }
-  
+
   .ios-cart-item-country {
     margin: 10px 0;
   }
-  
+
   .ios-cart-country-select {
     max-width: 100%;
     font-size: 12px;
@@ -2079,40 +2188,40 @@ details[open] .ios-chev {
 
   /* Privacy page mobile adjustments */
   .ios-privacy {
-    padding: 32px 0
+    padding: 32px 0;
   }
 
   .ios-privacy-text {
-    font-size: 14px
+    font-size: 14px;
   }
 
   .ios-privacy-text h2 {
     font-size: 20px;
-    margin-top: 28px
+    margin-top: 28px;
   }
 
   .ios-privacy-text h3 {
     font-size: 16px;
-    margin-top: 20px
+    margin-top: 20px;
   }
 
   .ios-privacy-text ul,
   .ios-privacy-text ol {
-    padding-left: 20px
+    padding-left: 20px;
   }
 
   /* Mobile menu adjustments for small screens */
   .ios-mobile {
-    padding: 12px 0 16px
+    padding: 12px 0 16px;
   }
 
   .ios-mobile.open {
-    padding: 12px 0 16px
+    padding: 12px 0 16px;
   }
 
   .ios-mobile a {
     padding: 10px 14px;
-    font-size: 13.5px
+    font-size: 13.5px;
   }
 }
 
@@ -2132,13 +2241,13 @@ details[open] .ios-chev {
   background: var(--card2);
   color: var(--text);
   text-decoration: none;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .ios-cart-icon:hover,
 .ios-cart-icon:focus {
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--stroke2);
   outline: none;
   transform: translateY(-2px);
@@ -2158,15 +2267,19 @@ details[open] .ios-chev {
   height: 20px;
   padding: 0 6px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(201, 162, 39, .98) 0%, rgba(201, 162, 39, .88) 100%);
-  color: rgba(6, 18, 12, .95);
+  background: linear-gradient(
+    180deg,
+    rgba(201, 162, 39, 0.98) 0%,
+    rgba(201, 162, 39, 0.88) 100%
+  );
+  color: rgba(6, 18, 12, 0.95);
   font-size: 11px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--bg0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .ios-mobile-cart-link {
@@ -2213,13 +2326,17 @@ details[open] .ios-chev {
   border-radius: var(--radius);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   position: relative;
 }
 
 @supports not (backdrop-filter: blur(1px)) {
   .ios-cart-item {
-    background: linear-gradient(180deg, rgba(6, 18, 12, .92) 0%, rgba(4, 11, 7, .88) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(6, 18, 12, 0.92) 0%,
+      rgba(4, 11, 7, 0.88) 100%
+    );
   }
 }
 
@@ -2234,7 +2351,7 @@ details[open] .ios-chev {
 }
 
 .ios-cart-item.ios-loading::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2248,7 +2365,9 @@ details[open] .ios-chev {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .ios-cart-item-image {
@@ -2294,7 +2413,7 @@ details[open] .ios-chev {
 .ios-cart-item-title a {
   color: var(--text);
   text-decoration: none;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
 .ios-cart-item-title a:hover {
@@ -2333,7 +2452,7 @@ details[open] .ios-chev {
 }
 
 .ios-cart-item-features li::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--gold);
@@ -2347,7 +2466,10 @@ details[open] .ios-chev {
 }
 
 .ios-cart-item-niche {
-  margin-top: 10px;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .ios-cart-niche-select {
@@ -2359,13 +2481,13 @@ details[open] .ios-chev {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   max-width: 200px;
 }
 
 .ios-cart-niche-select:hover {
   border-color: var(--stroke2);
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ios-cart-niche-select:focus {
@@ -2389,13 +2511,13 @@ details[open] .ios-chev {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   max-width: 200px;
 }
 
 .ios-cart-country-select:hover {
   border-color: var(--stroke2);
-  background: rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ios-cart-country-select:focus {
@@ -2438,7 +2560,7 @@ details[open] .ios-chev {
   color: var(--text);
   cursor: pointer;
   border-radius: 8px;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   padding: 0;
 }
 
@@ -2498,13 +2620,13 @@ details[open] .ios-chev {
   color: var(--muted);
   cursor: pointer;
   border-radius: 10px;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   padding: 0;
 }
 
 .ios-remove-btn:hover {
-  background: rgba(220, 53, 69, .15);
-  border-color: rgba(220, 53, 69, .4);
+  background: rgba(220, 53, 69, 0.15);
+  border-color: rgba(220, 53, 69, 0.4);
   color: #dc3545;
 }
 
@@ -2681,7 +2803,6 @@ details[open] .ios-chev {
    7. PRINT STYLES
    ============================================ */
 @media print {
-
   .ios-topbar,
   .ios-burger,
   .ios-mobile,
