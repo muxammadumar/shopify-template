@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -267,40 +276,10 @@
     },
     "reviews": {
       "type": "ios-reviews",
-      "blocks": {
-        "r1": {
-          "type": "review",
-          "settings": {
-            "name": "Daniel R.",
-            "text": "The store is great, but the support exceeded my expectations. They answered all my questions and guided me through every step of the launch.",
-            "rating": 5
-          }
-        },
-        "r2": {
-          "type": "review",
-          "settings": {
-            "name": "Mark T.",
-            "text": "I liked how straightforward the whole process was.\nNo unnecessary steps - just a ready-to-sell store delivered on time.\nPerfect for getting started without technical hassle.",
-            "rating": 5
-          }
-        },
-        "r3": {
-          "type": "review",
-          "settings": {
-            "name": "Alex R.",
-            "text": "Was able to start selling in less than a week. First sales came faster than I expected. Definitely one of the best investments I made in e-commerce.",
-            "rating": 5
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3"
-      ],
+      "disabled": true,
       "settings": {
-        "title": "Brands We Have Built",
-        "subtitle": "See the success stories of brands we've helped create and grow."
+        "title": "What Our Customers Say",
+        "subtitle": ""
       }
     },
     "profit": {
@@ -395,6 +374,14 @@
         "button_1": "Choose Package",
         "link_1": "#pricing"
       }
+    },
+    "portfolio_H7ynEh": {
+      "type": "portfolio",
+      "name": "Portfolio",
+      "settings": {
+        "title": "Brands we have built",
+        "subtitle": "See the success stories of brands we've helped create and grow."
+      }
     }
   },
   "order": [
@@ -407,6 +394,7 @@
     "landing_video",
     "reviews",
     "profit",
+    "portfolio_H7ynEh",
     "about",
     "faq",
     "cta"
