@@ -175,6 +175,7 @@
         "f2",
         "f3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Launch Without Complexity",
         "subtitle": "Less stress, faster launch."
@@ -295,6 +296,14 @@
         "profit_value": "≈ $35"
       }
     },
+    "portfolio_H7ynEh": {
+      "type": "portfolio",
+      "name": "Portfolio",
+      "settings": {
+        "title": "Brands we have built",
+        "subtitle": "See the success stories of brands we've helped create and grow."
+      }
+    },
     "about": {
       "type": "ios-about",
       "settings": {
@@ -373,14 +382,6 @@
         "subtitle": "Choose a package – we create the launch plan and hand over a ready-to-launch brand base.",
         "button_1": "Choose Package",
         "link_1": "#pricing"
-      }
-    },
-    "portfolio_H7ynEh": {
-      "type": "portfolio",
-      "name": "Portfolio",
-      "settings": {
-        "title": "Brands we have built",
-        "subtitle": "See the success stories of brands we've helped create and grow."
       }
     }
   },
