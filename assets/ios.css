@@ -699,6 +699,13 @@ body {
   flex-shrink: 0;
 }
 
+.ios-badge-sale {
+  background: rgba(255, 59, 48, 0.15);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
 /* Steps Section */
 .ios-steps {
   display: grid;
@@ -824,6 +831,18 @@ body {
   font-size: 28px;
   font-weight: 920;
   letter-spacing: -0.2px;
+}
+
+.ios-discount-badge {
+  display: inline-block;
+  background: rgba(255, 59, 48, 0.2);
+  border: 1px solid rgba(255, 59, 48, 0.4);
+  color: #ff3b30;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
 }
 
 .ios-was {
@@ -1044,6 +1063,26 @@ details[open] .ios-chev {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+/* Brands Section */
+.ios-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.ios-brand-card {
+  padding: 12px;
+  overflow: hidden;
+}
+
+.ios-brand-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
 }
 
 .ios-review-rating {
@@ -1847,6 +1886,10 @@ details[open] .ios-chev {
     grid-template-columns: 1fr
   }
 
+  .ios-brands-grid {
+    grid-template-columns: 1fr
+  }
+
   .ios-product-grid {
     grid-template-columns: 1fr;
     gap: 24px
@@ -1911,6 +1954,22 @@ details[open] .ios-chev {
 
   .ios-hero {
     padding: 32px 0 12px
+  }
+
+  /* Ensure pricing badges are visible on mobile */
+  .ios-plan-head {
+    flex-wrap: wrap;
+  }
+
+  .ios-badge {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+
+  /* Make discount badge more prominent on mobile */
+  .ios-discount-badge {
+    font-size: 13px !important;
+    padding: 4px 8px !important;
   }
 
   .ios-cta {
@@ -2271,6 +2330,42 @@ details[open] .ios-chev {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.ios-cart-niche {
+  margin-bottom: 16px;
+}
+
+.ios-cart-niche-label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted2);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ios-cart-niche-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  background: var(--card2);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.ios-cart-niche-select:hover {
+  border-color: var(--stroke2);
+  background: rgba(255, 255, 255, .10);
+}
+
+.ios-cart-niche-select:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-color: var(--gold);
 }
 
 .ios-cart-country-label {

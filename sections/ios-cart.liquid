@@ -4,6 +4,15 @@
 
 <section class="ios-section ios-cart" aria-label="{{ 'cart.title' | t }}">
   <div class="ios-wrap">
+    <div class="ios-contact-back">
+      <a href="/" class="ios-btn ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        {{ 'general.back_to_home' | t | default: 'Back to Home' }}
+      </a>
+    </div>
+
     {% if cart.item_count > 0 %}
       <div class="ios-cart-header">
         <h1 class="ios-h1">{{ 'cart.title' | t }}</h1>
@@ -131,6 +140,23 @@
         </div>
 
         <div class="ios-cart-footer">
+          <div class="ios-cart-niche">
+            <label for="brand-niche" class="ios-cart-niche-label">{{ 'cart.brand_niche' | t | default: 'Select Your Brand Niche' }}:</label>
+            <select id="brand-niche" class="ios-cart-niche-select" name="attributes[brand_niche]">
+              <option value="">Choose a niche...</option>
+              <option value="fashion">1. Fashion & Accessories</option>
+              <option value="fitness">2. Fitness & Health</option>
+              <option value="beauty">3. Beauty & Skincare</option>
+              <option value="home">4. Home & Living</option>
+              <option value="kitchen">5. Kitchen & Cooking</option>
+              <option value="pets">6. Pets</option>
+              <option value="electronics">7. Electronics & Gadgets</option>
+              <option value="car">8. Car Accessories</option>
+              <option value="baby">9. Baby & Kids</option>
+              <option value="recommended">10. Our Recommended Niche</option>
+            </select>
+          </div>
+
           <div class="ios-glass ios-cart-summary">
             <div class="ios-cart-summary-row">
               <span>{{ 'cart.subtotal' | t }}</span>
@@ -151,7 +177,6 @@
           </div>
 
           <div class="ios-cart-actions">
-            <a href="/" class="ios-btn ghost">{{ 'cart.continue_shopping' | t }}</a>
             <button type="submit" name="update" class="ios-btn ghost" style="display: none;" id="cart-update-btn">
               {{ 'cart.update' | t }}
             </button>

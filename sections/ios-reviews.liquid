@@ -1,90 +1,48 @@
-<section id="reviews" class="ios-section" aria-label="Reviews">
+<section id="brands" class="ios-section" aria-label="Brands We Have Built">
   <div class="ios-wrap">
     {% render 'ios-section-header', title: section.settings.title, subtitle: section.settings.subtitle %}
 
-    {% if section.blocks.size > 0 %}
-    <div class="ios-reviews-grid">
-      {% for block in section.blocks %}
-        <div class="ios-glass ios-review-card" {{ block.shopify_attributes }}>
-          <div class="ios-review-rating">
-            {% assign rating = block.settings.rating | default: 5 | plus: 0 %}
-            {% for i in (1..5) %}
-              {% if i <= rating %}
-                <span class="ios-star ios-star-filled">★</span>
-              {% else %}
-                <span class="ios-star ios-star-empty">☆</span>
-              {% endif %}
-            {% endfor %}
-          </div>
-          {% if block.settings.text != blank %}
-          <p class="ios-review-text">{{ block.settings.text }}</p>
-          {% endif %}
-          {% if block.settings.name != blank %}
-          <div class="ios-review-author">— {{ block.settings.name }}</div>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-    {% else %}
-    <p class="ios-sub">No reviews available.</p>
-    {% endif %}
+    <div class="ios-brands-grid">
+      <div class="ios-glass ios-brand-card">
+        <video
+          class="ios-brand-video"
+          src="{{ 'brand-1.MP4' | asset_url }}"
+          controls
+          playsinline
+          aria-label="Brand showcase 1">
+        </video>
+      </div>
 
-    {%- comment -%} Review Schema for SEO {%- endcomment -%}
-    {%- if section.blocks.size > 0 -%}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "{{ shop.name }}",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "{{ section.blocks.size }}"
-      },
-      "review": [
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'review' -%}
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "{{ block.settings.name | escape }}"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "{{ block.settings.rating | default: 5 }}",
-              "bestRating": "5"
-            },
-            "reviewBody": "{{ block.settings.text | escape }}"
-          }{%- unless forloop.last -%},{%- endunless -%}
-          {%- endif -%}
-        {%- endfor -%}
-      ]
-    }
-    </script>
-    {%- endif -%}
+      <div class="ios-glass ios-brand-card">
+        <video
+          class="ios-brand-video"
+          src="{{ 'brand-2.MP4' | asset_url }}"
+          controls
+          playsinline
+          aria-label="Brand showcase 2">
+        </video>
+      </div>
+
+      <div class="ios-glass ios-brand-card">
+        <video
+          class="ios-brand-video"
+          src="{{ 'brand-3.MP4' | asset_url }}"
+          controls
+          playsinline
+          aria-label="Brand showcase 3">
+        </video>
+      </div>
+    </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "iOS Reviews",
+  "name": "Brands We Have Built",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "What Our Customers Say" },
-    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Real experiences from entrepreneurs who started with us." }
+    { "type": "text", "id": "title", "label": "Title", "default": "Brands We Have Built" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "See the success stories of brands we've helped create and grow." }
   ],
-  "blocks": [
-    {
-      "type": "review",
-      "name": "Review",
-      "settings": [
-        { "type": "text", "id": "name", "label": "Customer Name", "default": "Daniel R." },
-        { "type": "textarea", "id": "text", "label": "Review Text", "default": "The store is great, but the support exceeded my expectations. They answered all my questions and guided me through every step of the launch." },
-        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 }
-      ]
-    }
-  ],
-  "max_blocks": 6,
-  "presets": [{ "name": "iOS Reviews" }]
+  "presets": [{ "name": "Brands We Have Built" }]
 }
 {% endschema %}
