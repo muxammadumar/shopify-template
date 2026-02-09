@@ -77,6 +77,23 @@
                     <option value="CH" {% if item.properties['_country'] == 'CH' %}selected{% endif %}>🇨🇭 Schweiz</option>
                   </select>
                 </div>
+
+                <div class="ios-cart-item-niche">
+                  <label class="ios-cart-country-label">{{ 'cart.brand_niche' | t | default: 'Brand Niche' }}:</label>
+                  <select class="ios-cart-niche-select" data-item-key="{{ item.key }}" name="updates[{{ item.key }}][properties][_niche]">
+                    <option value="" {% if item.properties['_niche'] == blank %}selected{% endif %}>Choose a niche...</option>
+                    <option value="fashion" {% if item.properties['_niche'] == 'fashion' %}selected{% endif %}>1. Fashion & Accessories</option>
+                    <option value="fitness" {% if item.properties['_niche'] == 'fitness' %}selected{% endif %}>2. Fitness & Health</option>
+                    <option value="beauty" {% if item.properties['_niche'] == 'beauty' %}selected{% endif %}>3. Beauty & Skincare</option>
+                    <option value="home" {% if item.properties['_niche'] == 'home' %}selected{% endif %}>4. Home & Living</option>
+                    <option value="kitchen" {% if item.properties['_niche'] == 'kitchen' %}selected{% endif %}>5. Kitchen & Cooking</option>
+                    <option value="pets" {% if item.properties['_niche'] == 'pets' %}selected{% endif %}>6. Pets</option>
+                    <option value="electronics" {% if item.properties['_niche'] == 'electronics' %}selected{% endif %}>7. Electronics & Gadgets</option>
+                    <option value="car" {% if item.properties['_niche'] == 'car' %}selected{% endif %}>8. Car Accessories</option>
+                    <option value="baby" {% if item.properties['_niche'] == 'baby' %}selected{% endif %}>9. Baby & Kids</option>
+                    <option value="recommended" {% if item.properties['_niche'] == 'recommended' %}selected{% endif %}>10. Our Recommended Niche</option>
+                  </select>
+                </div>
                 
                 <div class="ios-cart-item-price">
                   <span class="ios-price">{{ item.final_price | money }}</span>
@@ -140,23 +157,6 @@
         </div>
 
         <div class="ios-cart-footer">
-          <div class="ios-cart-niche">
-            <label for="brand-niche" class="ios-cart-niche-label">{{ 'cart.brand_niche' | t | default: 'Select Your Brand Niche' }}:</label>
-            <select id="brand-niche" class="ios-cart-niche-select" name="attributes[brand_niche]">
-              <option value="">Choose a niche...</option>
-              <option value="fashion">1. Fashion & Accessories</option>
-              <option value="fitness">2. Fitness & Health</option>
-              <option value="beauty">3. Beauty & Skincare</option>
-              <option value="home">4. Home & Living</option>
-              <option value="kitchen">5. Kitchen & Cooking</option>
-              <option value="pets">6. Pets</option>
-              <option value="electronics">7. Electronics & Gadgets</option>
-              <option value="car">8. Car Accessories</option>
-              <option value="baby">9. Baby & Kids</option>
-              <option value="recommended">10. Our Recommended Niche</option>
-            </select>
-          </div>
-
           <div class="ios-glass ios-cart-summary">
             <div class="ios-cart-summary-row">
               <span>{{ 'cart.subtotal' | t }}</span>
