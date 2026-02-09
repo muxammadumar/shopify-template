@@ -19,7 +19,7 @@
         <p class="ios-sub">{{ 'cart.item_count' | t: count: cart.item_count }}</p>
       </div>
 
-      <form action="/cart" method="post" novalidate class="ios-cart-form">
+      <form action="/cart" method="post" novalidate class="ios-cart-form" id="cart-form">
         <div class="ios-cart-items">
           {% for item in cart.items %}
             <div class="ios-cart-item" data-cart-item-key="{{ item.key }}">
@@ -80,7 +80,7 @@
 
                 <div class="ios-cart-item-niche">
                   <label class="ios-cart-country-label">{{ 'cart.brand_niche' | t | default: 'Brand Niche' }}:</label>
-                  <select class="ios-cart-niche-select" data-item-key="{{ item.key }}" name="updates[{{ item.key }}][properties][_niche]">
+                  <select class="ios-cart-niche-select" data-item-key="{{ item.key }}">
                     <option value="" {% if item.properties['_niche'] == blank %}selected{% endif %}>Choose a niche...</option>
                     <option value="fashion" {% if item.properties['_niche'] == 'fashion' %}selected{% endif %}>1. Fashion & Accessories</option>
                     <option value="fitness" {% if item.properties['_niche'] == 'fitness' %}selected{% endif %}>2. Fitness & Health</option>
@@ -180,7 +180,7 @@
             <button type="submit" name="update" class="ios-btn ghost" style="display: none;" id="cart-update-btn">
               {{ 'cart.update' | t }}
             </button>
-            <button type="submit" name="checkout" class="ios-btn primary ios-btn-large">
+            <button type="submit" name="checkout" class="ios-btn primary ios-btn-large" id="checkout-btn">
               {{ 'cart.checkout' | t }}
             </button>
           </div>

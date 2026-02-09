@@ -57,6 +57,22 @@
         }
       });
 
+      // Niche selection changes
+      document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('ios-cart-niche-select')) {
+          self.handleNicheChange(e.target);
+        }
+      });
+
+      // Checkout form submission - validate and update properties first
+      document.addEventListener('submit', function(e) {
+        var form = e.target;
+        if (form.id === 'cart-form' && e.submitter && e.submitter.name === 'checkout') {
+          e.preventDefault();
+          self.handleCheckout(form, e.submitter);
+        }
+      });
+
       // Update cart count when cart changes (for cart drawer/updates)
       document.addEventListener('cart:updated', function() {
         self.updateCartCount();
@@ -95,7 +111,7 @@
       var itemKey = select.getAttribute('data-item-key');
       var country = select.value;
       var flag = select.options[select.selectedIndex].getAttribute('data-flag') || select.options[select.selectedIndex].text.substring(0, 2);
-      
+
       // Store country selection in localStorage for persistence
       try {
         var cartCountries = JSON.parse(localStorage.getItem('cart_countries') || '{}');
@@ -104,9 +120,128 @@
       } catch(e) {
         console.error('Failed to store country selection:', e);
       }
-      
+
       // Show notification
       this.showNotification('Shipping country updated to ' + select.options[select.selectedIndex].text, 'success');
+    },
+
+    handleNicheChange: function(select) {
+      var itemKey = select.getAttribute('data-item-key');
+      var niche = select.value;
+
+      // Store niche selection in localStorage for persistence
+      try {
+        var cartNiches = JSON.parse(localStorage.getItem('cart_niches') || '{}');
+        cartNiches[itemKey] = niche;
+        localStorage.setItem('cart_niches', JSON.stringify(cartNiches));
+      } catch(e) {
+        console.error('Failed to store niche selection:', e);
+      }
+
+      if (niche) {
+        var selectedText = select.options[select.selectedIndex].text;
+        this.showNotification('Niche updated to ' + selectedText, 'success');
+      }
+    },
+
+    validateCartSelections: function() {
+      var errors = [];
+      var cartItems = document.querySelectorAll('.ios-cart-item');
+
+      cartItems.forEach(function(item) {
+        var nicheSelect = item.querySelector('.ios-cart-niche-select');
+
+        // Validate niche selection (required)
+        if (nicheSelect && !nicheSelect.value) {
+          errors.push('Please select a brand niche for all items');
+        }
+      });
+
+      return {
+        valid: errors.length === 0,
+        errors: errors
+      };
+    },
+
+    updateLineItemProperties: function(itemKey, properties) {
+      return fetch('/cart/change.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: itemKey,
+          properties: properties
+        })
+      })
+      .then(function(response) {
+        if (!response.ok) {
+          return response.json().then(function(data) {
+            throw new Error(data.description || 'Failed to update item properties');
+          });
+        }
+        return response.json();
+      });
+    },
+
+    handleCheckout: function(form, submitButton) {
+      var self = this;
+
+      // Step 1: Validate all selections
+      var validation = this.validateCartSelections();
+
+      if (!validation.valid) {
+        this.showNotification(validation.errors[0], 'error');
+        return;
+      }
+
+      // Step 2: Disable checkout button and show loading state
+      submitButton.disabled = true;
+      var originalText = submitButton.textContent;
+      submitButton.textContent = 'Preparing checkout...';
+
+      // Step 3: Collect all cart items and their properties
+      var cartItems = document.querySelectorAll('.ios-cart-item');
+      var updatePromises = [];
+
+      cartItems.forEach(function(item) {
+        var itemKey = item.getAttribute('data-cart-item-key');
+        var nicheSelect = item.querySelector('.ios-cart-niche-select');
+        var countrySelect = item.querySelector('.ios-cart-country-select');
+
+        // Build properties object
+        var properties = {};
+
+        if (nicheSelect && nicheSelect.value) {
+          properties._niche = nicheSelect.value;
+        }
+
+        if (countrySelect && countrySelect.value) {
+          properties._country = countrySelect.value;
+        }
+
+        // Update properties for this line item
+        if (Object.keys(properties).length > 0) {
+          updatePromises.push(self.updateLineItemProperties(itemKey, properties));
+        }
+      });
+
+      // Step 4: Update all properties, then proceed to checkout
+      Promise.all(updatePromises)
+        .then(function() {
+          // All properties updated successfully, proceed to standard Shopify checkout
+          window.location.href = '/checkout';
+        })
+        .catch(function(error) {
+          console.error('Failed to update cart properties:', error);
+
+          // Re-enable button on error
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+
+          // Show error to user
+          self.showNotification('Failed to update cart. Please try again.', 'error');
+        });
     },
 
     handleRemoveItem: function(btn) {
