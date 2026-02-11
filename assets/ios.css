@@ -928,11 +928,6 @@ body {
   padding: 4px 10px;
   border-radius: 8px;
   margin-bottom: 6px;
-  /* Fix: force own GPU layer so iOS Safari doesn't hide it inside backdrop-filter parent */
-  position: relative;
-  z-index: 1;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 .ios-was {
@@ -2801,6 +2796,20 @@ details[open] .ios-chev {
 
   .ios-cart-summary {
     padding: 20px;
+  }
+}
+
+/* ============================================
+   iOS SAFARI RENDERING FIX
+   ============================================ */
+/* iOS Safari creates a separate GPU layer for backdrop-filter elements,
+   which can cause child elements to render invisible. This forces
+   the discount badge onto its own layer to prevent that. */
+@supports (-webkit-touch-callout: none) {
+  .ios-discount-badge {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
   }
 }
 
