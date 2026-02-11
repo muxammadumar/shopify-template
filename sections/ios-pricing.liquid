@@ -31,7 +31,7 @@
             
             <div class="ios-price-wrapper">
               {% if discount_percent %}
-                <div class="ios-discount-badge">-{{ discount_percent }}%</div>
+                <div class="ios-sale-percent">-{{ discount_percent }}%</div>
               {% endif %}
               <div class="ios-price">
                 {{ current_price | money }}
@@ -43,12 +43,12 @@
           {% elsif block.settings.price != blank %}
             <div class="ios-price-wrapper">
               {% if block.settings.was != blank %}
-                {% assign price_clean = block.settings.price | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
-                {% assign was_clean = block.settings.was | replace: '€', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
+                {% assign price_clean = block.settings.price | replace: '€', '' | replace: '$', '' | replace: '£', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
+                {% assign was_clean = block.settings.was | replace: '€', '' | replace: '$', '' | replace: '£', '' | replace: ',', '.' | replace: ' ', '' | plus: 0 %}
                 {% if was_clean > 0 and price_clean > 0 %}
                   {% assign discount_amount = was_clean | minus: price_clean %}
                   {% assign discount_percent = discount_amount | times: 100 | divided_by: was_clean %}
-                  <div class="ios-discount-badge">-{{ discount_percent }}%</div>
+                  <div class="ios-sale-percent">-{{ discount_percent }}%</div>
                 {% endif %}
               {% endif %}
               <div class="ios-price">
