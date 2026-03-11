@@ -1,0 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "general": {
+    "menu": "Speisekarte",
+    "menu_open": "Menü öffnen",
+    "menu_close": "Menü schließen",
+    "view_packages": "Pakete ansehen",
+    "accept": "Akzeptieren",
+    "decline": "Abfall",
+    "skip_to_content": "Zum Hauptinhalt springen",
+    "support": "Unterstützung",
+    "policies": "Richtlinien",
+    "back_to_home": "Zurück zur Startseite"
+  },
+  "cookie_banner": {
+    "title": "🍪 Cookies & Datenschutz",
+    "text": "Wir verwenden Cookies, um Ihre Benutzererfahrung zu verbessern und unseren Service zu optimieren.",
+    "privacy_policy": "Datenschutzrichtlinie",
+    "imprint": "Impressum",
+    "agreement": "Durch die Nutzung unserer Website stimmen Sie unseren Bedingungen zu",
+    "and": "Und"
+  },
+  "language": {
+    "select": "Sprache auswählen",
+    "english": "Englisch",
+    "current": "Aktuelle Sprache"
+  },
+  "country": {
+    "select": "Land auswählen"
+  },
+  "meta": {
+    "description": "Individuelle Dropshipping-Marke: Shop, Branding, Werbung & Social Media – alles aus einer Hand. Ihre Marke ist in 48 Stunden startklar.",
+    "description_short": "Individuelle Dropshipping-Marke: Shop, Branding, Werbung & Social Media – alles in einem."
+  },
+  "hero": {
+    "important_benefits": "Wichtige Vorteile",
+    "short_and_clear": "Kurz und bündig",
+    "duration": "Dauer",
+    "duration_value": "Bis zu 48 Stunden",
+    "basis_value": "Shopify + Lieferant",
+    "format_value": "Markenbasis, die sofort einsatzbereit ist",
+    "tagline": "All-in-One-Dropshipping-Marke",
+    "kicker": "Ihre Marke ist in 48 Stunden einsatzbereit",
+    "heading": "Individuelle Dropshipping-Marke: Shop, Branding, Werbung & Social Media – alles in einem",
+    "subheading": "Wir schaffen die Grundlage für Ihre Marke und Ihren Shop, damit Sie schnell und stressfrei online gehen können.",
+    "primary_label": "Marke starten",
+    "secondary_label": "So funktioniert es",
+    "chip_1": "Bis zu 48 Stunden",
+    "chip_2": "1:1-Onboarding",
+    "chip_3": "Einmalzahlung"
+  },
+  "pricing": {
+    "packages": "Pakete"
+  },
+  "contact": {
+    "title": "Nehmen Sie Kontakt auf",
+    "subtitle": "Wir beherrschen 6 Sprachen fließend und arbeiten daran, Ihnen auch in weiteren Sprachen Unterstützung anbieten zu können, um noch näher an Sie heranzurücken!",
+    "info_title": "Kontaktinformationen",
+    "info_description": "Wir sind problemlos per E-Mail, Telefon und WhatsApp erreichbar und bemühen uns, Ihnen bequeme und reibungslose Kommunikationsmöglichkeiten zu bieten, die auf Ihre Bedürfnisse zugeschnitten sind.",
+    "form_email": "E-Mail",
+    "form_subject": "Thema",
+    "form_message": "Nachricht",
+    "send_button": "Nachricht senden",
+    "success_message": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+    "error_message": "Bitte korrigieren Sie die folgenden Fehler:"
+  },
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "subtitle": "Wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen.",
+    "last_updated": "Letzte Aktualisierung"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "view_cart": "Warenkorb ansehen",
+    "item_count": "{{ count }} Artikel",
+    "item_count_other": "{{ count }} Artikel",
+    "quantity": "Menge",
+    "quantity_for": "Menge für {{ title }}",
+    "increase_quantity": "Menge erhöhen",
+    "decrease_quantity": "Menge verringern",
+    "remove_item": "Entfernen Sie {{ title }}",
+    "subtotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "total": "Gesamt",
+    "shipping_note": "Versandkosten und Steuern werden an der Kasse berechnet.",
+    "continue_shopping": "Weiter einkaufen",
+    "update": "Warenkorb aktualisieren",
+    "checkout": "Kasse",
+    "empty_title": "Ihr Warenkorb ist leer",
+    "empty_message": "Sie scheinen noch nichts in Ihren Warenkorb gelegt zu haben.",
+    "store_language": "Sprache speichern",
+    "brand_niche": "Markennische"
+  }
+}
